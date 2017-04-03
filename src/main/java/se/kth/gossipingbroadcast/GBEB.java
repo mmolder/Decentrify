@@ -30,8 +30,13 @@ public class GBEB extends ComponentDefinition {
 
     public GBEB(Init init) {
         this.self = init.self;
-        //subscriptions
         past = new HashMap<>();
+        //subscriptions
+        subscribe(broadcastHandler, gbeb);
+        subscribe(croupierPortHandler, bs);
+        subscribe(historyDeliverHandler, net);
+        subscribe(historyResponseHandler, net);
+
     }
 
     private Handler<GBEBroadcast> broadcastHandler = new Handler<GBEBroadcast>() {

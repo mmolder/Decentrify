@@ -17,7 +17,6 @@ public class RB extends ComponentDefinition {
     private KAddress self;
 
     private Positive<GBEBPort> gbeb = requires(GBEBPort.class);
-    private Positive<Network> net = requires(Network.class);
     private Negative<RBPort> rb = provides(RBPort.class);
 
     private ArrayList<Object> delivered;
@@ -26,6 +25,8 @@ public class RB extends ComponentDefinition {
         this.self = init.self;
         delivered = new ArrayList<>();
         //subscriptions
+        subscribe(broadcastHandler, rb);
+        subscribe(gbebDeliverHandler, gbeb);
     }
 
     private Handler<RBroadcast> broadcastHandler = new Handler<RBroadcast>() {
