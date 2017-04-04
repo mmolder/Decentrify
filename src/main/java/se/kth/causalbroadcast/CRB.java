@@ -29,6 +29,10 @@ public class CRB extends ComponentDefinition {
         this.self = init.self;
         this.delivered = new ArrayList<>();
         this.past = new HashMap<>();
+
+        //subscriptions
+        subscribe(crbroadcastHandler, crb);
+        subscribe(rDeliverHandler, rb);
     }
 
     private Handler<CRBroadcast> crbroadcastHandler = new Handler<CRBroadcast>() {
