@@ -71,7 +71,7 @@ public class CRB extends ComponentDefinition {
         }
     };
 
-    public static class Init extends se.sics.kompics.Init {
+    public static class Init extends se.sics.kompics.Init<CRB> {
         public KAddress self;
 
         public Init(KAddress self) {
