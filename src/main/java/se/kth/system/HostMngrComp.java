@@ -20,6 +20,7 @@ package se.kth.system;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.kth.app.mngr.AppMngrComp;
+import se.kth.causalbroadcast.CRBPort;
 import se.sics.kompics.Channel;
 import se.sics.kompics.Component;
 import se.sics.kompics.ComponentDefinition;
@@ -49,6 +50,8 @@ public class HostMngrComp extends ComponentDefinition {
     //*****************************CONNECTIONS**********************************
     Positive<Timer> timerPort = requires(Timer.class);
     Positive<Network> networkPort = requires(Network.class);
+
+    Positive<CRBPort> crbPort = requires(CRBPort.class);
     //***************************EXTERNAL_STATE*********************************
     private KAddress selfAdr;
     private KAddress bootstrapServer;
@@ -97,7 +100,8 @@ public class HostMngrComp extends ComponentDefinition {
 
     private void connectApp() {
         AppMngrComp.ExtPort extPorts = new AppMngrComp.ExtPort(timerPort, networkPort,
-                overlayMngrComp.getPositive(CroupierPort.class), overlayMngrComp.getNegative(OverlayViewUpdatePort.class));
+                overlayMngrComp.getPositive(CroupierPort.class), overlayMngrComp.getNegative(OverlayViewUpdatePort.class),
+                crbPort);
         appMngrComp = create(AppMngrComp.class, new AppMngrComp.Init(extPorts, selfAdr, croupierId));
         connect(appMngrComp.getNegative(OverlayMngrPort.class), overlayMngrComp.getPositive(OverlayMngrPort.class), Channel.TWO_WAY);
     }

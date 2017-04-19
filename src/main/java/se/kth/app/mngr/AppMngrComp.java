@@ -19,8 +19,14 @@ package se.kth.app.mngr;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import se.kth.causalbroadcast.CRB;
+import se.kth.causalbroadcast.CRBPort;
 import se.kth.croupier.util.NoView;
 import se.kth.app.AppComp;
+import se.kth.gossipingbroadcast.GBEB;
+import se.kth.gossipingbroadcast.GBEBPort;
+import se.kth.reliablebroadcast.RB;
+import se.kth.reliablebroadcast.RBPort;
 import se.sics.kompics.Channel;
 import se.sics.kompics.Component;
 import se.sics.kompics.ComponentDefinition;
@@ -44,85 +50,110 @@ import se.sics.ktoolbox.util.overlays.view.OverlayViewUpdatePort;
  */
 public class AppMngrComp extends ComponentDefinition {
 
-  private static final Logger LOG = LoggerFactory.getLogger(BootstrapClientComp.class);
-  private String logPrefix = "";
-  //*****************************CONNECTIONS**********************************
-  Positive<OverlayMngrPort> omngrPort = requires(OverlayMngrPort.class);
-  //***************************EXTERNAL_STATE*********************************
-  private ExtPort extPorts;
-  private KAddress selfAdr;
-  private OverlayId croupierId;
-  //***************************INTERNAL_STATE*********************************
-  private Component appComp;
-  //******************************AUX_STATE***********************************
-  private OMngrCroupier.ConnectRequest pendingCroupierConnReq;
-  //**************************************************************************
+    private static final Logger LOG = LoggerFactory.getLogger(BootstrapClientComp.class);
+    private String logPrefix = "";
+    //*****************************CONNECTIONS**********************************
+    Positive<OverlayMngrPort> omngrPort = requires(OverlayMngrPort.class);
+    protected final Positive<Network> net = requires(Network.class);
+    //***************************EXTERNAL_STATE*********************************
+    private ExtPort extPorts;
+    private KAddress selfAdr;
+    private OverlayId croupierId;
+    //***************************INTERNAL_STATE*********************************
+    private Component appComp;
+    private Component crb;
+    private Component rb;
+    private Component gbeb;
 
-  public AppMngrComp(Init init) {
-    selfAdr = init.selfAdr;
-    logPrefix = "<nid:" + selfAdr.getId() + ">";
-    LOG.info("{}initiating...", logPrefix);
+    //******************************AUX_STATE***********************************
+    private OMngrCroupier.ConnectRequest pendingCroupierConnReq;
+    //**************************************************************************
 
-    extPorts = init.extPorts;
-    croupierId = init.croupierOId;
+    public AppMngrComp(Init init) {
+        selfAdr = init.selfAdr;
+        logPrefix = "<nid:" + selfAdr.getId() + ">";
+        LOG.info("{}initiating...", logPrefix);
 
-    subscribe(handleStart, control);
-    subscribe(handleCroupierConnected, omngrPort);
-  }
+        extPorts = init.extPorts;
+        croupierId = init.croupierOId;
 
-  Handler handleStart = new Handler<Start>() {
-    @Override
-    public void handle(Start event) {
-      LOG.info("{}starting...", logPrefix);
-
-      pendingCroupierConnReq = new OMngrCroupier.ConnectRequest(croupierId, false);
-      trigger(pendingCroupierConnReq, omngrPort);
+        subscribe(handleStart, control);
+        subscribe(handleCroupierConnected, omngrPort);
     }
-  };
 
-  Handler handleCroupierConnected = new Handler<OMngrCroupier.ConnectResponse>() {
-    @Override
-    public void handle(OMngrCroupier.ConnectResponse event) {
-      LOG.info("{}overlays connected", logPrefix);
-      connectAppComp();
-      trigger(Start.event, appComp.control());
-      trigger(new OverlayViewUpdate.Indication<>(croupierId, false, new NoView()), extPorts.viewUpdatePort);
+    Handler handleStart = new Handler<Start>() {
+        @Override
+        public void handle(Start event) {
+            LOG.info("{}starting...", logPrefix);
+
+            pendingCroupierConnReq = new OMngrCroupier.ConnectRequest(croupierId, false);
+            trigger(pendingCroupierConnReq, omngrPort);
+        }
+    };
+
+    Handler handleCroupierConnected = new Handler<OMngrCroupier.ConnectResponse>() {
+        @Override
+        public void handle(OMngrCroupier.ConnectResponse event) {
+            LOG.info("{}overlays connected", logPrefix);
+            connectAppComp();
+            trigger(Start.event, appComp.control());
+            trigger(new OverlayViewUpdate.Indication<>(croupierId, false, new NoView()), extPorts.viewUpdatePort);
+        }
+    };
+
+    private void connectAppComp() {
+        appComp = create(AppComp.class, new AppComp.Init(selfAdr, croupierId));
+        connect(appComp.getNegative(Timer.class), extPorts.timerPort, Channel.TWO_WAY);
+        connect(appComp.getNegative(Network.class), extPorts.networkPort, Channel.TWO_WAY);
+        connect(appComp.getNegative(CroupierPort.class), extPorts.croupierPort, Channel.TWO_WAY);
+
+        //CRB
+        crb = create(CRB.class, new CRB.Init(selfAdr));
+        connect(appComp.getNegative(CRBPort.class), crb.getPositive(CRBPort.class), Channel.TWO_WAY);
+        connect(net, crb.getNegative(Network.class), Channel.TWO_WAY);
+
+        //RB
+        rb = create(RB.class, new RB.Init(selfAdr));
+        connect(crb.getNegative(RBPort.class), rb.getPositive(RBPort.class), Channel.TWO_WAY);
+
+        //GBEB
+        gbeb = create(GBEB.class, new GBEB.Init(selfAdr));
+        connect(rb.getNegative(GBEBPort.class), gbeb.getPositive(GBEBPort.class), Channel.TWO_WAY);
+        connect(net, gbeb.getNegative(Network.class), Channel.TWO_WAY);
+        connect(gbeb.getNegative(CroupierPort.class), extPorts.croupierPort, Channel.TWO_WAY);
+
     }
-  };
 
-  private void connectAppComp() {
-    appComp = create(AppComp.class, new AppComp.Init(selfAdr, croupierId));
-    connect(appComp.getNegative(Timer.class), extPorts.timerPort, Channel.TWO_WAY);
-    connect(appComp.getNegative(Network.class), extPorts.networkPort, Channel.TWO_WAY);
-    connect(appComp.getNegative(CroupierPort.class), extPorts.croupierPort, Channel.TWO_WAY);
-  }
+    public static class Init extends se.sics.kompics.Init<AppMngrComp> {
 
-  public static class Init extends se.sics.kompics.Init<AppMngrComp> {
+        public final ExtPort extPorts;
+        public final KAddress selfAdr;
+        public final OverlayId croupierOId;
 
-    public final ExtPort extPorts;
-    public final KAddress selfAdr;
-    public final OverlayId croupierOId;
-
-    public Init(ExtPort extPorts, KAddress selfAdr, OverlayId croupierOId) {
-      this.extPorts = extPorts;
-      this.selfAdr = selfAdr;
-      this.croupierOId = croupierOId;
+        public Init(ExtPort extPorts, KAddress selfAdr, OverlayId croupierOId) {
+            this.extPorts = extPorts;
+            this.selfAdr = selfAdr;
+            this.croupierOId = croupierOId;
+        }
     }
-  }
 
-  public static class ExtPort {
+    public static class ExtPort {
 
-    public final Positive<Timer> timerPort;
-    public final Positive<Network> networkPort;
-    public final Positive<CroupierPort> croupierPort;
-    public final Negative<OverlayViewUpdatePort> viewUpdatePort;
+        public final Positive<Timer> timerPort;
+        public final Positive<Network> networkPort;
+        public final Positive<CroupierPort> croupierPort;
+        public final Negative<OverlayViewUpdatePort> viewUpdatePort;
 
-    public ExtPort(Positive<Timer> timerPort, Positive<Network> networkPort, Positive<CroupierPort> croupierPort,
-      Negative<OverlayViewUpdatePort> viewUpdatePort) {
-      this.networkPort = networkPort;
-      this.timerPort = timerPort;
-      this.croupierPort = croupierPort;
-      this.viewUpdatePort = viewUpdatePort;
+        public final Positive<CRBPort> crbPort;
+
+        public ExtPort(Positive<Timer> timerPort, Positive<Network> networkPort, Positive<CroupierPort> croupierPort,
+                       Negative<OverlayViewUpdatePort> viewUpdatePort, Positive<CRBPort> crbPort) {
+            this.networkPort = networkPort;
+            this.timerPort = timerPort;
+            this.croupierPort = croupierPort;
+            this.viewUpdatePort = viewUpdatePort;
+
+            this.crbPort = crbPort;
+        }
     }
-  }
 }

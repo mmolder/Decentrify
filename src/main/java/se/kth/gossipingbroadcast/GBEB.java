@@ -49,6 +49,9 @@ public class GBEB extends ComponentDefinition {
     private Handler<CroupierSample> croupierPortHandler = new Handler<CroupierSample>() {
         @Override
         public void handle(CroupierSample croupierSample) {
+            if (croupierSample.publicSample.isEmpty()) {
+                return;
+            }
             List<KAddress> sample = CroupierHelper.getSample(croupierSample);
             for(KAddress peer : sample) {
                 KHeader header = new BasicHeader(self, peer, Transport.TCP);

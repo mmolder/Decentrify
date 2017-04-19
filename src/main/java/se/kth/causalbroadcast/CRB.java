@@ -1,13 +1,18 @@
 package se.kth.causalbroadcast;
 
+import se.kth.gossipingbroadcast.HistoryRequest;
+import se.kth.gossipingbroadcast.HistoryResponse;
 import se.kth.reliablebroadcast.RBPort;
 import se.kth.reliablebroadcast.RBroadcast;
 import se.kth.reliablebroadcast.RDeliver;
-import se.sics.kompics.ComponentDefinition;
-import se.sics.kompics.Handler;
-import se.sics.kompics.Negative;
-import se.sics.kompics.Positive;
+import se.sics.kompics.*;
+import se.sics.kompics.network.Network;
+import se.sics.kompics.network.Transport;
 import se.sics.ktoolbox.util.network.KAddress;
+import se.sics.ktoolbox.util.network.KContentMsg;
+import se.sics.ktoolbox.util.network.KHeader;
+import se.sics.ktoolbox.util.network.basic.BasicContentMsg;
+import se.sics.ktoolbox.util.network.basic.BasicHeader;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,6 +25,7 @@ public class CRB extends ComponentDefinition {
 
     private Positive<RBPort> rb = requires(RBPort.class);
     private Negative<CRBPort> crb = provides(CRBPort.class);
+    private Positive<Network> net = requires(Network.class);
 
     private KAddress self;
     private HashMap<KAddress, Object> past;
@@ -31,10 +37,21 @@ public class CRB extends ComponentDefinition {
         this.past = new HashMap<>();
 
         //subscriptions
-        subscribe(crbroadcastHandler, crb);
+        subscribe(crbroadcastHandler, net);
         subscribe(rDeliverHandler, rb);
+        subscribe(crbroadcastHandler, net);
     }
 
+    private ClassMatchedHandler<CRBroadcast, KContentMsg<?, ?, CRBroadcast>> crbroadcastHandler = new ClassMatchedHandler<CRBroadcast, KContentMsg<?, ?, CRBroadcast>>() {
+        @Override
+        public void handle(CRBroadcast crBroadcast, KContentMsg<?, ?, CRBroadcast> crBroadcastKContentMsg) {
+            Object msg = crBroadcast.getMessage();
+            trigger(new RBroadcast(msg, past), rb);
+            past.put(self, msg);
+        }
+    };
+
+    /*
     private Handler<CRBroadcast> crbroadcastHandler = new Handler<CRBroadcast>() {
         @Override
         public void handle(CRBroadcast crBroadcast) {
@@ -42,7 +59,7 @@ public class CRB extends ComponentDefinition {
             trigger(new RBroadcast(msg, past), rb);
             past.put(self, msg);
         }
-    };
+    };*/
 
     private Handler<RDeliver> rDeliverHandler = new Handler<RDeliver>() {
         @Override
