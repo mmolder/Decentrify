@@ -1,18 +1,12 @@
 package se.kth.causalbroadcast;
 
-import se.kth.gossipingbroadcast.HistoryRequest;
-import se.kth.gossipingbroadcast.HistoryResponse;
 import se.kth.reliablebroadcast.RBPort;
 import se.kth.reliablebroadcast.RBroadcast;
 import se.kth.reliablebroadcast.RDeliver;
 import se.sics.kompics.*;
 import se.sics.kompics.network.Network;
-import se.sics.kompics.network.Transport;
 import se.sics.ktoolbox.util.network.KAddress;
 import se.sics.ktoolbox.util.network.KContentMsg;
-import se.sics.ktoolbox.util.network.KHeader;
-import se.sics.ktoolbox.util.network.basic.BasicContentMsg;
-import se.sics.ktoolbox.util.network.basic.BasicHeader;
 
 import java.util.ArrayList;
 import java.util.HashMap;

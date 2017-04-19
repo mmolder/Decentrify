@@ -54,7 +54,7 @@ public class GBEB extends ComponentDefinition {
             }
             List<KAddress> sample = CroupierHelper.getSample(croupierSample);
             for(KAddress peer : sample) {
-                KHeader header = new BasicHeader(self, peer, Transport.TCP);
+                KHeader header = new BasicHeader(self, peer, Transport.UDP);
                 KContentMsg msg = new BasicContentMsg(header, new HistoryRequest());
                 trigger(msg, net);
             }

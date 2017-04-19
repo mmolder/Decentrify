@@ -4,7 +4,6 @@ import se.kth.gossipingbroadcast.GBEBDeliver;
 import se.kth.gossipingbroadcast.GBEBPort;
 import se.kth.gossipingbroadcast.GBEBroadcast;
 import se.sics.kompics.*;
-import se.sics.kompics.network.Network;
 import se.sics.ktoolbox.util.network.KAddress;
 
 import java.util.ArrayList;
