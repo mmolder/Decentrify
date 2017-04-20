@@ -39,6 +39,7 @@ public class CRB extends ComponentDefinition {
     private ClassMatchedHandler<CRBroadcast, KContentMsg<?, ?, CRBroadcast>> crbroadcastHandler = new ClassMatchedHandler<CRBroadcast, KContentMsg<?, ?, CRBroadcast>>() {
         @Override
         public void handle(CRBroadcast crBroadcast, KContentMsg<?, ?, CRBroadcast> crBroadcastKContentMsg) {
+            System.out.println(self + " RECEIVED CRB");
             Object msg = crBroadcast.getMessage();
             trigger(new RBroadcast(msg, past), rb);
             past.put(self, msg);

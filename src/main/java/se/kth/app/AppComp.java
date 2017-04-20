@@ -63,7 +63,7 @@ public class AppComp extends ComponentDefinition {
         LOG.info("{}initiating...", logPrefix);
 
         subscribe(handleStart, control);
-        //subscribe(handleCroupierSample, croupierPort);
+        subscribe(handleCroupierSample, croupierPort);
         subscribe(handlePing, networkPort);
         subscribe(handlePong, networkPort);
         subscribe(crbDeliverHandler, crb);
@@ -77,7 +77,7 @@ public class AppComp extends ComponentDefinition {
         }
     };
 
-    /*
+
     Handler handleCroupierSample = new Handler<CroupierSample>() {
         @Override
         public void handle(CroupierSample croupierSample) {
@@ -86,15 +86,16 @@ public class AppComp extends ComponentDefinition {
             }
             List<KAddress> sample = CroupierHelper.getSample(croupierSample);
             for (KAddress peer : sample) {
+                System.out.println("RECEIVED SAMPLE");
                 KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
-                KContentMsg msg = new BasicContentMsg(header, new Ping());
-                //KContentMsg msg = new BasicContentMsg(header, new CRBroadcast("message"));
-                //trigger(msg, networkPort);
+                //KContentMsg msg = new BasicContentMsg(header, new Ping());
+                KContentMsg msg = new BasicContentMsg(header, new CRBroadcast("message"));
+                trigger(msg, networkPort);
                 //trigger(msg, crb);
             }
         }
     };
-    */
+
 
     Handler crbDeliverHandler = new Handler<CRBDeliver>() {
         @Override

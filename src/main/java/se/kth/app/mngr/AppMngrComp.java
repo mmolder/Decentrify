@@ -105,7 +105,7 @@ public class AppMngrComp extends ComponentDefinition {
         appComp = create(AppComp.class, new AppComp.Init(selfAdr, croupierId));
         connect(appComp.getNegative(Timer.class), extPorts.timerPort, Channel.TWO_WAY);
         connect(appComp.getNegative(Network.class), extPorts.networkPort, Channel.TWO_WAY);
-        //connect(appComp.getNegative(CroupierPort.class), extPorts.croupierPort, Channel.TWO_WAY);
+        connect(appComp.getNegative(CroupierPort.class), extPorts.croupierPort, Channel.TWO_WAY);
 
         //CRB
         crb = create(CRB.class, new CRB.Init(selfAdr));
