@@ -54,7 +54,6 @@ public class AppMngrComp extends ComponentDefinition {
     private String logPrefix = "";
     //*****************************CONNECTIONS**********************************
     Positive<OverlayMngrPort> omngrPort = requires(OverlayMngrPort.class);
-    protected final Positive<Network> net = requires(Network.class);
     //***************************EXTERNAL_STATE*********************************
     private ExtPort extPorts;
     private KAddress selfAdr;
@@ -97,8 +96,11 @@ public class AppMngrComp extends ComponentDefinition {
             LOG.info("{}overlays connected", logPrefix);
             connectAppComp();
             trigger(Start.event, appComp.control());
+            connectCRB();
             trigger(Start.event, crb.control());
+            connectRB();
             trigger(Start.event, rb.control());
+            connectGBEB();
             trigger(Start.event, gbeb.control());
             trigger(new OverlayViewUpdate.Indication<>(croupierId, false, new NoView()), extPorts.viewUpdatePort);
         }
@@ -108,21 +110,27 @@ public class AppMngrComp extends ComponentDefinition {
         appComp = create(AppComp.class, new AppComp.Init(selfAdr, croupierId));
         connect(appComp.getNegative(Timer.class), extPorts.timerPort, Channel.TWO_WAY);
         connect(appComp.getNegative(Network.class), extPorts.networkPort, Channel.TWO_WAY);
-        connect(appComp.getNegative(CroupierPort.class), extPorts.croupierPort, Channel.TWO_WAY);
+        //connect(appComp.getNegative(CroupierPort.class), extPorts.croupierPort, Channel.TWO_WAY);
+    }
 
+    private void connectCRB() {
         //CRB
         crb = create(CRB.class, new CRB.Init(selfAdr));
         connect(appComp.getNegative(CRBPort.class), crb.getPositive(CRBPort.class), Channel.TWO_WAY);
+    }
 
+    private void connectRB() {
         //RB
         rb = create(RB.class, new RB.Init(selfAdr));
         connect(crb.getNegative(RBPort.class), rb.getPositive(RBPort.class), Channel.TWO_WAY);
+    }
 
+    private void connectGBEB() {
         //GBEB
         gbeb = create(GBEB.class, new GBEB.Init(selfAdr));
         connect(rb.getNegative(GBEBPort.class), gbeb.getPositive(GBEBPort.class), Channel.TWO_WAY);
-        connect(net, gbeb.getNegative(Network.class), Channel.TWO_WAY);
-
+        connect(gbeb.getNegative(Network.class), extPorts.networkPort, Channel.TWO_WAY);
+        connect(appComp.getNegative(CroupierPort.class), extPorts.croupierPort, Channel.TWO_WAY);
     }
 
     public static class Init extends se.sics.kompics.Init<AppMngrComp> {

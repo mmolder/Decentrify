@@ -51,7 +51,7 @@ public class AppComp extends ComponentDefinition {
     //*******************************CONNECTIONS********************************
     Positive<Timer> timerPort = requires(Timer.class);
     Positive<Network> networkPort = requires(Network.class);
-    Positive<CroupierPort> croupierPort = requires(CroupierPort.class);
+    //Positive<CroupierPort> croupierPort = requires(CroupierPort.class);
 
     Positive<CRBPort> crb = requires(CRBPort.class);
     //**************************************************************************
@@ -63,7 +63,7 @@ public class AppComp extends ComponentDefinition {
         LOG.info("{}initiating...", logPrefix);
 
         subscribe(handleStart, control);
-        subscribe(handleCroupierSample, croupierPort);
+        //subscribe(handleCroupierSample, croupierPort);
         subscribe(handlePing, networkPort);
         subscribe(handlePong, networkPort);
         //subscribe(crbDeliverHandler, crb);
@@ -78,7 +78,7 @@ public class AppComp extends ComponentDefinition {
         }
     };
 
-
+    /*
     Handler handleCroupierSample = new Handler<CroupierSample>() {
         @Override
         public void handle(CroupierSample croupierSample) {
@@ -94,6 +94,7 @@ public class AppComp extends ComponentDefinition {
             }
         }
     };
+    */
 
     private ClassMatchedHandler<CRBroadcast, KContentMsg<?, ?, CRBroadcast>> crbroadcastHandler = new ClassMatchedHandler<CRBroadcast, KContentMsg<?, ?, CRBroadcast>>() {
         @Override
