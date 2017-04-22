@@ -97,6 +97,9 @@ public class AppMngrComp extends ComponentDefinition {
             LOG.info("{}overlays connected", logPrefix);
             connectAppComp();
             trigger(Start.event, appComp.control());
+            trigger(Start.event, crb.control());
+            trigger(Start.event, rb.control());
+            trigger(Start.event, gbeb.control());
             trigger(new OverlayViewUpdate.Indication<>(croupierId, false, new NoView()), extPorts.viewUpdatePort);
         }
     };
@@ -110,7 +113,6 @@ public class AppMngrComp extends ComponentDefinition {
         //CRB
         crb = create(CRB.class, new CRB.Init(selfAdr));
         connect(appComp.getNegative(CRBPort.class), crb.getPositive(CRBPort.class), Channel.TWO_WAY);
-        connect(net, crb.getNegative(Network.class), Channel.TWO_WAY);
 
         //RB
         rb = create(RB.class, new RB.Init(selfAdr));
@@ -120,7 +122,6 @@ public class AppMngrComp extends ComponentDefinition {
         gbeb = create(GBEB.class, new GBEB.Init(selfAdr));
         connect(rb.getNegative(GBEBPort.class), gbeb.getPositive(GBEBPort.class), Channel.TWO_WAY);
         connect(net, gbeb.getNegative(Network.class), Channel.TWO_WAY);
-        //connect(gbeb.getNegative(CroupierPort.class), extPorts.croupierPort, Channel.TWO_WAY);
 
     }
 

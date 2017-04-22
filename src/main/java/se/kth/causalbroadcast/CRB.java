@@ -6,7 +6,6 @@ import se.kth.reliablebroadcast.RDeliver;
 import se.sics.kompics.*;
 import se.sics.kompics.network.Network;
 import se.sics.ktoolbox.util.network.KAddress;
-import se.sics.ktoolbox.util.network.KContentMsg;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,11 +30,12 @@ public class CRB extends ComponentDefinition {
         this.past = new HashMap<>();
 
         //subscriptions
-        subscribe(crbroadcastHandler, net);
+        subscribe(crbroadcastHandler, crb);
         subscribe(rDeliverHandler, rb);
-        subscribe(crbroadcastHandler, net);
+        //subscribe(crbroadcastHandler, net);
     }
 
+    /*
     private ClassMatchedHandler<CRBroadcast, KContentMsg<?, ?, CRBroadcast>> crbroadcastHandler = new ClassMatchedHandler<CRBroadcast, KContentMsg<?, ?, CRBroadcast>>() {
         @Override
         public void handle(CRBroadcast crBroadcast, KContentMsg<?, ?, CRBroadcast> crBroadcastKContentMsg) {
@@ -45,16 +45,18 @@ public class CRB extends ComponentDefinition {
             past.put(self, msg);
         }
     };
+    */
 
-    /*
+
     private Handler<CRBroadcast> crbroadcastHandler = new Handler<CRBroadcast>() {
         @Override
         public void handle(CRBroadcast crBroadcast) {
+            System.out.println(self + " RECEIVED CRB 2");
             Object msg = crBroadcast.getMessage();
             trigger(new RBroadcast(msg, past), rb);
             past.put(self, msg);
         }
-    };*/
+    };
 
     private Handler<RDeliver> rDeliverHandler = new Handler<RDeliver>() {
         @Override

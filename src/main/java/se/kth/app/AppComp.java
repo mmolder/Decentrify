@@ -66,7 +66,8 @@ public class AppComp extends ComponentDefinition {
         subscribe(handleCroupierSample, croupierPort);
         subscribe(handlePing, networkPort);
         subscribe(handlePong, networkPort);
-        subscribe(crbDeliverHandler, crb);
+        //subscribe(crbDeliverHandler, crb);
+        subscribe(crbroadcastHandler, networkPort);
     }
 
     Handler handleStart = new Handler<Start>() {
@@ -88,21 +89,29 @@ public class AppComp extends ComponentDefinition {
             for (KAddress peer : sample) {
                 System.out.println("RECEIVED SAMPLE");
                 KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
-                //KContentMsg msg = new BasicContentMsg(header, new Ping());
                 KContentMsg msg = new BasicContentMsg(header, new CRBroadcast("message"));
                 trigger(msg, networkPort);
-                //trigger(msg, crb);
             }
         }
     };
 
+    private ClassMatchedHandler<CRBroadcast, KContentMsg<?, ?, CRBroadcast>> crbroadcastHandler = new ClassMatchedHandler<CRBroadcast, KContentMsg<?, ?, CRBroadcast>>() {
+        @Override
+        public void handle(CRBroadcast crBroadcast, KContentMsg<?, ?, CRBroadcast> crBroadcastKContentMsg) {
+            System.out.println(selfAdr + " RECEIVED CRB");
+            Object msg = crBroadcast.getMessage();
+            trigger(new CRBroadcast(msg), crb);
+        }
+    };
 
+
+    /*
     Handler crbDeliverHandler = new Handler<CRBDeliver>() {
         @Override
         public void handle(CRBDeliver crbDeliver) {
             LOG.info("{} broadcast received: {}", selfAdr, crbDeliver.getMessage());
         }
-    };
+    };*/
 
     ClassMatchedHandler handlePing
             = new ClassMatchedHandler<Ping, KContentMsg<?, ?, Ping>>() {
