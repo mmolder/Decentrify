@@ -130,7 +130,7 @@ public class AppMngrComp extends ComponentDefinition {
         gbeb = create(GBEB.class, new GBEB.Init(selfAdr));
         connect(rb.getNegative(GBEBPort.class), gbeb.getPositive(GBEBPort.class), Channel.TWO_WAY);
         connect(gbeb.getNegative(Network.class), extPorts.networkPort, Channel.TWO_WAY);
-        connect(appComp.getNegative(CroupierPort.class), extPorts.croupierPort, Channel.TWO_WAY);
+        connect(gbeb.getNegative(CroupierPort.class), extPorts.croupierPort, Channel.TWO_WAY);
     }
 
     public static class Init extends se.sics.kompics.Init<AppMngrComp> {

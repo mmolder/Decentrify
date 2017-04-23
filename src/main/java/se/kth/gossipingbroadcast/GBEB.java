@@ -31,6 +31,7 @@ public class GBEB extends ComponentDefinition {
     public GBEB(Init init) {
         this.self = init.self;
         past = new HashMap<>();
+
         //subscriptions
         subscribe(broadcastHandler, gbeb);
         subscribe(croupierPortHandler, bs);
@@ -49,12 +50,9 @@ public class GBEB extends ComponentDefinition {
     private Handler<CroupierSample> croupierPortHandler = new Handler<CroupierSample>() {
         @Override
         public void handle(CroupierSample croupierSample) {
-            if (croupierSample.publicSample.isEmpty()) {
-                return;
-            }
             List<KAddress> sample = CroupierHelper.getSample(croupierSample);
             for(KAddress peer : sample) {
-                KHeader header = new BasicHeader(self, peer, Transport.UDP);
+                KHeader header = new BasicHeader(self, peer, Transport.TCP);
                 KContentMsg msg = new BasicContentMsg(header, new HistoryRequest());
                 trigger(msg, net);
             }
@@ -82,7 +80,7 @@ public class GBEB extends ComponentDefinition {
             }
 
             for(Map.Entry<KAddress, Object> peer : unseen.entrySet()) {
-                trigger(new GBEBDeliver(peer.getKey(), peer.getValue()), gbeb);
+                trigger(new GBEBDeliver(peer.getKey(), peer.getValue()), gbeb);     // in RB
             }
 
             past.putAll(unseen);

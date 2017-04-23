@@ -66,8 +66,7 @@ public class AppComp extends ComponentDefinition {
         //subscribe(handleCroupierSample, croupierPort);
         subscribe(handlePing, networkPort);
         subscribe(handlePong, networkPort);
-        //subscribe(crbDeliverHandler, crb);
-        subscribe(crbroadcastHandler, networkPort);
+        subscribe(crbDeliverHandler, crb);
     }
 
     Handler handleStart = new Handler<Start>() {
@@ -96,23 +95,13 @@ public class AppComp extends ComponentDefinition {
     };
     */
 
-    private ClassMatchedHandler<CRBroadcast, KContentMsg<?, ?, CRBroadcast>> crbroadcastHandler = new ClassMatchedHandler<CRBroadcast, KContentMsg<?, ?, CRBroadcast>>() {
-        @Override
-        public void handle(CRBroadcast crBroadcast, KContentMsg<?, ?, CRBroadcast> crBroadcastKContentMsg) {
-            System.out.println(selfAdr + " RECEIVED CRB");
-            Object msg = crBroadcast.getMessage();
-            trigger(new CRBroadcast(msg), crb);
-        }
-    };
-
-
-    /*
     Handler crbDeliverHandler = new Handler<CRBDeliver>() {
         @Override
         public void handle(CRBDeliver crbDeliver) {
-            LOG.info("{} broadcast received: {}", selfAdr, crbDeliver.getMessage());
+            System.out.println("BROADCAST RECEIVED");
+            //LOG.info("{} broadcast received: {}", selfAdr, crbDeliver.getMessage());
         }
-    };*/
+    };
 
     ClassMatchedHandler handlePing
             = new ClassMatchedHandler<Ping, KContentMsg<?, ?, Ping>>() {

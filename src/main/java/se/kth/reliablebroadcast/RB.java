@@ -31,8 +31,7 @@ public class RB extends ComponentDefinition {
     private Handler<RBroadcast> broadcastHandler = new Handler<RBroadcast>() {
         @Override
         public void handle(RBroadcast rBroadcast) {
-            System.out.println(self + " RECEIVED RBROADCAST");
-            trigger(rBroadcast, gbeb);
+            trigger(rBroadcast, gbeb);                          // in GBEB
         }
     };
 
@@ -42,8 +41,8 @@ public class RB extends ComponentDefinition {
             Object msg = gbebDeliver.getMessage();
             if(!delivered.contains(msg)) {
                 delivered.add(msg);
-                trigger(new RDeliver(gbebDeliver.getPeer(), msg), rb);
-                trigger(new GBEBroadcast(gbebDeliver), gbeb);
+                trigger(new RDeliver(gbebDeliver.getPeer(), msg), rb);      // in CRB
+                trigger(new GBEBroadcast(gbebDeliver), gbeb);               // in GBEB
             }
         }
     };
