@@ -73,7 +73,7 @@ public class AppComp extends ComponentDefinition {
         @Override
         public void handle(Start event) {
             LOG.info("{}starting...", logPrefix);
-            //trigger(new CRBroadcast("tesing"), crb);
+            trigger(new CRBroadcast("testing"), crb);
         }
     };
 
@@ -98,7 +98,7 @@ public class AppComp extends ComponentDefinition {
     Handler crbDeliverHandler = new Handler<CRBDeliver>() {
         @Override
         public void handle(CRBDeliver crbDeliver) {
-            System.out.println("BROADCAST RECEIVED");
+            System.out.println("BROADCAST RECEIVED:" + crbDeliver.getMessage() + crbDeliver.getSource() + " SELF: " + selfAdr);
             //LOG.info("{} broadcast received: {}", selfAdr, crbDeliver.getMessage());
         }
     };
