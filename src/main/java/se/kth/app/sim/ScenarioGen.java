@@ -17,15 +17,20 @@
  */
 package se.kth.app.sim;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 import se.kth.sim.compatibility.SimNodeIdExtractor;
 import se.kth.system.HostMngrComp;
+import se.sics.kompics.Kill;
+import se.sics.kompics.KompicsEvent;
 import se.sics.kompics.network.Address;
 import se.sics.kompics.simulator.SimulationScenario;
 import se.sics.kompics.simulator.adaptor.Operation;
 import se.sics.kompics.simulator.adaptor.Operation1;
 import se.sics.kompics.simulator.adaptor.distributions.extra.BasicIntSequentialDistribution;
+import se.sics.kompics.simulator.events.system.KillNodeEvent;
 import se.sics.kompics.simulator.events.system.SetupEvent;
 import se.sics.kompics.simulator.events.system.StartNodeEvent;
 import se.sics.kompics.simulator.network.identifier.IdentifierExtractor;
@@ -97,12 +102,14 @@ public class ScenarioGen {
 
                 @Override
                 public Class getComponentDefinition() {
-                    return HostMngrComp.class;
+                    return SimulationClient.class;
+                    //return HostMngrComp.class;
                 }
 
                 @Override
-                public HostMngrComp.Init getComponentInit() {
-                    return new HostMngrComp.Init(selfAdr, ScenarioSetup.bootstrapServer, ScenarioSetup.croupierOId);
+                public SimulationClient.Init getComponentInit() {
+                    return new SimulationClient.Init(selfAdr);
+                    //return new HostMngrComp.Init(selfAdr, ScenarioSetup.bootstrapServer, ScenarioSetup.croupierOId);
                 }
 
                 @Override
@@ -116,6 +123,30 @@ public class ScenarioGen {
             };
         }
     };
+
+    /*
+    private static final Operation1 killNodeOp = new Operation1<KillNodeEvent, Integer>() {
+        @Override
+        public KillNodeEvent generate(final Integer killPort) {
+            return new KillNodeEvent() {
+                KAddress selfAdr;
+
+                {
+                    try {
+                        selfAdr = new KAddress(InetAddress.getByName("192.168.0.1"), killPort);
+                    } catch (UnknownHostException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+
+                @Override
+                public Address getNodeAddress() {
+                    return selfAdr;
+                }
+            };
+        }
+    };
+    */
 
     public static SimulationScenario simpleBoot() {
         SimulationScenario scen = new SimulationScenario() {
@@ -136,6 +167,38 @@ public class ScenarioGen {
                     {
                         eventInterArrivalTime(uniform(1000, 1100));
                         raise(100, startNodeOp, new BasicIntSequentialDistribution(1));
+                    }
+                };
+
+                systemSetup.start();
+                startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
+                startPeers.startAfterTerminationOf(1000, startBootstrapServer);
+                terminateAfterTerminationOf(1000*1000, startPeers);
+            }
+        };
+
+        return scen;
+    }
+
+    public static SimulationScenario broadcastTest1() {
+        SimulationScenario scen = new SimulationScenario() {
+            {
+                StochasticProcess systemSetup = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(constant(1000));
+                        raise(1, systemSetupOp);
+                    }
+                };
+                StochasticProcess startBootstrapServer = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(constant(1000));
+                        raise(1, startBootstrapServerOp);
+                    }
+                };
+                StochasticProcess startPeers = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1100));
+                        raise(5, startNodeOp, new BasicIntSequentialDistribution(1));
                     }
                 };
 
