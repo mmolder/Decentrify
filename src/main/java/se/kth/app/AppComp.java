@@ -64,8 +64,8 @@ public class AppComp extends ComponentDefinition {
 
         subscribe(handleStart, control);
         //subscribe(handleCroupierSample, croupierPort);
-        subscribe(handlePing, networkPort);
-        subscribe(handlePong, networkPort);
+        //subscribe(handlePing, networkPort);
+        //subscribe(handlePong, networkPort);
         subscribe(crbDeliverHandler, crb);
     }
 
@@ -73,7 +73,7 @@ public class AppComp extends ComponentDefinition {
         @Override
         public void handle(Start event) {
             LOG.info("{}starting...", logPrefix);
-            trigger(new CRBroadcast("testing"), crb);
+            trigger(new CRBroadcast("request"), crb);
         }
     };
 
@@ -98,11 +98,13 @@ public class AppComp extends ComponentDefinition {
     Handler crbDeliverHandler = new Handler<CRBDeliver>() {
         @Override
         public void handle(CRBDeliver crbDeliver) {
-            System.out.println("BROADCAST RECEIVED:" + crbDeliver.getMessage() + crbDeliver.getSource() + " SELF: " + selfAdr);
+            System.out.println("BROADCAST RECEIVED:" + crbDeliver.getMessage() + " SOURCE: " +  crbDeliver.getSource() + " SELF: " + selfAdr);
+            trigger(new CRBroadcast("response"), crb);
             //LOG.info("{} broadcast received: {}", selfAdr, crbDeliver.getMessage());
         }
     };
 
+    /*
     ClassMatchedHandler handlePing
             = new ClassMatchedHandler<Ping, KContentMsg<?, ?, Ping>>() {
 
@@ -112,7 +114,9 @@ public class AppComp extends ComponentDefinition {
             trigger(container.answer(new Pong()), networkPort);
         }
     };
+    */
 
+    /*
     ClassMatchedHandler handlePong
             = new ClassMatchedHandler<Pong, KContentMsg<?, KHeader<?>, Pong>>() {
 
@@ -121,6 +125,7 @@ public class AppComp extends ComponentDefinition {
             LOG.info("{}received pong from:{}", logPrefix, container.getHeader().getSource());
         }
     };
+    */
 
     public static class Init extends se.sics.kompics.Init<AppComp> {
 

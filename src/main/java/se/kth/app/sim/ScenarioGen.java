@@ -29,13 +29,16 @@ import se.sics.kompics.network.Address;
 import se.sics.kompics.simulator.SimulationScenario;
 import se.sics.kompics.simulator.adaptor.Operation;
 import se.sics.kompics.simulator.adaptor.Operation1;
+import se.sics.kompics.simulator.adaptor.Operation2;
 import se.sics.kompics.simulator.adaptor.distributions.extra.BasicIntSequentialDistribution;
 import se.sics.kompics.simulator.events.system.KillNodeEvent;
 import se.sics.kompics.simulator.events.system.SetupEvent;
 import se.sics.kompics.simulator.events.system.StartNodeEvent;
+import se.sics.ktoolbox.util.identifiable.Identifier;
 import se.sics.kompics.simulator.network.identifier.IdentifierExtractor;
 import se.sics.ktoolbox.omngr.bootstrap.BootstrapServerComp;
 import se.sics.ktoolbox.util.network.KAddress;
+import se.sics.ktoolbox.util.network.basic.BasicAddress;
 
 /**
  * @author Alex Ormenisan <aaor@kth.se>
@@ -102,14 +105,14 @@ public class ScenarioGen {
 
                 @Override
                 public Class getComponentDefinition() {
-                    return SimulationClient.class;
-                    //return HostMngrComp.class;
+                    //return SimulationClient.class;
+                    return HostMngrComp.class;
                 }
 
                 @Override
-                public SimulationClient.Init getComponentInit() {
-                    return new SimulationClient.Init(selfAdr);
-                    //return new HostMngrComp.Init(selfAdr, ScenarioSetup.bootstrapServer, ScenarioSetup.croupierOId);
+                public HostMngrComp.Init getComponentInit() {
+                    //return new SimulationClient.Init(selfAdr);
+                    return new HostMngrComp.Init(selfAdr, ScenarioSetup.bootstrapServer, ScenarioSetup.croupierOId);
                 }
 
                 @Override
@@ -124,7 +127,7 @@ public class ScenarioGen {
         }
     };
 
-    /*
+
     private static final Operation1 killNodeOp = new Operation1<KillNodeEvent, Integer>() {
         @Override
         public KillNodeEvent generate(final Integer killPort) {
@@ -146,7 +149,7 @@ public class ScenarioGen {
             };
         }
     };
-    */
+
 
     public static SimulationScenario simpleBoot() {
         SimulationScenario scen = new SimulationScenario() {
@@ -198,7 +201,7 @@ public class ScenarioGen {
                 StochasticProcess startPeers = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1100));
-                        raise(5, startNodeOp, new BasicIntSequentialDistribution(1));
+                        raise(10, startNodeOp, new BasicIntSequentialDistribution(1));
                     }
                 };
 
