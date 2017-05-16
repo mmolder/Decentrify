@@ -34,19 +34,26 @@ public class SimulationClient extends ComponentDefinition {
     Positive<CRBPort> crb = requires(CRBPort.class);
     //**************************************************************************
     private KAddress selfAdr;
+    private String ip;
+    private int id;
+    private String message;
 
     public SimulationClient(SimulationClient.Init init) {
         selfAdr = init.selfAdr;
+        ip = init.ip;
+        id = init.id;
+        message = init.msg;
         subscribe(handleStart, control);
     }
 
     Handler handleStart = new Handler<Start>() {
         @Override
         public void handle(Start event) {
-            LOG.info("{}starting...", logPrefix);
-            KAddress peer = ScenarioSetup.getNodeAdr("192.0.0.5", 5);
+            //LOG.info("{}starting...", logPrefix);
+            System.out.println("Special client starting, sending msg: " + message + " to " + ip);
+            KAddress peer = ScenarioSetup.getNodeAdr(ip, id);
             KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
-            KContentMsg msg = new BasicContentMsg(header, new TriggerMsg());
+            KContentMsg msg = new BasicContentMsg(header, new TriggerMsg(message));
             trigger(msg, networkPort);
         }
     };
@@ -56,9 +63,15 @@ public class SimulationClient extends ComponentDefinition {
     public static class Init extends se.sics.kompics.Init<se.kth.app.sim.SimulationClient> {
 
         public final KAddress selfAdr;
+        public final String ip;
+        public final int id;
+        public final String msg;
 
-        public Init(KAddress selfAdr) {
+        public Init(KAddress selfAdr, String ip, int id, String msg) {
             this.selfAdr = selfAdr;
+            this.ip = ip;
+            this.id = id;
+            this.msg = msg;
         }
     }
 }

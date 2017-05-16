@@ -129,10 +129,10 @@ public class ScenarioGen {
         }
     };
 
-    static Operation1 startSpecialNode = new Operation1<StartNodeEvent, Integer>() {
+    static Operation2 startSpecialNode = new Operation2<StartNodeEvent, Integer, Integer>() {
 
         @Override
-        public StartNodeEvent generate(final Integer self) {
+        public StartNodeEvent generate(final Integer self, final Integer target) {
             return new StartNodeEvent() {
                 final KAddress selfAdr;
                 {
@@ -157,7 +157,7 @@ public class ScenarioGen {
 
                 @Override
                 public SimulationClient.Init getComponentInit() {
-                    return new SimulationClient.Init(selfAdr);
+                    return new SimulationClient.Init(selfAdr, "193.0.0." + target, target, "test" + target);
                 }
             };
         }
@@ -241,7 +241,7 @@ public class ScenarioGen {
                 StochasticProcess startSpecial = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 4));
                     }
                 };
 
@@ -280,7 +280,13 @@ public class ScenarioGen {
                 StochasticProcess startSpecial = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 4));
+                    }
+                };
+                StochasticProcess startSpecial2 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 1));
                     }
                 };
                 StochasticProcess killPeer = new StochasticProcess() {
@@ -301,10 +307,11 @@ public class ScenarioGen {
                 systemSetup.start();
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
-                startSpecial.startAfterTerminationOf(1000, startPeers);
-                killPeer.startAfterTerminationOf(1000, startSpecial);
-                killPeer2.startAfterTerminationOf(1000, killPeer);
-                terminateAfterTerminationOf(1000*1000, killPeer2);
+                startSpecial.startAfterTerminationOf(100000, startPeers);
+                killPeer.startAfterTerminationOf(10000, startSpecial);
+                killPeer2.startAfterTerminationOf(10000, killPeer);
+                startSpecial2.startAfterTerminationOf(100000, killPeer2);
+                terminateAfterTerminationOf(1000*1000, startSpecial2);
             }
         };
 

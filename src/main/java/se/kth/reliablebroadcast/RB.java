@@ -31,6 +31,7 @@ public class RB extends ComponentDefinition {
     private Handler<RBroadcast> broadcastHandler = new Handler<RBroadcast>() {
         @Override
         public void handle(RBroadcast rBroadcast) {
+            System.out.println("RB received " + self);
             trigger(new GBEBroadcast(self, rBroadcast.getPayload()), gbeb);                       // in GBEB
             //trigger(new GBEBroadcast(self, rBroadcast), gbeb);
         }

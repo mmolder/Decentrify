@@ -35,6 +35,7 @@ public class CRB extends ComponentDefinition {
     private Handler<CRBroadcast> crbroadcastHandler = new Handler<CRBroadcast>() {
         @Override
         public void handle(CRBroadcast crBroadcast) {
+            System.out.println("CRB received " + self);
             Object msg = crBroadcast.getMessage();
             trigger(new RBroadcast(msg, past), rb);         // in RB
             past.put(self, msg);
@@ -45,6 +46,7 @@ public class CRB extends ComponentDefinition {
         @Override
         public void handle(RDeliver rDeliver) {
             Object msg = rDeliver.getPayload();
+            System.out.println("Sending back to appcomp :)");
             if(!delivered.contains(msg)) {
                 for(Map.Entry<KAddress, Object> entry : rDeliver.getPast().entrySet()) {
                     if(!delivered.contains(entry.getValue())) {

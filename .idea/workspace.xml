@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f34cd47a-99fb-46b1-9010-a3c3943862d4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/se/kth/app/test/TriggerMsg.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simulation.log" afterPath="$PROJECT_DIR$/simulation.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/kth/app/AppComp.java" afterPath="$PROJECT_DIR$/src/main/java/se/kth/app/AppComp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/kth/app/sim/ScenarioGen.java" afterPath="$PROJECT_DIR$/src/main/java/se/kth/app/sim/ScenarioGen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimLauncher.java" afterPath="$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimLauncher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimulationClient.java" afterPath="$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimulationClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/kth/app/test/TriggerMsg.java" afterPath="$PROJECT_DIR$/src/main/java/se/kth/app/test/TriggerMsg.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/kth/causalbroadcast/CRB.java" afterPath="$PROJECT_DIR$/src/main/java/se/kth/causalbroadcast/CRB.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/kth/gossipingbroadcast/GBEB.java" afterPath="$PROJECT_DIR$/src/main/java/se/kth/gossipingbroadcast/GBEB.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/kth/reliablebroadcast/RB.java" afterPath="$PROJECT_DIR$/src/main/java/se/kth/reliablebroadcast/RB.java" />
     </list>
@@ -29,37 +30,45 @@
       <file leaf-file-name="ScenarioGen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/ScenarioGen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="139" column="68" lean-forward="true" selection-start-line="139" selection-start-column="68" selection-end-line="139" selection-end-column="68" />
+            <state relative-caret-position="114">
+              <caret line="285" column="75" lean-forward="true" selection-start-line="285" selection-start-column="75" selection-end-line="285" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3299#4821#0" expanded="true" />
                 <element signature="e#4820#4821#0" expanded="true" />
-                <element signature="e#4865#5902#0" expanded="true" />
-                <element signature="e#5332#5333#0" expanded="true" />
-                <element signature="e#5386#5387#0" expanded="true" />
-                <element signature="e#5469#5470#0" expanded="true" />
-                <element signature="e#5538#5539#0" expanded="true" />
-                <element signature="e#5608#5609#0" expanded="true" />
-                <element signature="e#5696#5697#0" expanded="true" />
-                <element signature="e#5789#5790#0" expanded="true" />
-                <element signature="e#5870#5871#0" expanded="true" />
-                <element signature="e#5901#5902#0" expanded="true" />
-                <element signature="e#5955#6547#0" expanded="true" />
-                <element signature="e#6546#6547#0" expanded="true" />
+                <element signature="e#4865#5979#0" expanded="true" />
+                <element signature="e#5363#5364#0" expanded="true" />
+                <element signature="e#5417#5418#0" expanded="true" />
+                <element signature="e#5500#5501#0" expanded="true" />
+                <element signature="e#5569#5570#0" expanded="true" />
+                <element signature="e#5639#5640#0" expanded="true" />
+                <element signature="e#5727#5728#0" expanded="true" />
+                <element signature="e#5978#5979#0" expanded="true" />
+                <element signature="e#6032#6624#0" expanded="true" />
+                <element signature="e#6623#6624#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GBEB.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GBEB.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/gossipingbroadcast/GBEB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-380">
-              <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+            <state relative-caret-position="165">
+              <caret line="45" column="55" lean-forward="false" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RB.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/reliablebroadcast/RB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="33" column="52" lean-forward="false" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
               <folding>
-                <element signature="e#2211#2667#0" expanded="true" />
-                <element signature="e#2666#2667#0" expanded="true" />
+                <element signature="e#823#1165#0" expanded="true" />
+                <element signature="e#1164#1165#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,15 +77,15 @@
       <file leaf-file-name="AppComp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/AppComp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="89" column="14" lean-forward="false" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
+            <state relative-caret-position="285">
+              <caret line="89" column="125" lean-forward="false" selection-start-line="89" selection-start-column="125" selection-end-line="89" selection-end-column="125" />
               <folding>
                 <element signature="e#2654#2858#0" expanded="true" />
                 <element signature="e#2857#2858#0" expanded="true" />
-                <element signature="e#2908#3165#0" expanded="true" />
-                <element signature="e#3164#3165#0" expanded="true" />
-                <element signature="e#3200#3600#0" expanded="true" />
-                <element signature="e#3599#3600#0" expanded="true" />
+                <element signature="e#2908#3241#0" expanded="true" />
+                <element signature="e#3240#3241#0" expanded="true" />
+                <element signature="e#3276#3679#0" expanded="true" />
+                <element signature="e#3678#3679#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,26 +94,37 @@
       <file leaf-file-name="SimulationClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimulationClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="46" column="63" lean-forward="true" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="63" />
+            <state relative-caret-position="190">
+              <caret line="52" column="97" lean-forward="false" selection-start-line="52" selection-start-column="97" selection-end-line="52" selection-end-column="97" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1528#1938#0" expanded="true" />
-                <element signature="e#1937#1938#0" expanded="true" />
+                <element signature="e#1671#2180#0" expanded="true" />
+                <element signature="e#2179#2180#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RB.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/reliablebroadcast/RB.java">
+      <file leaf-file-name="CRB.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/causalbroadcast/CRB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10">
-              <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+            <state relative-caret-position="114">
+              <caret line="48" column="58" lean-forward="false" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TriggerMsg.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/test/TriggerMsg.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="19" />
               <folding>
-                <element signature="e#1109#1110#0" expanded="true" />
-                <element signature="e#1167#1603#0" expanded="true" />
-                <element signature="e#1602#1603#0" expanded="true" />
+                <element signature="e#217#218#0" expanded="true" />
+                <element signature="e#247#248#0" expanded="true" />
+                <element signature="e#277#278#0" expanded="true" />
+                <element signature="e#303#304#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,27 +150,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CRB.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/causalbroadcast/CRB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="50" column="90" lean-forward="false" selection-start-line="50" selection-start-column="90" selection-end-line="50" selection-end-column="90" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#945#1214#0" expanded="true" />
-                <element signature="e#1213#1214#0" expanded="true" />
-                <element signature="e#1265#2479#0" expanded="true" />
-                <element signature="e#2478#2479#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SimLauncher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+              <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -187,18 +191,18 @@
         <option value="$PROJECT_DIR$/src/main/java/se/kth/reliablebroadcast/RDeliver.java" />
         <option value="$PROJECT_DIR$/src/main/java/se/kth/system/SystemSetup.java" />
         <option value="$PROJECT_DIR$/src/main/java/se/kth/system/HostMngrComp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/se/kth/causalbroadcast/CRB.java" />
         <option value="$PROJECT_DIR$/src/main/java/se/kth/gossipingbroadcast/GBEBPort.java" />
         <option value="$PROJECT_DIR$/src/main/java/se/kth/app/mngr/AppMngrComp.java" />
         <option value="$PROJECT_DIR$/src/main/java/se/kth/gossipingbroadcast/GBEBroadcast.java" />
-        <option value="$PROJECT_DIR$/src/main/java/se/kth/reliablebroadcast/RB.java" />
-        <option value="$PROJECT_DIR$/src/main/java/se/kth/gossipingbroadcast/GBEB.java" />
         <option value="$PROJECT_DIR$/src/main/java/se/kth/reliablebroadcast/RBroadcast.java" />
+        <option value="$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimLauncher.java" />
         <option value="$PROJECT_DIR$/src/main/java/se/kth/app/test/TriggerMsg.java" />
         <option value="$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimulationClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/se/kth/app/sim/ScenarioGen.java" />
         <option value="$PROJECT_DIR$/src/main/java/se/kth/app/AppComp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimLauncher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/se/kth/app/sim/ScenarioGen.java" />
+        <option value="$PROJECT_DIR$/src/main/java/se/kth/reliablebroadcast/RB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/se/kth/gossipingbroadcast/GBEB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/se/kth/causalbroadcast/CRB.java" />
       </list>
     </option>
   </component>
@@ -849,7 +853,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -860,10 +864,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32522407" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32522407" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32855567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277849" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20600858" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1189,28 +1193,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/causalbroadcast/CRB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="50" column="90" lean-forward="false" selection-start-line="50" selection-start-column="90" selection-end-line="50" selection-end-column="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#945#1214#0" expanded="true" />
-            <element signature="e#1213#1214#0" expanded="true" />
-            <element signature="e#1265#2479#0" expanded="true" />
-            <element signature="e#2478#2479#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/test/TriggerMsg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="49" lean-forward="false" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/system/HostMngrComp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -1227,57 +1209,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/AppComp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="89" column="14" lean-forward="false" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
-          <folding>
-            <element signature="e#2654#2858#0" expanded="true" />
-            <element signature="e#2857#2858#0" expanded="true" />
-            <element signature="e#2908#3165#0" expanded="true" />
-            <element signature="e#3164#3165#0" expanded="true" />
-            <element signature="e#3200#3600#0" expanded="true" />
-            <element signature="e#3599#3600#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimulationClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="46" column="63" lean-forward="true" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1528#1938#0" expanded="true" />
-            <element signature="e#1937#1938#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/ScenarioGen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="139" column="68" lean-forward="true" selection-start-line="139" selection-start-column="68" selection-end-line="139" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3299#4821#0" expanded="true" />
-            <element signature="e#4820#4821#0" expanded="true" />
-            <element signature="e#4865#5902#0" expanded="true" />
-            <element signature="e#5332#5333#0" expanded="true" />
-            <element signature="e#5386#5387#0" expanded="true" />
-            <element signature="e#5469#5470#0" expanded="true" />
-            <element signature="e#5538#5539#0" expanded="true" />
-            <element signature="e#5608#5609#0" expanded="true" />
-            <element signature="e#5696#5697#0" expanded="true" />
-            <element signature="e#5789#5790#0" expanded="true" />
-            <element signature="e#5870#5871#0" expanded="true" />
-            <element signature="e#5901#5902#0" expanded="true" />
-            <element signature="e#5955#6547#0" expanded="true" />
-            <element signature="e#6546#6547#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/ScenarioSetup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1286,34 +1217,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/reliablebroadcast/RB.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        <state relative-caret-position="240">
+          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/test/TriggerMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="19" />
           <folding>
-            <element signature="e#1109#1110#0" expanded="true" />
-            <element signature="e#1167#1603#0" expanded="true" />
-            <element signature="e#1602#1603#0" expanded="true" />
+            <element signature="e#217#218#0" expanded="true" />
+            <element signature="e#247#248#0" expanded="true" />
+            <element signature="e#277#278#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimLauncher.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimulationClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="190">
+          <caret line="52" column="97" lean-forward="false" selection-start-line="52" selection-start-column="97" selection-end-line="52" selection-end-column="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1671#2180#0" expanded="true" />
+            <element signature="e#2179#2180#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/AppComp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="89" column="125" lean-forward="false" selection-start-line="89" selection-start-column="125" selection-end-line="89" selection-end-column="125" />
+          <folding>
+            <element signature="e#2654#2858#0" expanded="true" />
+            <element signature="e#2857#2858#0" expanded="true" />
+            <element signature="e#2908#3241#0" expanded="true" />
+            <element signature="e#3240#3241#0" expanded="true" />
+            <element signature="e#3276#3679#0" expanded="true" />
+            <element signature="e#3678#3679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/ScenarioGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="285" column="75" lean-forward="true" selection-start-line="285" selection-start-column="75" selection-end-line="285" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3299#4821#0" expanded="true" />
+            <element signature="e#4820#4821#0" expanded="true" />
+            <element signature="e#4865#5979#0" expanded="true" />
+            <element signature="e#5363#5364#0" expanded="true" />
+            <element signature="e#5417#5418#0" expanded="true" />
+            <element signature="e#5500#5501#0" expanded="true" />
+            <element signature="e#5569#5570#0" expanded="true" />
+            <element signature="e#5639#5640#0" expanded="true" />
+            <element signature="e#5727#5728#0" expanded="true" />
+            <element signature="e#5978#5979#0" expanded="true" />
+            <element signature="e#6032#6624#0" expanded="true" />
+            <element signature="e#6623#6624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/reliablebroadcast/RB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="33" column="52" lean-forward="false" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
+          <folding>
+            <element signature="e#823#1165#0" expanded="true" />
+            <element signature="e#1164#1165#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/gossipingbroadcast/GBEB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-380">
-          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-          <folding>
-            <element signature="e#2211#2667#0" expanded="true" />
-            <element signature="e#2666#2667#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="165">
+          <caret line="45" column="55" lean-forward="false" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/causalbroadcast/CRB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="48" column="58" lean-forward="false" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>

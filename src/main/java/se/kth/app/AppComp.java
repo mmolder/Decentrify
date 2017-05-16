@@ -79,14 +79,15 @@ public class AppComp extends ComponentDefinition {
     ClassMatchedHandler simulationMsgHandler = new ClassMatchedHandler<TriggerMsg, KContentMsg<?, KHeader<?>, TriggerMsg>>() {
         @Override
         public void handle(TriggerMsg msg, KContentMsg<?, KHeader<?>, TriggerMsg> cont) {
-            trigger(new CRBroadcast("TESTING"), crb);
+            System.out.println( selfAdr + " sending crb");
+            trigger(new CRBroadcast(cont.getContent().getMsg()), crb);
         }
     };
 
     Handler crbDeliverHandler = new Handler<CRBDeliver>() {
         @Override
         public void handle(CRBDeliver crbDeliver) {
-            System.out.println("BROADCAST RECEIVED:" + crbDeliver.getMessage() + " SOURCE: " +  crbDeliver.getSource() + " SELF: " + selfAdr);
+            System.out.println("BROADCAST RECEIVED: " + crbDeliver.getMessage() + ", SOURCE: " +  crbDeliver.getSource() + ", SELF: " + selfAdr);
             //trigger(new CRBroadcast("response"), crb);
             //LOG.info("{} broadcast received: {}", selfAdr, crbDeliver.getMessage());
         }

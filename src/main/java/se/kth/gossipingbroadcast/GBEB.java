@@ -27,6 +27,7 @@ public class GBEB extends ComponentDefinition {
     private Positive<Network> net =  requires(Network.class);
     private Positive<CroupierPort> bs = requires(CroupierPort.class);   //bs = croupierPort
     private Negative<GBEBPort> gbeb = provides(GBEBPort.class);
+    boolean flag = false;
 
     public GBEB(Init init) {
         this.self = init.self;
@@ -43,6 +44,7 @@ public class GBEB extends ComponentDefinition {
     private Handler<GBEBroadcast> broadcastHandler = new Handler<GBEBroadcast>() {
         @Override
         public void handle(GBEBroadcast gbeBroadcast) {
+
             past.put(self, gbeBroadcast.getMessage());
             //past.put(self, gbeBroadcast);
         }

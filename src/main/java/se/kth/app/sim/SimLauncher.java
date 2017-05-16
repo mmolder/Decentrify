@@ -30,7 +30,7 @@ public class SimLauncher {
         SimulationScenario broadcastTest1 = ScenarioGen.broadcastTest1();
         SimulationScenario broadcastTest2 = ScenarioGen.broadcastTest2();
         //simpleBootScenario.simulate(LauncherComp.class);
-        broadcastTest1.simulate(LauncherComp.class);
-        //broadcastTest2.simulate(LauncherComp.class);
+        //broadcastTest1.simulate(LauncherComp.class);
+        broadcastTest2.simulate(LauncherComp.class);
     }
 }
