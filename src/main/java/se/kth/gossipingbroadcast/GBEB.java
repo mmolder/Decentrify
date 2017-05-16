@@ -44,6 +44,7 @@ public class GBEB extends ComponentDefinition {
         @Override
         public void handle(GBEBroadcast gbeBroadcast) {
             past.put(self, gbeBroadcast.getMessage());
+            //past.put(self, gbeBroadcast);
         }
     };
 

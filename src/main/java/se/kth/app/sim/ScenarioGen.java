@@ -30,6 +30,7 @@ import se.sics.kompics.simulator.SimulationScenario;
 import se.sics.kompics.simulator.adaptor.Operation;
 import se.sics.kompics.simulator.adaptor.Operation1;
 import se.sics.kompics.simulator.adaptor.Operation2;
+import se.sics.kompics.simulator.adaptor.distributions.ConstantDistribution;
 import se.sics.kompics.simulator.adaptor.distributions.extra.BasicIntSequentialDistribution;
 import se.sics.kompics.simulator.events.system.KillNodeEvent;
 import se.sics.kompics.simulator.events.system.SetupEvent;
@@ -96,6 +97,7 @@ public class ScenarioGen {
                 {
                     String nodeIp = "193.0.0." + nodeId;
                     selfAdr = ScenarioSetup.getNodeAdr(nodeIp, nodeId);
+                    System.out.println("Starting node: " + nodeIp);
                 }
 
                 @Override
@@ -127,19 +129,51 @@ public class ScenarioGen {
         }
     };
 
+    static Operation1 startSpecialNode = new Operation1<StartNodeEvent, Integer>() {
+
+        @Override
+        public StartNodeEvent generate(final Integer self) {
+            return new StartNodeEvent() {
+                final KAddress selfAdr;
+                {
+                    selfAdr = ScenarioSetup.getNodeAdr("193.0.0." + self, self);
+                    System.out.println("Starting node: " + selfAdr);
+                }
+
+                @Override
+                public Address getNodeAddress() {
+                    return selfAdr;
+                }
+
+                @Override
+                public Class getComponentDefinition() {
+                    return SimulationClient.class;
+                }
+
+                @Override
+                public String toString() {
+                    return "StartClient<" + selfAdr.toString() + ">";
+                }
+
+                @Override
+                public SimulationClient.Init getComponentInit() {
+                    return new SimulationClient.Init(selfAdr);
+                }
+            };
+        }
+    };
+
 
     private static final Operation1 killNodeOp = new Operation1<KillNodeEvent, Integer>() {
         @Override
-        public KillNodeEvent generate(final Integer killPort) {
+        public KillNodeEvent generate(final Integer nodeID) {
             return new KillNodeEvent() {
                 KAddress selfAdr;
 
                 {
-                    try {
-                        selfAdr = new KAddress(InetAddress.getByName("192.168.0.1"), killPort);
-                    } catch (UnknownHostException ex) {
-                        throw new RuntimeException(ex);
-                    }
+                    String nodeIp = "193.0.0." + nodeID;
+                    selfAdr = ScenarioSetup.getNodeAdr(nodeIp, nodeID);
+                    System.out.println("Killing node: " + nodeIp);
                 }
 
                 @Override
@@ -204,11 +238,73 @@ public class ScenarioGen {
                         raise(10, startNodeOp, new BasicIntSequentialDistribution(1));
                     }
                 };
+                StochasticProcess startSpecial = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11));
+                    }
+                };
 
                 systemSetup.start();
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
+                startSpecial.startAfterTerminationOf(1000, startPeers);
                 terminateAfterTerminationOf(1000*1000, startPeers);
+            }
+        };
+
+        return scen;
+    }
+
+    public static SimulationScenario broadcastTest2() {
+        SimulationScenario scen = new SimulationScenario() {
+            {
+                StochasticProcess systemSetup = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(constant(1000));
+                        raise(1, systemSetupOp);
+                    }
+                };
+                StochasticProcess startBootstrapServer = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(constant(1000));
+                        raise(1, startBootstrapServerOp);
+                    }
+                };
+                StochasticProcess startPeers = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1100));
+                        raise(10, startNodeOp, new BasicIntSequentialDistribution(1));
+                    }
+                };
+                StochasticProcess startSpecial = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11));
+                    }
+                };
+                StochasticProcess killPeer = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, killNodeOp, new ConstantDistribution<>(Integer.class, 9));
+                    }
+                };
+
+                StochasticProcess killPeer2 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, killNodeOp, new ConstantDistribution<>(Integer.class, 6));
+                    }
+                };
+
+
+                systemSetup.start();
+                startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
+                startPeers.startAfterTerminationOf(1000, startBootstrapServer);
+                startSpecial.startAfterTerminationOf(1000, startPeers);
+                killPeer.startAfterTerminationOf(1000, startSpecial);
+                killPeer2.startAfterTerminationOf(1000, killPeer);
+                terminateAfterTerminationOf(1000*1000, killPeer2);
             }
         };
 

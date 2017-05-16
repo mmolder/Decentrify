@@ -21,12 +21,14 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import se.kth.app.test.TriggerMsg;
 import se.kth.causalbroadcast.CRBDeliver;
 import se.kth.causalbroadcast.CRBPort;
 import se.kth.causalbroadcast.CRBroadcast;
 import se.kth.croupier.util.CroupierHelper;
 import se.kth.app.test.Ping;
 import se.kth.app.test.Pong;
+import se.kth.gossipingbroadcast.HistoryResponse;
 import se.sics.kompics.*;
 import se.sics.kompics.network.Network;
 import se.sics.kompics.network.Transport;
@@ -51,7 +53,6 @@ public class AppComp extends ComponentDefinition {
     //*******************************CONNECTIONS********************************
     Positive<Timer> timerPort = requires(Timer.class);
     Positive<Network> networkPort = requires(Network.class);
-    //Positive<CroupierPort> croupierPort = requires(CroupierPort.class);
 
     Positive<CRBPort> crb = requires(CRBPort.class);
     //**************************************************************************
@@ -63,69 +64,33 @@ public class AppComp extends ComponentDefinition {
         LOG.info("{}initiating...", logPrefix);
 
         subscribe(handleStart, control);
-        //subscribe(handleCroupierSample, croupierPort);
-        //subscribe(handlePing, networkPort);
-        //subscribe(handlePong, networkPort);
         subscribe(crbDeliverHandler, crb);
+        subscribe(simulationMsgHandler, networkPort);
     }
 
     Handler handleStart = new Handler<Start>() {
         @Override
         public void handle(Start event) {
             LOG.info("{}starting...", logPrefix);
-            trigger(new CRBroadcast("request"), crb);
+            //trigger(new CRBroadcast("request"), crb);
         }
     };
 
-    /*
-    Handler handleCroupierSample = new Handler<CroupierSample>() {
+    ClassMatchedHandler simulationMsgHandler = new ClassMatchedHandler<TriggerMsg, KContentMsg<?, KHeader<?>, TriggerMsg>>() {
         @Override
-        public void handle(CroupierSample croupierSample) {
-            if (croupierSample.publicSample.isEmpty()) {
-                return;
-            }
-            List<KAddress> sample = CroupierHelper.getSample(croupierSample);
-            for (KAddress peer : sample) {
-                System.out.println("RECEIVED SAMPLE");
-                KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
-                KContentMsg msg = new BasicContentMsg(header, new CRBroadcast("message"));
-                trigger(msg, networkPort);
-            }
+        public void handle(TriggerMsg msg, KContentMsg<?, KHeader<?>, TriggerMsg> cont) {
+            trigger(new CRBroadcast("TESTING"), crb);
         }
     };
-    */
 
     Handler crbDeliverHandler = new Handler<CRBDeliver>() {
         @Override
         public void handle(CRBDeliver crbDeliver) {
             System.out.println("BROADCAST RECEIVED:" + crbDeliver.getMessage() + " SOURCE: " +  crbDeliver.getSource() + " SELF: " + selfAdr);
-            trigger(new CRBroadcast("response"), crb);
+            //trigger(new CRBroadcast("response"), crb);
             //LOG.info("{} broadcast received: {}", selfAdr, crbDeliver.getMessage());
         }
     };
-
-    /*
-    ClassMatchedHandler handlePing
-            = new ClassMatchedHandler<Ping, KContentMsg<?, ?, Ping>>() {
-
-        @Override
-        public void handle(Ping content, KContentMsg<?, ?, Ping> container) {
-            LOG.info("{}received ping from:{}", logPrefix, container.getHeader().getSource());
-            trigger(container.answer(new Pong()), networkPort);
-        }
-    };
-    */
-
-    /*
-    ClassMatchedHandler handlePong
-            = new ClassMatchedHandler<Pong, KContentMsg<?, KHeader<?>, Pong>>() {
-
-        @Override
-        public void handle(Pong content, KContentMsg<?, KHeader<?>, Pong> container) {
-            LOG.info("{}received pong from:{}", logPrefix, container.getHeader().getSource());
-        }
-    };
-    */
 
     public static class Init extends se.sics.kompics.Init<AppComp> {
 

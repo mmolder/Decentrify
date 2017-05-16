@@ -32,6 +32,7 @@ public class RB extends ComponentDefinition {
         @Override
         public void handle(RBroadcast rBroadcast) {
             trigger(new GBEBroadcast(self, rBroadcast.getPayload()), gbeb);                       // in GBEB
+            //trigger(new GBEBroadcast(self, rBroadcast), gbeb);
         }
     };
 
@@ -42,7 +43,7 @@ public class RB extends ComponentDefinition {
             if(!delivered.contains(msg)) {
                 delivered.add(msg);
                 trigger(new RDeliver(gbebDeliver.getPeer(), msg), rb);      // in CRB
-                trigger(new GBEBroadcast(gbebDeliver.getPeer(), gbebDeliver.getMessage()), gbeb);   // in GBEB
+                trigger(new GBEBroadcast(gbebDeliver.getPeer(), msg), gbeb);   // in GBEB
             }
         }
     };

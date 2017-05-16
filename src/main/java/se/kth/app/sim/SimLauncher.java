@@ -26,9 +26,11 @@ import se.sics.kompics.simulator.run.LauncherComp;
 public class SimLauncher {
     public static void main(String[] args) {
         SimulationScenario.setSeed(ScenarioSetup.scenarioSeed);
-        //SimulationScenario simpleBootScenario = ScenarioGen.simpleBoot();
+        SimulationScenario simpleBootScenario = ScenarioGen.simpleBoot();
+        SimulationScenario broadcastTest1 = ScenarioGen.broadcastTest1();
+        SimulationScenario broadcastTest2 = ScenarioGen.broadcastTest2();
         //simpleBootScenario.simulate(LauncherComp.class);
-        SimulationScenario broadcastTest = ScenarioGen.broadcastTest1();
-        broadcastTest.simulate(LauncherComp.class);
+        broadcastTest1.simulate(LauncherComp.class);
+        //broadcastTest2.simulate(LauncherComp.class);
     }
 }
