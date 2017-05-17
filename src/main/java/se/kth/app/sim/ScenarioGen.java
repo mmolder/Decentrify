@@ -87,6 +87,13 @@ public class ScenarioGen {
         }
     };
 
+    /**
+     *
+     * startNodeOp
+     *
+     * Starts an AppComp node with the ip 193.0.0.<nodeID>
+     *
+     **/
     static Operation1<StartNodeEvent, Integer> startNodeOp = new Operation1<StartNodeEvent, Integer>() {
 
         @Override
@@ -129,6 +136,15 @@ public class ScenarioGen {
         }
     };
 
+
+    /**
+     *
+     * startSpecialNode
+     *
+     * Starts an special node which will trigger the node with address 193.0.0.<target>
+     * to broadcast a message
+     *
+     **/
     static Operation2 startSpecialNode = new Operation2<StartNodeEvent, Integer, Integer>() {
 
         @Override
@@ -163,7 +179,13 @@ public class ScenarioGen {
         }
     };
 
-
+    /**
+     *
+     * killNodeOp
+     *
+     * Kills the node with address 193.0.0.<nodeId>
+     *
+     **/
     private static final Operation1 killNodeOp = new Operation1<KillNodeEvent, Integer>() {
         @Override
         public KillNodeEvent generate(final Integer nodeID) {
@@ -185,6 +207,13 @@ public class ScenarioGen {
     };
 
 
+    /**
+     *
+     * simpleBoot
+     *
+     * This simulation scenario starts 100 normal nodes which at the moment wont do anything
+     *
+     **/
     public static SimulationScenario simpleBoot() {
         SimulationScenario scen = new SimulationScenario() {
             {
@@ -217,6 +246,15 @@ public class ScenarioGen {
         return scen;
     }
 
+    /**
+     *
+     * broadcastTest1
+     *
+     * SimulationScenario which will start 10 normal nodes and start one special node that triggers an alive node to
+     * broadcast a message. This should eventually be received by all alive nodes on order to validate the properties
+     * of the algorithm.
+     *
+     **/
     public static SimulationScenario broadcastTest1() {
         SimulationScenario scen = new SimulationScenario() {
             {
@@ -246,8 +284,10 @@ public class ScenarioGen {
                 };
 
                 systemSetup.start();
+                /** Start 10 normal nodes */
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
+                /** Start special node which triggers one normal node to broadcast a message */
                 startSpecial.startAfterTerminationOf(1000, startPeers);
                 terminateAfterTerminationOf(1000*1000, startPeers);
             }
@@ -305,13 +345,99 @@ public class ScenarioGen {
 
 
                 systemSetup.start();
+                /** Start 10 normal nodes */
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
+                /** Start special node which triggers one normal node to broadcast a message */
                 startSpecial.startAfterTerminationOf(100000, startPeers);
+                /** Kill two nodes */
                 killPeer.startAfterTerminationOf(10000, startSpecial);
                 killPeer2.startAfterTerminationOf(10000, killPeer);
+                /** Start another special nodes which triggers an alive node to broadcast a message */
                 startSpecial2.startAfterTerminationOf(100000, killPeer2);
                 terminateAfterTerminationOf(1000*1000, startSpecial2);
+            }
+        };
+
+        return scen;
+    }
+
+    public static SimulationScenario broadcastTest3() {
+        SimulationScenario scen = new SimulationScenario() {
+            {
+                StochasticProcess systemSetup = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(constant(1000));
+                        raise(1, systemSetupOp);
+                    }
+                };
+                StochasticProcess startBootstrapServer = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(constant(1000));
+                        raise(1, startBootstrapServerOp);
+                    }
+                };
+                StochasticProcess startPeers = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1100));
+                        raise(10, startNodeOp, new BasicIntSequentialDistribution(1));
+                    }
+                };
+                StochasticProcess startSpecial = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 4));
+                    }
+                };
+                StochasticProcess startSpecial2 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 1));
+                    }
+                };
+                StochasticProcess killPeer = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, killNodeOp, new ConstantDistribution<>(Integer.class, 9));
+                    }
+                };
+
+                StochasticProcess killPeer2 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, killNodeOp, new ConstantDistribution<>(Integer.class, 6));
+                    }
+                };
+                StochasticProcess startDeadPeer = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1100));
+                        raise(10, startNodeOp, new BasicIntSequentialDistribution(9));
+                    }
+                };
+                StochasticProcess startSpecial3 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 9));
+                    }
+                };
+
+
+                systemSetup.start();
+                /** Start 10 normal nodes */
+                startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
+                startPeers.startAfterTerminationOf(1000, startBootstrapServer);
+                /** Start special node which triggers one normal node to broadcast a message */
+                startSpecial.startAfterTerminationOf(100000, startPeers);
+                /** Kill two nodes */
+                killPeer.startAfterTerminationOf(10000, startSpecial);
+                killPeer2.startAfterTerminationOf(10000, killPeer);
+                /** Start another special nodes which triggers an alive node to broadcast a message */
+                startSpecial2.startAfterTerminationOf(100000, killPeer2);
+                /** Start a node which was previously dead */
+                startDeadPeer.startAfterTerminationOf(10000, startSpecial2);
+                /** Start special peer who targets the newly started node in order to test it's properties */
+                startSpecial3.startAfterTerminationOf(100000, startDeadPeer);
+                terminateAfterTerminationOf(1000*1000, startSpecial3);
             }
         };
 

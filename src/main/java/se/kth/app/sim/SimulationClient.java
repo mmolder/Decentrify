@@ -50,7 +50,7 @@ public class SimulationClient extends ComponentDefinition {
         @Override
         public void handle(Start event) {
             //LOG.info("{}starting...", logPrefix);
-            System.out.println("Special client starting, sending msg: " + message + " to " + ip);
+            //System.out.println("Special client starting, sending msg: " + message + " to " + ip);
             KAddress peer = ScenarioSetup.getNodeAdr(ip, id);
             KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
             KContentMsg msg = new BasicContentMsg(header, new TriggerMsg(message));

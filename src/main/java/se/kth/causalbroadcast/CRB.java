@@ -35,7 +35,6 @@ public class CRB extends ComponentDefinition {
     private Handler<CRBroadcast> crbroadcastHandler = new Handler<CRBroadcast>() {
         @Override
         public void handle(CRBroadcast crBroadcast) {
-            System.out.println("CRB received " + self);
             Object msg = crBroadcast.getMessage();
             trigger(new RBroadcast(msg, past), rb);         // in RB
             past.put(self, msg);
