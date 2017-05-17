@@ -27,7 +27,6 @@ public class GBEB extends ComponentDefinition {
     private Positive<Network> net =  requires(Network.class);
     private Positive<CroupierPort> bs = requires(CroupierPort.class);   //bs = croupierPort
     private Negative<GBEBPort> gbeb = provides(GBEBPort.class);
-    boolean flag = false;
 
     public GBEB(Init init) {
         this.self = init.self;
@@ -44,7 +43,7 @@ public class GBEB extends ComponentDefinition {
     private Handler<GBEBroadcast> broadcastHandler = new Handler<GBEBroadcast>() {
         @Override
         public void handle(GBEBroadcast gbeBroadcast) {
-            past.put(self, gbeBroadcast.getMessage());  //will be a RBroadcast event containing msg and past from CRB
+            past.put(self, gbeBroadcast.payload);  //will be a RBroadcast event containing msg and past from CRB
             //past.put(self, gbeBroadcast);
         }
     };
@@ -73,7 +72,7 @@ public class GBEB extends ComponentDefinition {
     private ClassMatchedHandler<HistoryResponse, KContentMsg<?, ?, HistoryResponse>> historyResponseHandler = new ClassMatchedHandler<HistoryResponse, KContentMsg<?, ?, HistoryResponse>>() {
         @Override
         public void handle(HistoryResponse historyResponse, KContentMsg<?, ?, HistoryResponse> historyResponseKContentMsg) {
-            HashMap<KAddress, Object> history = new HashMap<>(historyResponse.getPast());
+            HashMap<KAddress, Object> history = new HashMap<>(historyResponse.past);
             HashMap<KAddress, Object> unseen = new HashMap<>();
 
             for(Map.Entry<KAddress, Object> entry : history.entrySet()) {

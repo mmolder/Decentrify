@@ -10,19 +10,11 @@ import java.util.HashMap;
  */
 public class RBroadcast implements KompicsEvent {
 
-    private Object payload;
-    private HashMap<KAddress, Object> past;
+    public Object payload;
+    public HashMap<KAddress, Object> past;
 
     public RBroadcast(Object payload, HashMap<KAddress, Object> past) {
         this.payload = payload;
         this.past = past;
-    }
-
-    public Object getPayload() {
-        return payload;
-    }
-
-    public HashMap<KAddress, Object> getPast() {
-        return past;
     }
 }

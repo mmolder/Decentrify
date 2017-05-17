@@ -18,33 +18,37 @@ public class RB extends ComponentDefinition {
     private Positive<GBEBPort> gbeb = requires(GBEBPort.class);
     private Negative<RBPort> rb = provides(RBPort.class);
 
-    private ArrayList<Object> delivered;
+    private ArrayList<Object> delivered;        // list of delivered messages
 
     public RB(Init init) {
         this.self = init.self;
         delivered = new ArrayList<>();
+
         //subscriptions
         subscribe(broadcastHandler, rb);
         subscribe(gbebDeliverHandler, gbeb);
     }
 
+    /** handle reliable broadcast events, forward using gossip best effort broadcast **/
     private Handler<RBroadcast> broadcastHandler = new Handler<RBroadcast>() {
         @Override
         public void handle(RBroadcast rBroadcast) {
-            //trigger(new GBEBroadcast(self, rBroadcast.getPayload()), gbeb);                       // in GBEB
-            trigger(new GBEBroadcast(self, rBroadcast), gbeb);
+            // send entire broadcast event in order to not throw away past
+            trigger(new GBEBroadcast(self, rBroadcast), gbeb);                           // in GBEB
         }
     };
 
+    /** handle gossip best effort broadcast events, check if delivered before, if not deliver and add to past through gbeb **/
     private Handler<GBEBDeliver> gbebDeliverHandler = new Handler<GBEBDeliver>() {
         @Override
         public void handle(GBEBDeliver gbebDeliver) {
-            Object msg = gbebDeliver.getMessage();  //RBroadcast event
-            RBroadcast rbEvent = (RBroadcast) gbebDeliver.getMessage();
-            if(!delivered.contains(msg)) {
-                delivered.add(msg);
-                trigger(new RDeliver(gbebDeliver.getPeer(), rbEvent.getPayload(), rbEvent.getPast()), rb);      // in CRB
-                trigger(new GBEBroadcast(gbebDeliver.getPeer(), msg), gbeb);   // in GBEB
+            //RBroadcast rbEvent = (RBroadcast) gbebDeliver.payload;     // cast to RBroadcast
+            if(!delivered.contains(gbebDeliver.payload)) {
+                delivered.add(gbebDeliver.payload);
+                trigger(new RDeliver(gbebDeliver.source, gbebDeliver.payload), rb);         // in CRB
+                //trigger(new RDeliver(gbebDeliver.source, rbEvent.payload, rbEvent.past), rb);
+                trigger(new GBEBroadcast(gbebDeliver.source, gbebDeliver.payload), gbeb);   // in GBEB
+                //trigger(new GBEBroadcast(gbebDeliver.source, msg), gbeb);
             }
         }
     };

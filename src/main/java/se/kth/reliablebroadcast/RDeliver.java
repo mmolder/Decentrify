@@ -10,25 +10,11 @@ import java.util.HashMap;
  */
 public class RDeliver implements KompicsEvent {
 
-    private KAddress source;
-    private Object payload;
-    private HashMap<KAddress, Object> past = new HashMap<>();
+    public KAddress source;
+    public Object payload;
 
-    public RDeliver(KAddress source, Object payload, HashMap<KAddress, Object> past) {
+    public RDeliver(KAddress source, Object payload) {
         this.source = source;
         this.payload = payload;
-        this.past = past;
-    }
-
-    public KAddress getSource() {
-        return source;
-    }
-
-    public Object getPayload() {
-        return payload;
-    }
-
-    public HashMap<KAddress, Object> getPast() {
-        return past;
     }
 }

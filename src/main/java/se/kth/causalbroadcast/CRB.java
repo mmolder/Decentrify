@@ -32,37 +32,44 @@ public class CRB extends ComponentDefinition {
         subscribe(rDeliverHandler, rb);
     }
 
+    /** handle causal order reliable broadcast events, forward it using reliable broadcast **/
     private Handler<CRBroadcast> crbroadcastHandler = new Handler<CRBroadcast>() {
         @Override
         public void handle(CRBroadcast crBroadcast) {
-            Object msg = crBroadcast.getMessage();
-            trigger(new RBroadcast(msg, past), rb);         // in RB
-            past.put(self, msg);
+            Object msg = crBroadcast.payload;           // extract payload, don't want to send cBroadcast event
+            trigger(new RBroadcast(msg, past), rb);     // in RB
+            past.put(self, msg);                        // add to own past
         }
     };
 
+    /** handle reliable broadcast deliver events, check if not delivered before, if not, check event past and deliver all not delivered **/
     private Handler<RDeliver> rDeliverHandler = new Handler<RDeliver>() {
         @Override
         public void handle(RDeliver rDeliver) {
-            Object msg = rDeliver.getPayload();
-            //System.out.println("Sending back to appcomp :)");
+            RBroadcast msg = (RBroadcast) rDeliver.payload;     // extract payload, don't want to handle rDeliver event
+
+            // check if not delivered before
             if(!delivered.contains(msg)) {
-                for(Map.Entry<KAddress, Object> entry : rDeliver.getPast().entrySet()) {
+                // go through list of past received by event handler
+                for(Map.Entry<KAddress, Object> entry : msg.past.entrySet()) {
+                    // check if not delivered before
                     if(!delivered.contains(entry.getValue())) {
                         trigger(new CRBDeliver(entry.getKey(), entry.getValue()), crb);         // in AppComp
-                        delivered.add(entry.getValue());
+                        delivered.add(entry.getValue());    // has now been delivered
+                        // check if past does not contain the current key-value pair
                         if(past.containsKey(entry.getKey())) {
                             if(!past.get(entry.getKey()).equals(entry.getValue())) {
-                                past.put(entry.getKey(), entry.getValue());
+                                past.put(entry.getKey(), entry.getValue());     // add to past
                             }
                         }
                     }
                 }
-                trigger(new CRBDeliver(rDeliver.getSource(), msg), crb);        // in AppComp
-                delivered.add(msg);
-                if(past.containsKey(rDeliver.getSource())) {
-                    if(!past.get(rDeliver.getSource()).equals(msg)) {
-                        past.put(rDeliver.getSource(), msg);
+                trigger(new CRBDeliver(rDeliver.source, msg), crb);        // in AppComp
+                delivered.add(msg);     // has been delivered
+                // check if past does not contain the event key-value pair
+                if(past.containsKey(rDeliver.source)) {
+                    if(!past.get(rDeliver.source).equals(msg)) {
+                        past.put(rDeliver.source, msg);
                     }
                 }
             }

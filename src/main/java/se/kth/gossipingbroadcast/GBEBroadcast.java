@@ -8,19 +8,11 @@ import se.sics.ktoolbox.util.network.KAddress;
  */
 public class GBEBroadcast implements KompicsEvent {
 
-    private Object message;
-    private KAddress source;
+    public Object payload;
+    public KAddress source;
 
-    public GBEBroadcast(KAddress source, Object message) {
+    public GBEBroadcast(KAddress source, Object payload) {
         this.source = source;
-        this.message = message;
-    }
-
-    public Object getMessage() {
-        return message;
-    }
-
-    public KAddress getSource() {
-        return source;
+        this.payload = payload;
     }
 }

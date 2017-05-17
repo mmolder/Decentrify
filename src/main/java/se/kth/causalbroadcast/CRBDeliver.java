@@ -7,19 +7,11 @@ import se.sics.ktoolbox.util.network.KAddress;
  * Created by mikael on 2017-04-04.
  */
 public class CRBDeliver implements KompicsEvent {
-    private KAddress source;
-    private Object message;
+    public KAddress source;
+    public Object payload;
 
-    public CRBDeliver(KAddress source, Object message) {
+    public CRBDeliver(KAddress source, Object payload) {
         this.source = source;
-        this.message = message;
-    }
-
-    public Object getMessage() {
-        return message;
-    }
-
-    public KAddress getSource() {
-        return source;
+        this.payload = payload;
     }
 }

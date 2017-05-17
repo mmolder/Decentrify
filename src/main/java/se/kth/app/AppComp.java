@@ -87,10 +87,10 @@ public class AppComp extends ComponentDefinition {
     Handler crbDeliverHandler = new Handler<CRBDeliver>() {
         @Override
         public void handle(CRBDeliver crbDeliver) {
-            if(crbDeliver.getMessage() instanceof Add) {
-                Add addOp = (Add)crbDeliver.getMessage();
-                System.out.println(selfAdr + " received ADD, adding " + addOp.getElement());
-                mySet.add(addOp.getElement());
+            if(crbDeliver.payload instanceof Add) {
+                Add addOp = (Add)crbDeliver.payload;
+                System.out.println(selfAdr + " received ADD, adding " + addOp.element);
+                mySet.add(addOp.element);
                 System.out.println(selfAdr + " my set now contains: " + mySet.print());
             }
             //System.out.println("BROADCAST RECEIVED: " + crbDeliver.getMessage() + ", SOURCE: " +  crbDeliver.getSource() + ", SELF: " + selfAdr);
