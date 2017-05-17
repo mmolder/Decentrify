@@ -12,8 +12,6 @@ import se.sics.ktoolbox.util.network.KHeader;
 import se.sics.ktoolbox.util.network.basic.BasicContentMsg;
 import se.sics.ktoolbox.util.network.basic.BasicHeader;
 
-import com.google.common.collect.Maps;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

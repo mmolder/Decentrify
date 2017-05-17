@@ -17,14 +17,10 @@
  */
 package se.kth.app.sim;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 import se.kth.sim.compatibility.SimNodeIdExtractor;
 import se.kth.system.HostMngrComp;
-import se.sics.kompics.Kill;
-import se.sics.kompics.KompicsEvent;
 import se.sics.kompics.network.Address;
 import se.sics.kompics.simulator.SimulationScenario;
 import se.sics.kompics.simulator.adaptor.Operation;
@@ -35,11 +31,9 @@ import se.sics.kompics.simulator.adaptor.distributions.extra.BasicIntSequentialD
 import se.sics.kompics.simulator.events.system.KillNodeEvent;
 import se.sics.kompics.simulator.events.system.SetupEvent;
 import se.sics.kompics.simulator.events.system.StartNodeEvent;
-import se.sics.ktoolbox.util.identifiable.Identifier;
 import se.sics.kompics.simulator.network.identifier.IdentifierExtractor;
 import se.sics.ktoolbox.omngr.bootstrap.BootstrapServerComp;
 import se.sics.ktoolbox.util.network.KAddress;
-import se.sics.ktoolbox.util.network.basic.BasicAddress;
 
 /**
  * @author Alex Ormenisan <aaor@kth.se>
@@ -296,6 +290,16 @@ public class ScenarioGen {
         return scen;
     }
 
+    /**
+     *
+     * broadcastTest2
+     *
+     * SimulationScenario which will start 10 normal nodes and then start one special node that triggers an alive node
+     * to broadcast a message. After this, two nodes are killed in order to simulate churn. A new special node is started
+     * which will trigger another alive node to broadcast. A check can be made to see if all alive nodes deliver the
+     * message eventually which satisfies the properties of the algorithm.
+     *
+     **/
     public static SimulationScenario broadcastTest2() {
         SimulationScenario scen = new SimulationScenario() {
             {
@@ -362,6 +366,17 @@ public class ScenarioGen {
         return scen;
     }
 
+    /**
+     *
+     * broadcastTest2
+     *
+     * SimulationScenario which will start 10 normal nodes and then start one special node that triggers an alive node
+     * to broadcast a message. After this, two nodes are killed in order to simulate churn. A new special node is started
+     * which will trigger another alive node to broadcast. A node with the same address as one which was killed off
+     * in order to simulate nodes connecting and disconnecting (churn). A new special node is started which will target
+     * the newly started node which will broadcast a message.
+     *
+     **/
     public static SimulationScenario broadcastTest3() {
         SimulationScenario scen = new SimulationScenario() {
             {
@@ -411,7 +426,7 @@ public class ScenarioGen {
                 StochasticProcess startDeadPeer = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1100));
-                        raise(10, startNodeOp, new BasicIntSequentialDistribution(9));
+                        raise(1, startNodeOp, new ConstantDistribution<>(Integer.class, 9));
                     }
                 };
                 StochasticProcess startSpecial3 = new StochasticProcess() {

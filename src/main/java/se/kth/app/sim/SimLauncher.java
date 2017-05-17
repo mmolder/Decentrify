@@ -25,14 +25,18 @@ import se.sics.kompics.simulator.run.LauncherComp;
  */
 public class SimLauncher {
     public static void main(String[] args) {
+
+        /** Broadcast simulation */
         SimulationScenario.setSeed(ScenarioSetup.scenarioSeed);
-        SimulationScenario simpleBootScenario = ScenarioGen.simpleBoot();
         SimulationScenario broadcastTest1 = ScenarioGen.broadcastTest1();
         SimulationScenario broadcastTest2 = ScenarioGen.broadcastTest2();
         SimulationScenario broadcastTest3 = ScenarioGen.broadcastTest3();
-        //simpleBootScenario.simulate(LauncherComp.class);
         //broadcastTest1.simulate(LauncherComp.class);
-        broadcastTest2.simulate(LauncherComp.class);
+        //broadcastTest2.simulate(LauncherComp.class);
         //broadcastTest3.simulate(LauncherComp.class);
+
+        /** Operation simulation */
+        SimulationScenario operationTest1 = OperationSimulation.operationTest1();
+        operationTest1.simulate(LauncherComp.class);
     }
 }

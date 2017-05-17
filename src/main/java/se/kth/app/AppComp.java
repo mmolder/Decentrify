@@ -17,30 +17,19 @@
  */
 package se.kth.app;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.kth.app.test.TriggerMsg;
 import se.kth.causalbroadcast.CRBDeliver;
 import se.kth.causalbroadcast.CRBPort;
 import se.kth.causalbroadcast.CRBroadcast;
-import se.kth.croupier.util.CroupierHelper;
-import se.kth.app.test.Ping;
-import se.kth.app.test.Pong;
-import se.kth.gossipingbroadcast.HistoryResponse;
 import se.sics.kompics.*;
 import se.sics.kompics.network.Network;
-import se.sics.kompics.network.Transport;
 import se.sics.kompics.timer.Timer;
-import se.sics.ktoolbox.croupier.CroupierPort;
-import se.sics.ktoolbox.croupier.event.CroupierSample;
 import se.sics.ktoolbox.util.identifiable.Identifier;
 import se.sics.ktoolbox.util.network.KAddress;
 import se.sics.ktoolbox.util.network.KContentMsg;
 import se.sics.ktoolbox.util.network.KHeader;
-import se.sics.ktoolbox.util.network.basic.BasicContentMsg;
-import se.sics.ktoolbox.util.network.basic.BasicHeader;
 
 /**
  * @author Alex Ormenisan <aaor@kth.se>
@@ -57,22 +46,26 @@ public class AppComp extends ComponentDefinition {
     Positive<CRBPort> crb = requires(CRBPort.class);
     //**************************************************************************
     private KAddress selfAdr;
+    private Sets mySet;
 
     public AppComp(Init init) {
         selfAdr = init.selfAdr;
         logPrefix = "<nid:" + selfAdr.getId() + ">";
         LOG.info("{}initiating...", logPrefix);
 
+        mySet = new Sets();
+
         subscribe(handleStart, control);
         subscribe(crbDeliverHandler, crb);
         subscribe(simulationMsgHandler, networkPort);
+        subscribe(addOperationHandler, networkPort);
+        subscribe(removeOperationHandler, networkPort);
     }
 
     Handler handleStart = new Handler<Start>() {
         @Override
         public void handle(Start event) {
             LOG.info("{}starting...", logPrefix);
-            //trigger(new CRBroadcast("request"), crb);
         }
     };
 
@@ -83,12 +76,34 @@ public class AppComp extends ComponentDefinition {
         }
     };
 
+    ClassMatchedHandler addOperationHandler = new ClassMatchedHandler<Add, KContentMsg<?, KHeader<?>, Add>>() {
+        @Override
+        public void handle(Add msg, KContentMsg<?, KHeader<?>, Add> cont) {
+            trigger(new CRBroadcast(cont.getContent()), crb);
+        }
+    };
+
+    ClassMatchedHandler removeOperationHandler = new ClassMatchedHandler<Remove, KContentMsg<?, KHeader<?>, Remove>>() {
+        @Override
+        public void handle(Remove msg, KContentMsg<?, KHeader<?>, Remove> cont) {
+            trigger(new CRBroadcast(cont.getContent()), crb);
+        }
+    };
+
     Handler crbDeliverHandler = new Handler<CRBDeliver>() {
         @Override
         public void handle(CRBDeliver crbDeliver) {
-            System.out.println("BROADCAST RECEIVED: " + crbDeliver.getMessage() + ", SOURCE: " +  crbDeliver.getSource() + ", SELF: " + selfAdr);
-            //trigger(new CRBroadcast("response"), crb);
-            //LOG.info("{} broadcast received: {}", selfAdr, crbDeliver.getMessage());
+            if(crbDeliver.getMessage() instanceof Add) {
+                Add addElement = (Add)((Add) crbDeliver.getMessage()).getElement();
+                System.out.println(selfAdr + " received ADD");
+                mySet.add(addElement);
+            }
+            else if(crbDeliver.getMessage() instanceof Remove) {
+                Remove removeElement = (Remove)((Remove) crbDeliver.getMessage()).getElement();
+                System.out.println(selfAdr + " recevied REMOVE");
+                mySet.remove(removeElement);
+            }
+            //System.out.println("BROADCAST RECEIVED: " + crbDeliver.getMessage() + ", SOURCE: " +  crbDeliver.getSource() + ", SELF: " + selfAdr);
         }
     };
 
