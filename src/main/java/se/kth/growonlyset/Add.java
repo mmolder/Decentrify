@@ -1,14 +1,14 @@
-package se.kth.app;
+package se.kth.growonlyset;
 
 import se.sics.kompics.KompicsEvent;
 
 /**
  * Created by mikael on 2017-05-17.
  */
-public class Remove implements KompicsEvent {
+public class Add implements KompicsEvent {
     private Object element;
 
-    public Remove(Object element) {
+    public Add(Object element) {
         this.element = element;
     }
 

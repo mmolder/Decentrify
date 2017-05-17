@@ -7,7 +7,6 @@ import se.sics.kompics.simulator.SimulationScenario;
 import se.sics.kompics.simulator.adaptor.Operation;
 import se.sics.kompics.simulator.adaptor.Operation1;
 import se.sics.kompics.simulator.adaptor.Operation2;
-import se.sics.kompics.simulator.adaptor.Operation3;
 import se.sics.kompics.simulator.adaptor.distributions.ConstantDistribution;
 import se.sics.kompics.simulator.adaptor.distributions.extra.BasicIntSequentialDistribution;
 import se.sics.kompics.simulator.events.system.KillNodeEvent;
@@ -124,10 +123,10 @@ public class OperationSimulation {
      * to broadcast a message
      *
      **/
-    static Operation3 startSpecialNode = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
+    static Operation2 startSpecialNode = new Operation2<StartNodeEvent, Integer, Integer>() {
 
         @Override
-        public StartNodeEvent generate(final Integer self, final Integer target, final Integer op) {
+        public StartNodeEvent generate(final Integer self, final Integer target) {
             return new StartNodeEvent() {
                 final KAddress selfAdr;
                 {
@@ -152,7 +151,7 @@ public class OperationSimulation {
 
                 @Override
                 public OperationClient.Init getComponentInit() {
-                    return new OperationClient.Init(selfAdr, "193.0.0." + target, target, op);
+                    return new OperationClient.Init(selfAdr, "193.0.0." + target, target);
                 }
             };
         }
@@ -218,7 +217,7 @@ public class OperationSimulation {
                 StochasticProcess startSpecial = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 1));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 4));
                     }
                 };
 

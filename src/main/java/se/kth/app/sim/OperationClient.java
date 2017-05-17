@@ -2,10 +2,8 @@ package se.kth.app.sim;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.kth.app.Add;
-import se.kth.app.Remove;
-import se.kth.app.test.TriggerMsg;
 import se.kth.causalbroadcast.CRBPort;
+import se.kth.growonlyset.Add;
 import se.sics.kompics.*;
 import se.sics.kompics.network.Network;
 import se.sics.kompics.network.Transport;
@@ -33,13 +31,11 @@ public class OperationClient extends ComponentDefinition {
     private KAddress selfAdr;
     private String ip;
     private int id;
-    private int op;
 
     public OperationClient(OperationClient.Init init) {
         selfAdr = init.selfAdr;
         ip = init.ip;
         id = init.id;
-        op = init.op;
         subscribe(handleStart, control);
     }
 
@@ -48,13 +44,8 @@ public class OperationClient extends ComponentDefinition {
         public void handle(Start event) {
             KAddress peer = ScenarioSetup.getNodeAdr(ip, id);
             KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
-            if(op == 1) {
-                KContentMsg msg = new BasicContentMsg(header, new Add("hello"));
-                trigger(msg, networkPort);
-            } else if(op == 0) {
-                KContentMsg msg = new BasicContentMsg(header, new Remove("hello"));
-                trigger(msg, networkPort);
-            }
+            KContentMsg msg = new BasicContentMsg(header, new Add("hello"));
+            trigger(msg, networkPort);
 
             //msg = new BasicContentMsg(header, new Remove("hello"));
         }
@@ -67,13 +58,11 @@ public class OperationClient extends ComponentDefinition {
         public final KAddress selfAdr;
         public final String ip;
         public final int id;
-        public final int op;
 
-        public Init(KAddress selfAdr, String ip, int id, int op) {
+        public Init(KAddress selfAdr, String ip, int id) {
             this.selfAdr = selfAdr;
             this.ip = ip;
             this.id = id;
-            this.op = op;
         }
     }
 }

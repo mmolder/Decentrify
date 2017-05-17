@@ -23,6 +23,8 @@ import se.kth.app.test.TriggerMsg;
 import se.kth.causalbroadcast.CRBDeliver;
 import se.kth.causalbroadcast.CRBPort;
 import se.kth.causalbroadcast.CRBroadcast;
+import se.kth.growonlyset.Add;
+import se.kth.growonlyset.GSet;
 import se.sics.kompics.*;
 import se.sics.kompics.network.Network;
 import se.sics.kompics.timer.Timer;
@@ -46,20 +48,19 @@ public class AppComp extends ComponentDefinition {
     Positive<CRBPort> crb = requires(CRBPort.class);
     //**************************************************************************
     private KAddress selfAdr;
-    private Sets mySet;
+    private GSet mySet;
 
     public AppComp(Init init) {
         selfAdr = init.selfAdr;
         logPrefix = "<nid:" + selfAdr.getId() + ">";
         LOG.info("{}initiating...", logPrefix);
 
-        mySet = new Sets();
+        mySet = new GSet();
 
         subscribe(handleStart, control);
         subscribe(crbDeliverHandler, crb);
         subscribe(simulationMsgHandler, networkPort);
         subscribe(addOperationHandler, networkPort);
-        subscribe(removeOperationHandler, networkPort);
     }
 
     Handler handleStart = new Handler<Start>() {
@@ -83,25 +84,14 @@ public class AppComp extends ComponentDefinition {
         }
     };
 
-    ClassMatchedHandler removeOperationHandler = new ClassMatchedHandler<Remove, KContentMsg<?, KHeader<?>, Remove>>() {
-        @Override
-        public void handle(Remove msg, KContentMsg<?, KHeader<?>, Remove> cont) {
-            trigger(new CRBroadcast(cont.getContent()), crb);
-        }
-    };
-
     Handler crbDeliverHandler = new Handler<CRBDeliver>() {
         @Override
         public void handle(CRBDeliver crbDeliver) {
             if(crbDeliver.getMessage() instanceof Add) {
-                Add addElement = (Add)((Add) crbDeliver.getMessage()).getElement();
-                System.out.println(selfAdr + " received ADD");
-                mySet.add(addElement);
-            }
-            else if(crbDeliver.getMessage() instanceof Remove) {
-                Remove removeElement = (Remove)((Remove) crbDeliver.getMessage()).getElement();
-                System.out.println(selfAdr + " recevied REMOVE");
-                mySet.remove(removeElement);
+                Add addOp = (Add)crbDeliver.getMessage();
+                System.out.println(selfAdr + " received ADD, adding " + addOp.getElement());
+                mySet.add(addOp.getElement());
+                System.out.println(selfAdr + " my set now contains: " + mySet.print());
             }
             //System.out.println("BROADCAST RECEIVED: " + crbDeliver.getMessage() + ", SOURCE: " +  crbDeliver.getSource() + ", SELF: " + selfAdr);
         }
