@@ -12,6 +12,8 @@ import se.sics.ktoolbox.util.network.KHeader;
 import se.sics.ktoolbox.util.network.basic.BasicContentMsg;
 import se.sics.ktoolbox.util.network.basic.BasicHeader;
 
+import com.google.common.collect.Maps;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,8 +46,7 @@ public class GBEB extends ComponentDefinition {
     private Handler<GBEBroadcast> broadcastHandler = new Handler<GBEBroadcast>() {
         @Override
         public void handle(GBEBroadcast gbeBroadcast) {
-
-            past.put(self, gbeBroadcast.getMessage());
+            past.put(self, gbeBroadcast.getMessage());  //will be a RBroadcast event containing msg and past from CRB
             //past.put(self, gbeBroadcast);
         }
     };
@@ -76,8 +77,9 @@ public class GBEB extends ComponentDefinition {
         public void handle(HistoryResponse historyResponse, KContentMsg<?, ?, HistoryResponse> historyResponseKContentMsg) {
             HashMap<KAddress, Object> history = new HashMap<>(historyResponse.getPast());
             HashMap<KAddress, Object> unseen = new HashMap<>();
+
             for(Map.Entry<KAddress, Object> entry : history.entrySet()) {
-                if(!past.containsKey(entry.getKey())) {
+                if(!past.containsValue(entry.getValue())) {
                     unseen.put(entry.getKey(), entry.getValue());
                 }
             }

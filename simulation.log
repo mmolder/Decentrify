@@ -45927,3 +45927,1433 @@ KompicsFault(java.lang.RuntimeException: Cannot create component se.kth.app.sim.
 [00:00:11,538] INFO  {AppComp} <nid:10>starting...
 [00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
 [00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[10:17:03,259] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>initiating...
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>starting...
+[00:00:02,000] INFO  {AppComp} <nid:1>initiating...
+[00:00:02,000] INFO  {AppComp} <nid:1>starting...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>initiating...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>starting...
+[00:00:03,065] INFO  {AppComp} <nid:2>initiating...
+[00:00:03,065] INFO  {AppComp} <nid:2>starting...
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>initiating...
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>starting...
+[00:00:04,160] INFO  {AppComp} <nid:3>initiating...
+[00:00:04,160] INFO  {AppComp} <nid:3>starting...
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>initiating...
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>starting...
+[00:00:05,246] INFO  {AppComp} <nid:4>initiating...
+[00:00:05,246] INFO  {AppComp} <nid:4>starting...
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>initiating...
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>starting...
+[00:00:06,292] INFO  {AppComp} <nid:5>initiating...
+[00:00:06,292] INFO  {AppComp} <nid:5>starting...
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>initiating...
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>starting...
+[00:00:07,326] INFO  {AppComp} <nid:6>initiating...
+[00:00:07,326] INFO  {AppComp} <nid:6>starting...
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>initiating...
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>starting...
+[00:00:08,346] INFO  {AppComp} <nid:7>initiating...
+[00:00:08,346] INFO  {AppComp} <nid:7>starting...
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>initiating...
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>starting...
+[00:00:09,381] INFO  {AppComp} <nid:8>initiating...
+[00:00:09,381] INFO  {AppComp} <nid:8>starting...
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>initiating...
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>starting...
+[00:00:10,443] INFO  {AppComp} <nid:9>initiating...
+[00:00:10,443] INFO  {AppComp} <nid:9>starting...
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>initiating...
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>starting...
+[00:00:11,538] INFO  {AppComp} <nid:10>initiating...
+[00:00:11,538] INFO  {AppComp} <nid:10>starting...
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[10:20:10,002] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>initiating...
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>starting...
+[00:00:02,000] INFO  {AppComp} <nid:1>initiating...
+[00:00:02,000] INFO  {AppComp} <nid:1>starting...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>initiating...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>starting...
+[00:00:03,065] INFO  {AppComp} <nid:2>initiating...
+[00:00:03,065] INFO  {AppComp} <nid:2>starting...
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>initiating...
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>starting...
+[00:00:04,160] INFO  {AppComp} <nid:3>initiating...
+[00:00:04,160] INFO  {AppComp} <nid:3>starting...
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>initiating...
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>starting...
+[00:00:05,246] INFO  {AppComp} <nid:4>initiating...
+[00:00:05,246] INFO  {AppComp} <nid:4>starting...
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>initiating...
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>starting...
+[00:00:06,292] INFO  {AppComp} <nid:5>initiating...
+[00:00:06,292] INFO  {AppComp} <nid:5>starting...
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>initiating...
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>starting...
+[00:00:07,326] INFO  {AppComp} <nid:6>initiating...
+[00:00:07,326] INFO  {AppComp} <nid:6>starting...
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>initiating...
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>starting...
+[00:00:08,346] INFO  {AppComp} <nid:7>initiating...
+[00:00:08,346] INFO  {AppComp} <nid:7>starting...
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>initiating...
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>starting...
+[00:00:09,381] INFO  {AppComp} <nid:8>initiating...
+[00:00:09,381] INFO  {AppComp} <nid:8>starting...
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>initiating...
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>starting...
+[00:00:10,443] INFO  {AppComp} <nid:9>initiating...
+[00:00:10,443] INFO  {AppComp} <nid:9>starting...
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>initiating...
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>starting...
+[00:00:11,538] INFO  {AppComp} <nid:10>initiating...
+[00:00:11,538] INFO  {AppComp} <nid:10>starting...
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:01:52,160] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:43)
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:40)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:399)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:343)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:01:52,160] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+[00:01:52,160] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast thrown in Component(2180c33a-0bed-3178-b52a-e68e160896c3):se.kth.reliablebroadcast.RB@17f9d882 while handling event se.kth.gossipingbroadcast.GBEBDeliver@eadd4fb) 
+
+
+[00:01:52,292] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:43)
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:40)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:399)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:343)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:01:52,292] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+[00:01:52,292] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast thrown in Component(2c4fd598-d1f2-d5f6-7be0-bc750cb9a108):se.kth.reliablebroadcast.RB@1caa0244 while handling event se.kth.gossipingbroadcast.GBEBDeliver@2a8448fa) 
+
+
+[00:01:52,346] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:43)
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:40)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:399)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:343)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:01:52,346] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+[00:01:52,346] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast thrown in Component(d666d1ed-f911-ea5a-61ea-26db4e35b4ac):se.kth.reliablebroadcast.RB@247310d0 while handling event se.kth.gossipingbroadcast.GBEBDeliver@2de56eb2) 
+
+
+[00:01:52,443] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:43)
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:40)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:399)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:343)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:01:52,443] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+[00:01:52,443] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast thrown in Component(d46a7b58-303a-a43e-6256-07921f842ea1):se.kth.reliablebroadcast.RB@533bda92 while handling event se.kth.gossipingbroadcast.GBEBDeliver@3ad83a66) 
+
+
+[00:01:53,065] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:43)
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:40)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:399)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:343)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:01:53,065] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+[00:01:53,065] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast thrown in Component(3527f583-81b7-3208-7dcb-45c3854bdcdd):se.kth.reliablebroadcast.RB@5149d738 while handling event se.kth.gossipingbroadcast.GBEBDeliver@17bffc17) 
+
+
+[00:01:53,246] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:43)
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:40)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:399)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:343)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:01:53,246] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+[00:01:53,246] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast thrown in Component(704518bf-d460-3c06-31c4-083d8a1f265f):se.kth.reliablebroadcast.RB@33bc72d1 while handling event se.kth.gossipingbroadcast.GBEBDeliver@15a34df2) 
+
+
+[00:01:53,326] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:43)
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:40)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:399)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:343)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:01:53,326] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+[00:01:53,326] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast thrown in Component(c21ec35b-85d9-798c-261f-dfc26307a774):se.kth.reliablebroadcast.RB@7d9d0818 while handling event se.kth.gossipingbroadcast.GBEBDeliver@338fc1d8) 
+
+
+[00:01:53,381] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:43)
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:40)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:399)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:343)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:01:53,381] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+[00:01:53,381] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast thrown in Component(2e136d1d-07dc-312a-456c-2834e9aee2d8):se.kth.reliablebroadcast.RB@73eb439a while handling event se.kth.gossipingbroadcast.GBEBDeliver@48e1f6c7) 
+
+
+[00:01:53,538] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:43)
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:40)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:399)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:343)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:01:53,538] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+[00:01:53,538] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast thrown in Component(41b899d5-1269-3255-cb7e-bf853da7ab6d):se.kth.reliablebroadcast.RB@70cf32e3 while handling event se.kth.gossipingbroadcast.GBEBDeliver@1807e3f6) 
+
+
+[00:01:54,000] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:43)
+	at se.kth.reliablebroadcast.RB$2.handle(RB.java:40)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:399)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:343)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:01:54,000] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast
+[00:01:54,000] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: java.lang.String cannot be cast to se.kth.reliablebroadcast.RBroadcast thrown in Component(40730ba5-c574-c40b-f2bc-3c2cb672aefb):se.kth.reliablebroadcast.RB@13e344d while handling event se.kth.gossipingbroadcast.GBEBDeliver@f1da57d) 
+
+
+[10:42:24,945] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>initiating...
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>starting...
+[00:00:02,000] INFO  {AppComp} <nid:1>initiating...
+[00:00:02,000] INFO  {AppComp} <nid:1>starting...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>initiating...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>starting...
+[00:00:03,065] INFO  {AppComp} <nid:2>initiating...
+[00:00:03,065] INFO  {AppComp} <nid:2>starting...
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>initiating...
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>starting...
+[00:00:04,160] INFO  {AppComp} <nid:3>initiating...
+[00:00:04,160] INFO  {AppComp} <nid:3>starting...
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>initiating...
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>starting...
+[00:00:05,246] INFO  {AppComp} <nid:4>initiating...
+[00:00:05,246] INFO  {AppComp} <nid:4>starting...
+[00:00:06,000] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:06,000] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:06,000] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(b09fd4e6-3613-85b1-0c54-2cf9c878bfdf):se.kth.gossipingbroadcast.GBEB@1ffaf86 while handling event se.kth.gossipingbroadcast.HistoryResponse@451001e5from:193.0.0.2:12345<2>to:193.0.0.1:12345<1>) 
+
+
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>initiating...
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>starting...
+[00:00:06,292] INFO  {AppComp} <nid:5>initiating...
+[00:00:06,292] INFO  {AppComp} <nid:5>starting...
+[00:00:07,065] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:07,065] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:07,065] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(33550ba5-5dc9-d166-60e7-3e8c7a4669ba):se.kth.gossipingbroadcast.GBEB@6bbe85a8 while handling event se.kth.gossipingbroadcast.HistoryResponse@17fc391bfrom:193.0.0.3:12345<3>to:193.0.0.2:12345<2>) 
+
+
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>initiating...
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>starting...
+[00:00:07,326] INFO  {AppComp} <nid:6>initiating...
+[00:00:07,326] INFO  {AppComp} <nid:6>starting...
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>initiating...
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>starting...
+[00:00:08,346] INFO  {AppComp} <nid:7>initiating...
+[00:00:08,346] INFO  {AppComp} <nid:7>starting...
+[00:00:09,246] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:09,246] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:09,246] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(9a16064e-959b-83cd-dfca-4f9498ee601e):se.kth.gossipingbroadcast.GBEB@1a75e76a while handling event se.kth.gossipingbroadcast.HistoryResponse@4a8355ddfrom:193.0.0.3:12345<3>to:193.0.0.4:12345<4>) 
+
+
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>initiating...
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>starting...
+[00:00:09,381] INFO  {AppComp} <nid:8>initiating...
+[00:00:09,381] INFO  {AppComp} <nid:8>starting...
+[00:00:10,160] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:10,160] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:10,160] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(d158da1e-e468-c5a6-b516-71ff88de15e5):se.kth.gossipingbroadcast.GBEB@79e4c792 while handling event se.kth.gossipingbroadcast.HistoryResponse@5c80cf32from:193.0.0.5:12345<5>to:193.0.0.3:12345<3>) 
+
+
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>initiating...
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>starting...
+[00:00:10,443] INFO  {AppComp} <nid:9>initiating...
+[00:00:10,443] INFO  {AppComp} <nid:9>starting...
+[00:00:11,326] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:11,326] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:11,326] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(6307a773-a2a1-8ca2-ab41-045ee62e6c9c):se.kth.gossipingbroadcast.GBEB@35841320 while handling event se.kth.gossipingbroadcast.HistoryResponse@7bd7d6d6from:193.0.0.5:12345<5>to:193.0.0.6:12345<6>) 
+
+
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>initiating...
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>starting...
+[00:00:11,538] INFO  {AppComp} <nid:10>initiating...
+[00:00:11,538] INFO  {AppComp} <nid:10>starting...
+[00:00:12,292] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:12,292] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:12,292] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(c783f1c2-42e7-5d21-a832-f423d70b9ef1):se.kth.gossipingbroadcast.GBEB@4a003cbe while handling event se.kth.gossipingbroadcast.HistoryResponse@55cb6996from:193.0.0.7:12345<7>to:193.0.0.5:12345<5>) 
+
+
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,381] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:13,381] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:13,381] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(930dae10-0d45-8a58-528b-182d6acc31e0):se.kth.gossipingbroadcast.GBEB@4d1bf319 while handling event se.kth.gossipingbroadcast.HistoryResponse@480d3575from:193.0.0.7:12345<7>to:193.0.0.8:12345<8>) 
+
+
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:14,443] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:14,443] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:14,443] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(fe4f9db7-cff4-4cd8-6927-3be996cf1cc4):se.kth.gossipingbroadcast.GBEB@eadd4fb while handling event se.kth.gossipingbroadcast.HistoryResponse@194fad1from:193.0.0.7:12345<7>to:193.0.0.9:12345<9>) 
+
+
+[00:00:15,538] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:15,538] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:15,538] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(e0d20846-0296-2b40-0d91-3b0f4b623ea0):se.kth.gossipingbroadcast.GBEB@4722ef0c while handling event se.kth.gossipingbroadcast.HistoryResponse@72c8e7bfrom:193.0.0.7:12345<7>to:193.0.0.10:12345<10>) 
+
+
+[10:47:25,569] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>initiating...
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>starting...
+[00:00:02,000] INFO  {AppComp} <nid:1>initiating...
+[00:00:02,000] INFO  {AppComp} <nid:1>starting...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>initiating...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>starting...
+[00:00:03,065] INFO  {AppComp} <nid:2>initiating...
+[00:00:03,065] INFO  {AppComp} <nid:2>starting...
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>initiating...
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>starting...
+[00:00:04,160] INFO  {AppComp} <nid:3>initiating...
+[00:00:04,160] INFO  {AppComp} <nid:3>starting...
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>initiating...
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>starting...
+[00:00:05,246] INFO  {AppComp} <nid:4>initiating...
+[00:00:05,246] INFO  {AppComp} <nid:4>starting...
+[00:00:06,000] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:06,000] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:06,000] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(b09fd4e6-3613-85b1-0c54-2cf9c878bfdf):se.kth.gossipingbroadcast.GBEB@e350b40 while handling event se.kth.gossipingbroadcast.HistoryResponse@cecf639from:193.0.0.2:12345<2>to:193.0.0.1:12345<1>) 
+
+
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>initiating...
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>starting...
+[00:00:06,292] INFO  {AppComp} <nid:5>initiating...
+[00:00:06,292] INFO  {AppComp} <nid:5>starting...
+[00:00:07,065] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:07,065] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:07,065] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(33550ba5-5dc9-d166-60e7-3e8c7a4669ba):se.kth.gossipingbroadcast.GBEB@7161d8d1 while handling event se.kth.gossipingbroadcast.HistoryResponse@2b40ff9cfrom:193.0.0.3:12345<3>to:193.0.0.2:12345<2>) 
+
+
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>initiating...
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>starting...
+[00:00:07,326] INFO  {AppComp} <nid:6>initiating...
+[00:00:07,326] INFO  {AppComp} <nid:6>starting...
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>initiating...
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>starting...
+[00:00:08,346] INFO  {AppComp} <nid:7>initiating...
+[00:00:08,346] INFO  {AppComp} <nid:7>starting...
+[00:00:09,246] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:09,246] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:09,246] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(9a16064e-959b-83cd-dfca-4f9498ee601e):se.kth.gossipingbroadcast.GBEB@18271936 while handling event se.kth.gossipingbroadcast.HistoryResponse@7ae0a9ecfrom:193.0.0.3:12345<3>to:193.0.0.4:12345<4>) 
+
+
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>initiating...
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>starting...
+[00:00:09,381] INFO  {AppComp} <nid:8>initiating...
+[00:00:09,381] INFO  {AppComp} <nid:8>starting...
+[00:00:10,160] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:10,160] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:10,160] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(d158da1e-e468-c5a6-b516-71ff88de15e5):se.kth.gossipingbroadcast.GBEB@33065d67 while handling event se.kth.gossipingbroadcast.HistoryResponse@4c163e3from:193.0.0.5:12345<5>to:193.0.0.3:12345<3>) 
+
+
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>initiating...
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>starting...
+[00:00:10,443] INFO  {AppComp} <nid:9>initiating...
+[00:00:10,443] INFO  {AppComp} <nid:9>starting...
+[00:00:11,326] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:11,326] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:11,326] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(6307a773-a2a1-8ca2-ab41-045ee62e6c9c):se.kth.gossipingbroadcast.GBEB@76494737 while handling event se.kth.gossipingbroadcast.HistoryResponse@6f53b8afrom:193.0.0.5:12345<5>to:193.0.0.6:12345<6>) 
+
+
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>initiating...
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>starting...
+[00:00:11,538] INFO  {AppComp} <nid:10>initiating...
+[00:00:11,538] INFO  {AppComp} <nid:10>starting...
+[00:00:12,292] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:12,292] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:12,292] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(c783f1c2-42e7-5d21-a832-f423d70b9ef1):se.kth.gossipingbroadcast.GBEB@221a3fa4 while handling event se.kth.gossipingbroadcast.HistoryResponse@740fb309from:193.0.0.7:12345<7>to:193.0.0.5:12345<5>) 
+
+
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,381] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:13,381] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:13,381] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(930dae10-0d45-8a58-528b-182d6acc31e0):se.kth.gossipingbroadcast.GBEB@45d84a20 while handling event se.kth.gossipingbroadcast.HistoryResponse@43f02ef2from:193.0.0.7:12345<7>to:193.0.0.8:12345<8>) 
+
+
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:14,443] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:14,443] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:14,443] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(fe4f9db7-cff4-4cd8-6927-3be996cf1cc4):se.kth.gossipingbroadcast.GBEB@6b695b06 while handling event se.kth.gossipingbroadcast.HistoryResponse@2a8448fafrom:193.0.0.7:12345<7>to:193.0.0.9:12345<9>) 
+
+
+[00:00:15,538] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:15,538] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:15,538] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(e0d20846-0296-2b40-0d91-3b0f4b623ea0):se.kth.gossipingbroadcast.GBEB@4e5ed836 while handling event se.kth.gossipingbroadcast.HistoryResponse@2de56eb2from:193.0.0.7:12345<7>to:193.0.0.10:12345<10>) 
+
+
+[10:47:45,464] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>initiating...
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>starting...
+[00:00:02,000] INFO  {AppComp} <nid:1>initiating...
+[00:00:02,000] INFO  {AppComp} <nid:1>starting...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>initiating...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>starting...
+[00:00:03,065] INFO  {AppComp} <nid:2>initiating...
+[00:00:03,065] INFO  {AppComp} <nid:2>starting...
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>initiating...
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>starting...
+[00:00:04,160] INFO  {AppComp} <nid:3>initiating...
+[00:00:04,160] INFO  {AppComp} <nid:3>starting...
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>initiating...
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>starting...
+[00:00:05,246] INFO  {AppComp} <nid:4>initiating...
+[00:00:05,246] INFO  {AppComp} <nid:4>starting...
+[00:00:06,000] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:06,000] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:06,000] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(b09fd4e6-3613-85b1-0c54-2cf9c878bfdf):se.kth.gossipingbroadcast.GBEB@e350b40 while handling event se.kth.gossipingbroadcast.HistoryResponse@1caa0244from:193.0.0.2:12345<2>to:193.0.0.1:12345<1>) 
+
+
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>initiating...
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>starting...
+[00:00:06,292] INFO  {AppComp} <nid:5>initiating...
+[00:00:06,292] INFO  {AppComp} <nid:5>starting...
+[00:00:07,065] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:07,065] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:07,065] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(33550ba5-5dc9-d166-60e7-3e8c7a4669ba):se.kth.gossipingbroadcast.GBEB@74d1dc36 while handling event se.kth.gossipingbroadcast.HistoryResponse@3e08ff24from:193.0.0.3:12345<3>to:193.0.0.2:12345<2>) 
+
+
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>initiating...
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>starting...
+[00:00:07,326] INFO  {AppComp} <nid:6>initiating...
+[00:00:07,326] INFO  {AppComp} <nid:6>starting...
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>initiating...
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>starting...
+[00:00:08,346] INFO  {AppComp} <nid:7>initiating...
+[00:00:08,346] INFO  {AppComp} <nid:7>starting...
+[00:00:09,246] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:09,246] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:09,246] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(9a16064e-959b-83cd-dfca-4f9498ee601e):se.kth.gossipingbroadcast.GBEB@909217e while handling event se.kth.gossipingbroadcast.HistoryResponse@35841320from:193.0.0.3:12345<3>to:193.0.0.4:12345<4>) 
+
+
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>initiating...
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>starting...
+[00:00:09,381] INFO  {AppComp} <nid:8>initiating...
+[00:00:09,381] INFO  {AppComp} <nid:8>starting...
+[00:00:10,160] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:10,160] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:10,160] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(d158da1e-e468-c5a6-b516-71ff88de15e5):se.kth.gossipingbroadcast.GBEB@cb0755b while handling event se.kth.gossipingbroadcast.HistoryResponse@4a8355ddfrom:193.0.0.5:12345<5>to:193.0.0.3:12345<3>) 
+
+
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>initiating...
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>starting...
+[00:00:10,443] INFO  {AppComp} <nid:9>initiating...
+[00:00:10,443] INFO  {AppComp} <nid:9>starting...
+[00:00:11,326] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:11,326] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:11,326] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(6307a773-a2a1-8ca2-ab41-045ee62e6c9c):se.kth.gossipingbroadcast.GBEB@4a003cbe while handling event se.kth.gossipingbroadcast.HistoryResponse@5c80cf32from:193.0.0.5:12345<5>to:193.0.0.6:12345<6>) 
+
+
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>initiating...
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>starting...
+[00:00:11,538] INFO  {AppComp} <nid:10>initiating...
+[00:00:11,538] INFO  {AppComp} <nid:10>starting...
+[00:00:12,292] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:12,292] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:12,292] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(c783f1c2-42e7-5d21-a832-f423d70b9ef1):se.kth.gossipingbroadcast.GBEB@451001e5 while handling event se.kth.gossipingbroadcast.HistoryResponse@7bd7d6d6from:193.0.0.7:12345<7>to:193.0.0.5:12345<5>) 
+
+
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,381] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:13,381] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:13,381] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(930dae10-0d45-8a58-528b-182d6acc31e0):se.kth.gossipingbroadcast.GBEB@52f27fbd while handling event se.kth.gossipingbroadcast.HistoryResponse@239a307bfrom:193.0.0.7:12345<7>to:193.0.0.8:12345<8>) 
+
+
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:14,443] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:14,443] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:14,443] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(fe4f9db7-cff4-4cd8-6927-3be996cf1cc4):se.kth.gossipingbroadcast.GBEB@4d1bf319 while handling event se.kth.gossipingbroadcast.HistoryResponse@6f204a1afrom:193.0.0.7:12345<7>to:193.0.0.9:12345<9>) 
+
+
+[00:00:15,538] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:80)
+	at se.kth.gossipingbroadcast.GBEB$4.handle(GBEB.java:75)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:412)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:353)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.simulator.scheduler.BasicSimulationScheduler.proceed(BasicSimulationScheduler.java:55)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:229)
+	at se.sics.kompics.Kompics.createAndStart(Kompics.java:156)
+	at se.sics.kompics.simulator.run.LauncherComp.main(LauncherComp.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at javassist.Loader.run(Loader.java:288)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:359)
+	at se.sics.kompics.simulator.SimulationScenario.simulate(SimulationScenario.java:333)
+	at se.kth.app.sim.SimLauncher.main(SimLauncher.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+[00:00:15,538] ERROR {SimulatorMngrComp} fault:java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap
+[00:00:15,538] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.ClassCastException: com.google.common.collect.Maps$MapDifferenceImpl cannot be cast to java.util.HashMap thrown in Component(e0d20846-0296-2b40-0d91-3b0f4b623ea0):se.kth.gossipingbroadcast.GBEB@eadd4fb while handling event se.kth.gossipingbroadcast.HistoryResponse@5f8e8a9dfrom:193.0.0.7:12345<7>to:193.0.0.10:12345<10>) 
+
+
+[10:54:15,757] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>initiating...
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>starting...
+[00:00:02,000] INFO  {AppComp} <nid:1>initiating...
+[00:00:02,000] INFO  {AppComp} <nid:1>starting...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>initiating...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>starting...
+[00:00:03,065] INFO  {AppComp} <nid:2>initiating...
+[00:00:03,065] INFO  {AppComp} <nid:2>starting...
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>initiating...
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>starting...
+[00:00:04,160] INFO  {AppComp} <nid:3>initiating...
+[00:00:04,160] INFO  {AppComp} <nid:3>starting...
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>initiating...
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>starting...
+[00:00:05,246] INFO  {AppComp} <nid:4>initiating...
+[00:00:05,246] INFO  {AppComp} <nid:4>starting...
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>initiating...
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>starting...
+[00:00:06,292] INFO  {AppComp} <nid:5>initiating...
+[00:00:06,292] INFO  {AppComp} <nid:5>starting...
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>initiating...
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>starting...
+[00:00:07,326] INFO  {AppComp} <nid:6>initiating...
+[00:00:07,326] INFO  {AppComp} <nid:6>starting...
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>initiating...
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>starting...
+[00:00:08,346] INFO  {AppComp} <nid:7>initiating...
+[00:00:08,346] INFO  {AppComp} <nid:7>starting...
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>initiating...
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>starting...
+[00:00:09,381] INFO  {AppComp} <nid:8>initiating...
+[00:00:09,381] INFO  {AppComp} <nid:8>starting...
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>initiating...
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>starting...
+[00:00:10,443] INFO  {AppComp} <nid:9>initiating...
+[00:00:10,443] INFO  {AppComp} <nid:9>starting...
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>initiating...
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>starting...
+[00:00:11,538] INFO  {AppComp} <nid:10>initiating...
+[00:00:11,538] INFO  {AppComp} <nid:10>starting...
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[10:59:17,685] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>initiating...
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>starting...
+[00:00:02,000] INFO  {AppComp} <nid:1>initiating...
+[00:00:02,000] INFO  {AppComp} <nid:1>starting...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>initiating...
+[00:00:03,065] INFO  {HostMngrComp} <nid:2>starting...
+[00:00:03,065] INFO  {AppComp} <nid:2>initiating...
+[00:00:03,065] INFO  {AppComp} <nid:2>starting...
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>initiating...
+[00:00:04,160] INFO  {HostMngrComp} <nid:3>starting...
+[00:00:04,160] INFO  {AppComp} <nid:3>initiating...
+[00:00:04,160] INFO  {AppComp} <nid:3>starting...
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>initiating...
+[00:00:05,246] INFO  {HostMngrComp} <nid:4>starting...
+[00:00:05,246] INFO  {AppComp} <nid:4>initiating...
+[00:00:05,246] INFO  {AppComp} <nid:4>starting...
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>initiating...
+[00:00:06,292] INFO  {HostMngrComp} <nid:5>starting...
+[00:00:06,292] INFO  {AppComp} <nid:5>initiating...
+[00:00:06,292] INFO  {AppComp} <nid:5>starting...
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>initiating...
+[00:00:07,326] INFO  {HostMngrComp} <nid:6>starting...
+[00:00:07,326] INFO  {AppComp} <nid:6>initiating...
+[00:00:07,326] INFO  {AppComp} <nid:6>starting...
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>initiating...
+[00:00:08,346] INFO  {HostMngrComp} <nid:7>starting...
+[00:00:08,346] INFO  {AppComp} <nid:7>initiating...
+[00:00:08,346] INFO  {AppComp} <nid:7>starting...
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>initiating...
+[00:00:09,381] INFO  {HostMngrComp} <nid:8>starting...
+[00:00:09,381] INFO  {AppComp} <nid:8>initiating...
+[00:00:09,381] INFO  {AppComp} <nid:8>starting...
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>initiating...
+[00:00:10,443] INFO  {HostMngrComp} <nid:9>starting...
+[00:00:10,443] INFO  {AppComp} <nid:9>initiating...
+[00:00:10,443] INFO  {AppComp} <nid:9>starting...
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>initiating...
+[00:00:11,538] INFO  {HostMngrComp} <nid:10>starting...
+[00:00:11,538] INFO  {AppComp} <nid:10>initiating...
+[00:00:11,538] INFO  {AppComp} <nid:10>starting...
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours

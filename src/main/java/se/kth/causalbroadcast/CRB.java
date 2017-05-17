@@ -46,7 +46,7 @@ public class CRB extends ComponentDefinition {
         @Override
         public void handle(RDeliver rDeliver) {
             Object msg = rDeliver.getPayload();
-            System.out.println("Sending back to appcomp :)");
+            //System.out.println("Sending back to appcomp :)");
             if(!delivered.contains(msg)) {
                 for(Map.Entry<KAddress, Object> entry : rDeliver.getPast().entrySet()) {
                     if(!delivered.contains(entry.getValue())) {

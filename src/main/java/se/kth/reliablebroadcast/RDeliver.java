@@ -14,10 +14,10 @@ public class RDeliver implements KompicsEvent {
     private Object payload;
     private HashMap<KAddress, Object> past = new HashMap<>();
 
-    public RDeliver(KAddress source, Object payload) {
+    public RDeliver(KAddress source, Object payload, HashMap<KAddress, Object> past) {
         this.source = source;
         this.payload = payload;
-        this.past.put(source, payload);
+        this.past = past;
     }
 
     public KAddress getSource() {
