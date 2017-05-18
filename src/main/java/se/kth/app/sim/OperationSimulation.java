@@ -298,7 +298,7 @@ public class OperationSimulation {
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
                 /** Start special node which triggers one normal node to broadcast a message */
                 startSpecial.startAfterTerminationOf(1000, startPeers);
-                startSpecial2.startAfterTerminationOf(1000, startSpecial);
+                startSpecial2.startAfterTerminationOf(100000, startSpecial);
                 //startSpecial3.startAfterTerminationOf(100000, startSpecial2);
                 terminateAfterTerminationOf(1000*1000, startSpecial2);
             }

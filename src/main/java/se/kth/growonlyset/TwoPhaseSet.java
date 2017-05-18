@@ -9,18 +9,24 @@ public class TwoPhaseSet {
     private GSet set = new GSet();
     private GSet tombstone = new GSet();
 
-    public void add(Object element) {
+    public boolean add(Object element) {
+        // don't need to check tombstone since it only adds to it if it's present in set
         if(!set.contains(element)) {
             set.add(element);
-        } /*else {
+            return true;
+        } else {
             System.out.println("Not allowed to add '" + element + "' again");
-        }*/
+            return false;
+        }
     }
 
-    public void remove(Object element) {
+    public boolean remove(Object element) {
         if(set.contains(element) && !tombstone.contains(element)) {
             tombstone.add(element);
+            return true;
         }
+        System.out.println("Element " + element + " not in set, cant remove");
+        return false;
     }
 
     public boolean contains(Object element) {

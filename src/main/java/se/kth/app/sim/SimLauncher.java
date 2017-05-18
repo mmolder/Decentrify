@@ -38,7 +38,7 @@ public class SimLauncher {
         /** Operation simulation */
         SimulationScenario operationTest1 = OperationSimulation.operationTest1();
         SimulationScenario operationTest2 = OperationSimulation.operationTest2();
-        operationTest1.simulate(LauncherComp.class);
-        //operationTest2.simulate(LauncherComp.class);
+        //operationTest1.simulate(LauncherComp.class);
+        operationTest2.simulate(LauncherComp.class);
     }
 }
