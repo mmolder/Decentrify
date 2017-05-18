@@ -285,6 +285,12 @@ public class OperationSimulation {
                         raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 1));
                     }
                 };
+                StochasticProcess startSpecial3 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
+                    }
+                };
 
                 systemSetup.start();
                 /** Start 10 normal nodes */
@@ -293,6 +299,7 @@ public class OperationSimulation {
                 /** Start special node which triggers one normal node to broadcast a message */
                 startSpecial.startAfterTerminationOf(1000, startPeers);
                 startSpecial2.startAfterTerminationOf(1000, startSpecial);
+                //startSpecial3.startAfterTerminationOf(100000, startSpecial2);
                 terminateAfterTerminationOf(1000*1000, startSpecial2);
             }
         };

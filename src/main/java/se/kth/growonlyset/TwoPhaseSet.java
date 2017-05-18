@@ -12,7 +12,9 @@ public class TwoPhaseSet {
     public void add(Object element) {
         if(!set.contains(element)) {
             set.add(element);
-        }
+        } /*else {
+            System.out.println("Not allowed to add '" + element + "' again");
+        }*/
     }
 
     public void remove(Object element) {

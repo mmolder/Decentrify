@@ -104,9 +104,10 @@ public class AppComp extends ComponentDefinition {
             if(crbDeliver.payload instanceof Add) {
                 Add addOp = (Add)crbDeliver.payload;
                 System.out.println(selfAdr + " received ADD, adding " + addOp.element);
-                //mySet.add(addOp.element);
-                twoPhaseSet.add(addOp.element);
-                System.out.println(selfAdr + " my set now contains: " + twoPhaseSet.print());
+                mySet.add(addOp.element);
+                //twoPhaseSet.add(addOp.element);
+                System.out.println(selfAdr + " my set now contains: " + mySet.print());
+                //System.out.println(selfAdr + " my set now contains: " + twoPhaseSet.print());
             }
             else if(crbDeliver.payload instanceof Remove) {
                 Remove removeOp = (Remove)crbDeliver.payload;

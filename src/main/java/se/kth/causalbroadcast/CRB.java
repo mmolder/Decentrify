@@ -63,6 +63,7 @@ public class CRB extends ComponentDefinition {
                             }
                         }
                     }
+                    return;
                 }
                 trigger(new CRBDeliver(rDeliver.source, msg.payload), crb);        // in AppComp
                 delivered.add(msg);     // has been delivered
