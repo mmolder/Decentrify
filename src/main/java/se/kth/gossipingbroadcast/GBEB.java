@@ -22,7 +22,7 @@ import java.util.Map;
 public class GBEB extends ComponentDefinition {
 
     private KAddress self;
-    private HashMap<KAddress, Object> past;
+    private HashMap<Object, KAddress> past;
 
     private Positive<Network> net =  requires(Network.class);
     private Positive<CroupierPort> bs = requires(CroupierPort.class);   //bs = croupierPort
@@ -43,7 +43,7 @@ public class GBEB extends ComponentDefinition {
     private Handler<GBEBroadcast> broadcastHandler = new Handler<GBEBroadcast>() {
         @Override
         public void handle(GBEBroadcast gbeBroadcast) {
-            past.put(self, gbeBroadcast.payload);  //will be a RBroadcast event containing msg and past from CRB
+            past.put(gbeBroadcast.payload, self);  //will be a RBroadcast event containing msg and past from CRB
             //past.put(self, gbeBroadcast);
         }
     };
@@ -72,17 +72,17 @@ public class GBEB extends ComponentDefinition {
     private ClassMatchedHandler<HistoryResponse, KContentMsg<?, ?, HistoryResponse>> historyResponseHandler = new ClassMatchedHandler<HistoryResponse, KContentMsg<?, ?, HistoryResponse>>() {
         @Override
         public void handle(HistoryResponse historyResponse, KContentMsg<?, ?, HistoryResponse> historyResponseKContentMsg) {
-            HashMap<KAddress, Object> history = new HashMap<>(historyResponse.past);
-            HashMap<KAddress, Object> unseen = new HashMap<>();
+            HashMap<Object, KAddress> history = new HashMap<>(historyResponse.past);
+            HashMap<Object, KAddress> unseen = new HashMap<>();
 
-            for(Map.Entry<KAddress, Object> entry : history.entrySet()) {
+            for(Map.Entry<Object, KAddress> entry : history.entrySet()) {
                 if(!past.containsValue(entry.getValue())) {
                     unseen.put(entry.getKey(), entry.getValue());
                 }
             }
 
-            for(Map.Entry<KAddress, Object> peer : unseen.entrySet()) {
-                trigger(new GBEBDeliver(peer.getKey(), peer.getValue()), gbeb);     // in RB
+            for(Map.Entry<Object, KAddress> peer : unseen.entrySet()) {
+                trigger(new GBEBDeliver(peer.getValue(), peer.getKey()), gbeb);     // in RB
             }
 
             past.putAll(unseen);

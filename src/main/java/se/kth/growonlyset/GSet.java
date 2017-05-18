@@ -26,4 +26,12 @@ public class GSet {
     public boolean contains(Object element) {
         return set.contains(element);
     }
+
+    public int size() {
+        return set.size();
+    }
+
+    public Object elementAt(int n) {
+        return set.get(n);
+    }
 }

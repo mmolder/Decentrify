@@ -10,9 +10,9 @@ import java.util.HashMap;
  */
 public class HistoryResponse implements KompicsEvent {
 
-    public HashMap<KAddress, Object> past;
+    public HashMap<Object, KAddress> past;
 
-    public HistoryResponse(HashMap<KAddress, Object> past) {
+    public HistoryResponse(HashMap<Object, KAddress> past) {
         this.past = new HashMap<>(past);
     }
 }

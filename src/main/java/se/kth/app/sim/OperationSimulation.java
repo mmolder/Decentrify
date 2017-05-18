@@ -7,6 +7,7 @@ import se.sics.kompics.simulator.SimulationScenario;
 import se.sics.kompics.simulator.adaptor.Operation;
 import se.sics.kompics.simulator.adaptor.Operation1;
 import se.sics.kompics.simulator.adaptor.Operation2;
+import se.sics.kompics.simulator.adaptor.Operation3;
 import se.sics.kompics.simulator.adaptor.distributions.ConstantDistribution;
 import se.sics.kompics.simulator.adaptor.distributions.extra.BasicIntSequentialDistribution;
 import se.sics.kompics.simulator.events.system.KillNodeEvent;
@@ -123,10 +124,10 @@ public class OperationSimulation {
      * to broadcast a message
      *
      **/
-    static Operation2 startSpecialNode = new Operation2<StartNodeEvent, Integer, Integer>() {
+    static Operation3 startSpecialNode = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
 
         @Override
-        public StartNodeEvent generate(final Integer self, final Integer target) {
+        public StartNodeEvent generate(final Integer self, final Integer target, final Integer settype) {
             return new StartNodeEvent() {
                 final KAddress selfAdr;
                 {
@@ -151,7 +152,7 @@ public class OperationSimulation {
 
                 @Override
                 public OperationClient.Init getComponentInit() {
-                    return new OperationClient.Init(selfAdr, "193.0.0." + target, target);
+                    return new OperationClient.Init(selfAdr, "193.0.0." + target, target, settype, "element" + target);
                 }
             };
         }
@@ -217,7 +218,13 @@ public class OperationSimulation {
                 StochasticProcess startSpecial = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 4));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
+                    }
+                };
+                StochasticProcess startSpecial2 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 5), new ConstantDistribution<>(Integer.class, 0));
                     }
                 };
 
@@ -227,7 +234,66 @@ public class OperationSimulation {
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
                 /** Start special node which triggers one normal node to broadcast a message */
                 startSpecial.startAfterTerminationOf(1000, startPeers);
-                terminateAfterTerminationOf(1000*1000, startPeers);
+                startSpecial2.startAfterTerminationOf(1000, startSpecial);
+                terminateAfterTerminationOf(1000*1000, startSpecial2);
+            }
+        };
+
+        return scen;
+    }
+
+    /**
+     *
+     * operationTest2
+     *
+     * SimulationScenario which will start 10 normal nodes and start one special node that triggers an alive node to
+     * broadcast an add operation. Thereafter a remove operation ios triggered which will remove the object again.
+     * The operations should eventually be received by all alive nodes on order to validate the properties
+     * of the algorithms.
+     *
+     **/
+    public static SimulationScenario operationTest2() {
+        SimulationScenario scen = new SimulationScenario() {
+            {
+                StochasticProcess systemSetup = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(constant(1000));
+                        raise(1, systemSetupOp);
+                    }
+                };
+                StochasticProcess startBootstrapServer = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(constant(1000));
+                        raise(1, startBootstrapServerOp);
+                    }
+                };
+                StochasticProcess startPeers = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1100));
+                        raise(10, startNodeOp, new BasicIntSequentialDistribution(1));
+                    }
+                };
+                StochasticProcess startSpecial = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
+                    }
+                };
+                StochasticProcess startSpecial2 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 1));
+                    }
+                };
+
+                systemSetup.start();
+                /** Start 10 normal nodes */
+                startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
+                startPeers.startAfterTerminationOf(1000, startBootstrapServer);
+                /** Start special node which triggers one normal node to broadcast a message */
+                startSpecial.startAfterTerminationOf(1000, startPeers);
+                startSpecial2.startAfterTerminationOf(1000, startSpecial);
+                terminateAfterTerminationOf(1000*1000, startSpecial2);
             }
         };
 

@@ -19,7 +19,7 @@ public class CRB extends ComponentDefinition {
     private Negative<CRBPort> crb = provides(CRBPort.class);
 
     private KAddress self;
-    private HashMap<KAddress, Object> past;
+    private HashMap<Object, KAddress> past;
     private ArrayList<Object> delivered;
 
     public CRB(Init init) {
@@ -38,7 +38,7 @@ public class CRB extends ComponentDefinition {
         public void handle(CRBroadcast crBroadcast) {
             Object msg = crBroadcast.payload;           // extract payload, don't want to send cBroadcast event
             trigger(new RBroadcast(msg, past), rb);     // in RB
-            past.put(self, msg);                        // add to own past
+            past.put(msg, self);                        // add to own past
         }
     };
 
@@ -51,10 +51,10 @@ public class CRB extends ComponentDefinition {
             // check if not delivered before
             if(!delivered.contains(msg)) {
                 // go through list of past received by event handler
-                for(Map.Entry<KAddress, Object> entry : msg.past.entrySet()) {
+                for(Map.Entry<Object, KAddress> entry : msg.past.entrySet()) {
                     // check if not delivered before
                     if(!delivered.contains(entry.getValue())) {
-                        trigger(new CRBDeliver(entry.getKey(), entry.getValue()), crb);         // in AppComp
+                        trigger(new CRBDeliver(entry.getValue(), entry.getKey()), crb);         // in AppComp
                         delivered.add(entry.getValue());    // has now been delivered
                         // check if past does not contain the current key-value pair
                         if(past.containsKey(entry.getKey())) {
@@ -64,12 +64,12 @@ public class CRB extends ComponentDefinition {
                         }
                     }
                 }
-                trigger(new CRBDeliver(rDeliver.source, msg), crb);        // in AppComp
+                trigger(new CRBDeliver(rDeliver.source, msg.payload), crb);        // in AppComp
                 delivered.add(msg);     // has been delivered
                 // check if past does not contain the event key-value pair
-                if(past.containsKey(rDeliver.source)) {
-                    if(!past.get(rDeliver.source).equals(msg)) {
-                        past.put(rDeliver.source, msg);
+                if(past.containsKey(rDeliver.payload)) {
+                    if(!past.get(rDeliver.payload).equals(msg)) {
+                        past.put(msg, rDeliver.source);
                     }
                 }
             }
