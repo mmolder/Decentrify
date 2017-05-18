@@ -9,10 +9,12 @@ public class GSet {
 
     private ArrayList<Object> set = new ArrayList<>();
 
-    public void add(Object element) {
+    public boolean add(Object element) {
         if(!set.contains(element)) {
             set.add(element);
+            return true;
         }
+        return false;
     }
 
     public String print() {

@@ -62,7 +62,7 @@ public class CRB extends ComponentDefinition {
                                 past.put(entry.getKey(), entry.getValue());     // add to past
                             }
                         }
-                        return;
+                        return;     // return here to avoid duplicate deliver events
                     }
                 }
                 trigger(new CRBDeliver(rDeliver.source, msg.payload), crb);        // in AppComp

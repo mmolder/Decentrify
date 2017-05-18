@@ -59,13 +59,11 @@ public class OperationClient extends ComponentDefinition {
     };
 
     public void addOp() {
-        System.out.println("PREPARING ADD OPERATION");
         KContentMsg msg = createMsg(ip, id, 0, content);
         trigger(msg, networkPort);
     }
 
     public void removeOp() {
-        System.out.println("PREPARING REMOVE OPERATION");
         KContentMsg msg = createMsg(ip, id, 1, content);
         trigger(msg, networkPort);
     }
@@ -74,10 +72,8 @@ public class OperationClient extends ComponentDefinition {
         KAddress peer = ScenarioSetup.getNodeAdr(ipaddr, ide);
         KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
         if(type == 0) {
-            System.out.println("Sending Add operation");
             return new BasicContentMsg(header, new Add(content));
         } else {
-            System.out.println("Sending Remove operation");
             return new BasicContentMsg(header, new Remove(content));
         }
     }

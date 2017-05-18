@@ -56,7 +56,7 @@ public class AppComp extends ComponentDefinition {
     public AppComp(Init init) {
         selfAdr = init.selfAdr;
         logPrefix = "<nid:" + selfAdr.getId() + ">";
-        LOG.info("{}initiating...", logPrefix);
+        //LOG.info("{}initiating...", logPrefix);
 
         mySet = new GSet();
         twoPhaseSet = new TwoPhaseSet();
@@ -71,7 +71,7 @@ public class AppComp extends ComponentDefinition {
     Handler handleStart = new Handler<Start>() {
         @Override
         public void handle(Start event) {
-            LOG.info("{}starting...", logPrefix);
+            //LOG.info("{}starting...", logPrefix);
         }
     };
 
@@ -85,7 +85,13 @@ public class AppComp extends ComponentDefinition {
     ClassMatchedHandler addOperationHandler = new ClassMatchedHandler<Add, KContentMsg<?, KHeader<?>, Add>>() {
         @Override
         public void handle(Add msg, KContentMsg<?, KHeader<?>, Add> cont) {
-            //System.out.println("Add, Msg: " + msg + " other: " + cont.getContent());
+            Object element = cont.getContent().element;
+            /*if(mySet.add(element)) {
+                System.out.println("Added " + element + " to source set");
+            }*/
+            if(twoPhaseSet.add(element)) {
+                System.out.println("Added " + element + " to source set, now contains: " + twoPhaseSet.print());
+            }
             trigger(new CRBroadcast(cont.getContent()), crb);
         }
     };
@@ -93,7 +99,9 @@ public class AppComp extends ComponentDefinition {
     ClassMatchedHandler removeOperationHandler = new ClassMatchedHandler<Remove, KContentMsg<?, KHeader<?>, Remove>>() {
         @Override
         public void handle(Remove msg, KContentMsg<?, KHeader<?>, Remove> cont) {
-            //System.out.println("Remove, Msg: " + msg + " other: " + cont.getContent());
+            if(twoPhaseSet.remove(cont.getContent().element)) {
+                System.out.println("Removed " + cont.getContent().element + " from source set, now contains: " + twoPhaseSet.print());
+            }
             trigger(new CRBroadcast(cont.getContent()), crb);
         }
     };
@@ -118,9 +126,10 @@ public class AppComp extends ComponentDefinition {
                 }
             }
             else {
-                System.out.println("Operation not recognized: " + crbDeliver.payload);
+                //System.out.println("Operation not recognized: " + crbDeliver.payload);
+                System.out.println("BROADCAST RECEIVED: " + crbDeliver.payload + ", SOURCE: " +  crbDeliver.source + ", SELF: " + selfAdr);
             }
-            //System.out.println("BROADCAST RECEIVED: " + crbDeliver.getMessage() + ", SOURCE: " +  crbDeliver.getSource() + ", SELF: " + selfAdr);
+
         }
     };
 
