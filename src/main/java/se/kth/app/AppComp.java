@@ -27,6 +27,8 @@ import se.kth.growonlyset.Add;
 import se.kth.growonlyset.GSet;
 import se.kth.growonlyset.Remove;
 import se.kth.growonlyset.TwoPhaseSet;
+import se.kth.observedremovedset.OR_Add;
+import se.kth.observedremovedset.OR_Remove;
 import se.sics.kompics.*;
 import se.sics.kompics.network.Network;
 import se.sics.kompics.timer.Timer;
@@ -66,6 +68,8 @@ public class AppComp extends ComponentDefinition {
         subscribe(simulationMsgHandler, networkPort);
         subscribe(addOperationHandler, networkPort);
         subscribe(removeOperationHandler, networkPort);
+        subscribe(oraddhandler, networkPort);
+        subscribe(orremovehandler, networkPort);
     }
 
     Handler handleStart = new Handler<Start>() {
@@ -102,6 +106,20 @@ public class AppComp extends ComponentDefinition {
             if(twoPhaseSet.remove(cont.getContent().element)) {
                 System.out.println("Removed " + cont.getContent().element + " from source set, now contains: " + twoPhaseSet.print());
             }
+            trigger(new CRBroadcast(cont.getContent()), crb);
+        }
+    };
+
+    ClassMatchedHandler oraddhandler = new ClassMatchedHandler<OR_Add, KContentMsg<?, KHeader<?>, OR_Add>>() {
+        @Override
+        public void handle(OR_Add msg, KContentMsg<?, KHeader<?>, OR_Add> cont) {
+            trigger(new CRBroadcast(cont.getContent()), crb);
+        }
+    };
+
+    ClassMatchedHandler orremovehandler = new ClassMatchedHandler<OR_Remove, KContentMsg<?, KHeader<?>, OR_Remove>>() {
+        @Override
+        public void handle(OR_Remove msg, KContentMsg<?, KHeader<?>, OR_Remove> cont) {
             trigger(new CRBroadcast(cont.getContent()), crb);
         }
     };
