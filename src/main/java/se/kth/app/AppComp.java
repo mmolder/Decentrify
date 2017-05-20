@@ -27,6 +27,7 @@ import se.kth.growonlyset.Add;
 import se.kth.growonlyset.GSet;
 import se.kth.growonlyset.Remove;
 import se.kth.growonlyset.TwoPhaseSet;
+import se.kth.observedremovedset.ORSet;
 import se.kth.observedremovedset.OR_Add;
 import se.kth.observedremovedset.OR_Remove;
 import se.sics.kompics.*;
@@ -36,6 +37,8 @@ import se.sics.ktoolbox.util.identifiable.Identifier;
 import se.sics.ktoolbox.util.network.KAddress;
 import se.sics.ktoolbox.util.network.KContentMsg;
 import se.sics.ktoolbox.util.network.KHeader;
+
+import java.util.ArrayList;
 
 /**
  * @author Alex Ormenisan <aaor@kth.se>
@@ -54,6 +57,7 @@ public class AppComp extends ComponentDefinition {
     private KAddress selfAdr;
     private GSet mySet;
     private TwoPhaseSet twoPhaseSet;
+    private ORSet orSet;
 
     public AppComp(Init init) {
         selfAdr = init.selfAdr;
@@ -62,6 +66,7 @@ public class AppComp extends ComponentDefinition {
 
         mySet = new GSet();
         twoPhaseSet = new TwoPhaseSet();
+        orSet = new ORSet();
 
         subscribe(handleStart, control);
         subscribe(crbDeliverHandler, crb);
@@ -82,45 +87,51 @@ public class AppComp extends ComponentDefinition {
     ClassMatchedHandler simulationMsgHandler = new ClassMatchedHandler<TriggerMsg, KContentMsg<?, KHeader<?>, TriggerMsg>>() {
         @Override
         public void handle(TriggerMsg msg, KContentMsg<?, KHeader<?>, TriggerMsg> cont) {
-            trigger(new CRBroadcast(cont.getContent().getMsg()), crb);
+            trigger(new CRBroadcast(cont.getContent().payload), crb);
         }
     };
 
     ClassMatchedHandler addOperationHandler = new ClassMatchedHandler<Add, KContentMsg<?, KHeader<?>, Add>>() {
         @Override
-        public void handle(Add msg, KContentMsg<?, KHeader<?>, Add> cont) {
-            Object element = cont.getContent().element;
+        public void handle(Add op, KContentMsg<?, KHeader<?>, Add> msg) {
+            Object element = op.element;
             /*if(mySet.add(element)) {
                 System.out.println("Added " + element + " to source set");
             }*/
             if(twoPhaseSet.add(element)) {
                 System.out.println("Added " + element + " to source set, now contains: " + twoPhaseSet.print());
             }
-            trigger(new CRBroadcast(cont.getContent()), crb);
+            trigger(new CRBroadcast(op), crb);
         }
     };
 
     ClassMatchedHandler removeOperationHandler = new ClassMatchedHandler<Remove, KContentMsg<?, KHeader<?>, Remove>>() {
         @Override
-        public void handle(Remove msg, KContentMsg<?, KHeader<?>, Remove> cont) {
-            if(twoPhaseSet.remove(cont.getContent().element)) {
-                System.out.println("Removed " + cont.getContent().element + " from source set, now contains: " + twoPhaseSet.print());
+        public void handle(Remove op, KContentMsg<?, KHeader<?>, Remove> msg) {
+            if(twoPhaseSet.remove(op.element)) {
+                System.out.println("Removed " + op.element + " from source set, now contains: " + twoPhaseSet.print());
             }
-            trigger(new CRBroadcast(cont.getContent()), crb);
+            trigger(new CRBroadcast(op), crb);
         }
     };
 
     ClassMatchedHandler oraddhandler = new ClassMatchedHandler<OR_Add, KContentMsg<?, KHeader<?>, OR_Add>>() {
         @Override
-        public void handle(OR_Add msg, KContentMsg<?, KHeader<?>, OR_Add> cont) {
-            trigger(new CRBroadcast(cont.getContent()), crb);
+        public void handle(OR_Add op, KContentMsg<?, KHeader<?>, OR_Add> msg) {
+            // add to source set
+            String tag = orSet.add(op.element, "");                     // get unique tag (will add it to source as well not empty string)
+            System.out.println("Adding " + op.element + " to source set with tag " + tag + ", now contains: " + orSet.print());
+            trigger(new CRBroadcast(new OR_Add(op.element, tag)), crb);    // broadcast to all nodes
         }
     };
 
     ClassMatchedHandler orremovehandler = new ClassMatchedHandler<OR_Remove, KContentMsg<?, KHeader<?>, OR_Remove>>() {
         @Override
-        public void handle(OR_Remove msg, KContentMsg<?, KHeader<?>, OR_Remove> cont) {
-            trigger(new CRBroadcast(cont.getContent()), crb);
+        public void handle(OR_Remove op, KContentMsg<?, KHeader<?>, OR_Remove> msg) {
+            // remove from source set
+            ArrayList<String> tags = orSet.remove(op.element, new ArrayList<String>());     // get list of tags associated with element
+            System.out.println("Removed " + op.element + " from source set with tags: " + tags + ", now contains: " + orSet.print());
+            trigger(new CRBroadcast(new OR_Remove(op.element, tags)), crb);                 // broadcast to all nodes
         }
     };
 
@@ -142,6 +153,18 @@ public class AppComp extends ComponentDefinition {
                 if(twoPhaseSet.remove(removeOp.element)) {
                     System.out.println(selfAdr + " my set now contains: " + twoPhaseSet.print());
                 }
+            }
+            else if(crbDeliver.payload instanceof OR_Add) {
+                OR_Add orAddOp = (OR_Add)crbDeliver.payload;
+                System.out.println(selfAdr + " received OR_ADD, adding " + orAddOp.element);
+                orSet.add(orAddOp.element, orAddOp.tag);
+                System.out.println(selfAdr + " my set now contains: " + orSet.print());
+            }
+            else if(crbDeliver.payload instanceof  OR_Remove) {
+                OR_Remove orRemoveOp = (OR_Remove)crbDeliver.payload;
+                System.out.println(selfAdr + " received OR_REMOVE, removing " + orRemoveOp.element);
+                orSet.remove(orRemoveOp.element, orRemoveOp.tags);
+                System.out.println(selfAdr + " my set now contains: " + orSet.print());
             }
             else {
                 //System.out.println("Operation not recognized: " + crbDeliver.payload);

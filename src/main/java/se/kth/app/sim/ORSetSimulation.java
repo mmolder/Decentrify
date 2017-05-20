@@ -152,7 +152,7 @@ public class ORSetSimulation {
 
                 @Override
                 public ORSetClient.Init getComponentInit() {
-                    return new ORSetClient.Init(selfAdr, "193.0.0." + target, target, settype);
+                    return new ORSetClient.Init(selfAdr, "193.0.0." + target, target, settype, "test" + target);
                 }
             };
         }
@@ -234,8 +234,8 @@ public class ORSetSimulation {
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
                 /** Start special node which triggers one normal node to broadcast a message */
                 startSpecial.startAfterTerminationOf(1000, startPeers);
-                //startSpecial2.startAfterTerminationOf(1000, startSpecial);
-                terminateAfterTerminationOf(1000*1000, startSpecial);
+                startSpecial2.startAfterTerminationOf(1000, startSpecial);
+                terminateAfterTerminationOf(1000*1000, startSpecial2);
             }
         };
 
@@ -282,13 +282,19 @@ public class ORSetSimulation {
                 StochasticProcess startSpecial2 = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 1));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
                     }
                 };
                 StochasticProcess startSpecial3 = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 6), new ConstantDistribution<>(Integer.class, 0));
+                    }
+                };
+                StochasticProcess startSpecial4 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 14), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 1));
                     }
                 };
 
@@ -299,8 +305,9 @@ public class ORSetSimulation {
                 /** Start special node which triggers one normal node to broadcast a message */
                 startSpecial.startAfterTerminationOf(1000, startPeers);
                 startSpecial2.startAfterTerminationOf(10000, startSpecial);
-                startSpecial3.startAfterTerminationOf(10000, startSpecial2);
-                terminateAfterTerminationOf(1000*1000, startSpecial3);
+                //startSpecial3.startAfterTerminationOf(10000, startSpecial2);
+                startSpecial4.startAfterTerminationOf(1000000, startSpecial2);
+                terminateAfterTerminationOf(1000*1000, startSpecial4);
             }
         };
 

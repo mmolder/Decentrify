@@ -1,7 +1,5 @@
 package se.kth.app.sim;
 
-import se.kth.growonlyset.Add;
-import se.kth.growonlyset.Remove;
 import se.kth.observedremovedset.OR_Add;
 import se.kth.observedremovedset.OR_Remove;
 import se.sics.kompics.*;
@@ -13,6 +11,8 @@ import se.sics.ktoolbox.util.network.KContentMsg;
 import se.sics.ktoolbox.util.network.KHeader;
 import se.sics.ktoolbox.util.network.basic.BasicContentMsg;
 import se.sics.ktoolbox.util.network.basic.BasicHeader;
+
+import java.util.ArrayList;
 
 /**
  * Created by Mikael on 2017-04-29.
@@ -27,12 +27,14 @@ public class ORSetClient extends ComponentDefinition {
     private String ip;
     private int id;
     private int type;
+    private String msg;
 
     public ORSetClient(ORSetClient.Init init) {
         selfAdr = init.selfAdr;
         ip = init.ip;
         id = init.id;
         type = init.type;
+        msg = init.msg;
 
         subscribe(handleStart, control);
     }
@@ -68,9 +70,9 @@ public class ORSetClient extends ComponentDefinition {
         KAddress peer = ScenarioSetup.getNodeAdr(ipaddr, ide);
         KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
         if(type == 0) {
-            return new BasicContentMsg(header, new OR_Add("dog"));
+            return new BasicContentMsg(header, new OR_Add(msg, ""));
         } else {
-            return new BasicContentMsg(header, new OR_Remove("dog"));
+            return new BasicContentMsg(header, new OR_Remove(msg, new ArrayList<String>()));
         }
     }
 
@@ -81,12 +83,14 @@ public class ORSetClient extends ComponentDefinition {
         public final String ip;
         public final int id;
         public final int type;
+        public final String msg;
 
-        public Init(KAddress selfAdr, String ip, int id, int type) {
+        public Init(KAddress selfAdr, String ip, int id, int type, String msg) {
             this.selfAdr = selfAdr;
             this.ip = ip;
             this.id = id;
             this.type = type;
+            this.msg = msg;
         }
     }
 }

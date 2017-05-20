@@ -1,9 +1,6 @@
 package se.kth.observedremovedset;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Created by mikael on 2017-05-18.
@@ -41,9 +38,9 @@ public class ORSet {
                 for(String key : set.keySet()) {
                     if(set.get(key).equals(element)) {
                         tags.add(key);
-                        set.remove(key);    // remove from source
                     }
                 }
+                set.keySet().removeAll(tags);   // remove from source
             }
             return tags;
         }
@@ -64,5 +61,13 @@ public class ORSet {
             }
             return tags;
         }
+    }
+
+    public String print() {
+        StringBuilder sb = new StringBuilder();
+        for(Map.Entry<String, Object> entry : set.entrySet()) {
+            sb.append(entry.getValue().toString());
+        }
+        return sb.toString();
     }
 }

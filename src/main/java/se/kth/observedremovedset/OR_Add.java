@@ -7,8 +7,10 @@ import se.sics.kompics.KompicsEvent;
  */
 public class OR_Add implements KompicsEvent {
     public Object element;
+    public String tag;
 
-    public OR_Add(Object element) {
+    public OR_Add(Object element, String tag) {
         this.element = element;
+        this.tag = tag;
     }
 }

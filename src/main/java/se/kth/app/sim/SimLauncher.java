@@ -40,5 +40,11 @@ public class SimLauncher {
         SimulationScenario operationTest2 = OperationSimulation.operationTest2();
         //operationTest1.simulate(LauncherComp.class);
         //operationTest2.simulate(LauncherComp.class);
+
+        /** OR Set simulation */
+        SimulationScenario orSetTest1 = ORSetSimulation.orsettest1();
+        SimulationScenario orSetTest2 = ORSetSimulation.orsettest2();
+        //orSetTest1.simulate(LauncherComp.class);
+        orSetTest2.simulate(LauncherComp.class);
     }
 }
