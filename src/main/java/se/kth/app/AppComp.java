@@ -156,13 +156,13 @@ public class AppComp extends ComponentDefinition {
             }
             else if(crbDeliver.payload instanceof OR_Add) {
                 OR_Add orAddOp = (OR_Add)crbDeliver.payload;
-                System.out.println(selfAdr + " received OR_ADD, adding " + orAddOp.element);
+                System.out.println(selfAdr + " received OR_ADD, adding " + orAddOp.element + ", before: " + orSet.print());
                 orSet.add(orAddOp.element, orAddOp.tag);
                 System.out.println(selfAdr + " my set now contains: " + orSet.print());
             }
             else if(crbDeliver.payload instanceof  OR_Remove) {
                 OR_Remove orRemoveOp = (OR_Remove)crbDeliver.payload;
-                System.out.println(selfAdr + " received OR_REMOVE, removing " + orRemoveOp.element);
+                System.out.println(selfAdr + " received OR_REMOVE, removing " + orRemoveOp.element + ", before: " + orSet.print());
                 orSet.remove(orRemoveOp.element, orRemoveOp.tags);
                 System.out.println(selfAdr + " my set now contains: " + orSet.print());
             }

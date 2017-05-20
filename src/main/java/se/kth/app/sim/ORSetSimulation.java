@@ -304,9 +304,9 @@ public class ORSetSimulation {
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
                 /** Start special node which triggers one normal node to broadcast a message */
                 startSpecial.startAfterTerminationOf(1000, startPeers);
-                startSpecial2.startAfterTerminationOf(10000, startSpecial);
-                //startSpecial3.startAfterTerminationOf(10000, startSpecial2);
-                startSpecial4.startAfterTerminationOf(1000000, startSpecial2);
+                startSpecial2.startAfterTerminationOf(1000, startSpecial);
+                startSpecial3.startAfterTerminationOf(1000, startSpecial2);
+                startSpecial4.startAfterTerminationOf(1000000, startSpecial3);
                 terminateAfterTerminationOf(1000*1000, startSpecial4);
             }
         };
