@@ -36,8 +36,8 @@ public class SimLauncher {
         //broadcastTest3.simulate(LauncherComp.class);
 
         /** Operation simulation */
-        SimulationScenario operationTest1 = OperationSimulation.operationTest1();
-        SimulationScenario operationTest2 = OperationSimulation.operationTest2();
+        SimulationScenario operationTest1 = TwoPSetSimulation.operationTest1();
+        SimulationScenario operationTest2 = TwoPSetSimulation.operationTest2();
         //operationTest1.simulate(LauncherComp.class);
         //operationTest2.simulate(LauncherComp.class);
 

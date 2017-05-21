@@ -2,9 +2,13 @@ package se.kth.app.sim;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import se.kth.growonlyset.GSet_Add;
 import se.kth.growonlyset.TwoP_Add;
 import se.kth.growonlyset.TwoP_Remove;
-import se.sics.kompics.*;
+import se.sics.kompics.ComponentDefinition;
+import se.sics.kompics.Handler;
+import se.sics.kompics.Positive;
+import se.sics.kompics.Start;
 import se.sics.kompics.network.Network;
 import se.sics.kompics.network.Transport;
 import se.sics.kompics.timer.Timer;
@@ -15,12 +19,9 @@ import se.sics.ktoolbox.util.network.basic.BasicContentMsg;
 import se.sics.ktoolbox.util.network.basic.BasicHeader;
 
 /**
- * Created by Mikael on 2017-04-29.
+ * Created by mikael on 2017-05-21.
  */
-public class OperationClient extends ComponentDefinition {
-
-    private static final Logger LOG = LoggerFactory.getLogger(se.kth.app.sim.OperationClient.class);
-    private String logPrefix = " ";
+public class GSetClient extends ComponentDefinition {
 
     //*******************************CONNECTIONS********************************
     Positive<Timer> timerPort = requires(Timer.class);
@@ -32,7 +33,7 @@ public class OperationClient extends ComponentDefinition {
     private int settype;
     private Object content;
 
-    public OperationClient(OperationClient.Init init) {
+    public GSetClient(GSetClient.Init init) {
         selfAdr = init.selfAdr;
         ip = init.ip;
         id = init.id;
@@ -44,17 +45,7 @@ public class OperationClient extends ComponentDefinition {
     Handler handleStart = new Handler<Start>() {
         @Override
         public void handle(Start event) {
-            switch (settype) {
-                case 0:
-                    addOp();
-                    break;
-                case 1:
-                    removeOp();
-                    break;
-                default:
-                    break;
-            }
-
+            addOp();
         }
     };
 
@@ -63,23 +54,14 @@ public class OperationClient extends ComponentDefinition {
         trigger(msg, networkPort);
     }
 
-    public void removeOp() {
-        KContentMsg msg = createMsg(ip, id, 1, content);
-        trigger(msg, networkPort);
-    }
-
     public KContentMsg createMsg(String ipaddr, int ide, int type, Object content) {
         KAddress peer = ScenarioSetup.getNodeAdr(ipaddr, ide);
         KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
-        if(type == 0) {
-            return new BasicContentMsg(header, new TwoP_Add(content));
-        } else {
-            return new BasicContentMsg(header, new TwoP_Remove(content));
-        }
+        return new BasicContentMsg(header, new GSet_Add(content));
     }
 
 
-    public static class Init extends se.sics.kompics.Init<se.kth.app.sim.OperationClient> {
+    public static class Init extends se.sics.kompics.Init<se.kth.app.sim.GSetClient> {
 
         public final KAddress selfAdr;
         public final String ip;

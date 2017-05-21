@@ -6,7 +6,6 @@ import se.sics.kompics.network.Address;
 import se.sics.kompics.simulator.SimulationScenario;
 import se.sics.kompics.simulator.adaptor.Operation;
 import se.sics.kompics.simulator.adaptor.Operation1;
-import se.sics.kompics.simulator.adaptor.Operation2;
 import se.sics.kompics.simulator.adaptor.Operation3;
 import se.sics.kompics.simulator.adaptor.distributions.ConstantDistribution;
 import se.sics.kompics.simulator.adaptor.distributions.extra.BasicIntSequentialDistribution;
@@ -23,7 +22,7 @@ import java.util.Map;
 /**
  * Created by mikael on 2017-05-17.
  */
-public class OperationSimulation {
+public class GSetSimulation {
 
     static Operation<SetupEvent> systemSetupOp = new Operation<SetupEvent>() {
         @Override
@@ -142,7 +141,7 @@ public class OperationSimulation {
 
                 @Override
                 public Class getComponentDefinition() {
-                    return OperationClient.class;
+                    return GSetClient.class;
                 }
 
                 @Override
@@ -151,8 +150,8 @@ public class OperationSimulation {
                 }
 
                 @Override
-                public OperationClient.Init getComponentInit() {
-                    return new OperationClient.Init(selfAdr, "193.0.0." + target, target, settype, "element" + target);
+                public GSetClient.Init getComponentInit() {
+                    return new GSetClient.Init(selfAdr, "193.0.0." + target, target, settype, "element" + target);
                 }
             };
         }

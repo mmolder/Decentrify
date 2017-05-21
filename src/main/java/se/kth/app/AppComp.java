@@ -70,7 +70,6 @@ public class AppComp extends ComponentDefinition {
         subscribe(simulationMsgHandler, networkPort);
         subscribe(gSetAddHandler, networkPort);
         subscribe(twpPAddHandler, networkPort);
-        subscribe(gSetRemoveHandler, networkPort);
         subscribe(twoPRemoveHandler, networkPort);
         subscribe(oraddhandler, networkPort);
         subscribe(orremovehandler, networkPort);
@@ -112,16 +111,6 @@ public class AppComp extends ComponentDefinition {
         }
     };
 
-    ClassMatchedHandler gSetRemoveHandler = new ClassMatchedHandler<GSet_Remove, KContentMsg<?, KHeader<?>, GSet_Remove>>() {
-        @Override
-        public void handle(GSet_Remove op, KContentMsg<?, KHeader<?>, GSet_Remove> msg) {
-            if(twoPhaseSet.remove(op.element)) {
-                System.out.println("Removed " + op.element + " from source set, now contains: " + twoPhaseSet.print());
-            }
-            trigger(new CRBroadcast(op), crb);
-        }
-    };
-
     ClassMatchedHandler twoPRemoveHandler = new ClassMatchedHandler<TwoP_Remove, KContentMsg<?, KHeader<?>, TwoP_Remove>>() {
         @Override
         public void handle(TwoP_Remove op, KContentMsg<?, KHeader<?>, TwoP_Remove> msg) {
@@ -155,15 +144,23 @@ public class AppComp extends ComponentDefinition {
     Handler crbDeliverHandler = new Handler<CRBDeliver>() {
         @Override
         public void handle(CRBDeliver crbDeliver) {
+            /** GROW ONLY SET ADD */
+            if(crbDeliver.payload instanceof GSet_Add) {
+                GSet_Add addOp = (GSet_Add)crbDeliver.payload;
+                System.out.println(selfAdr + " received ADD, adding " + addOp.element);
+                if(mySet.add(addOp.element)) {
+                    System.out.println(selfAdr + " my set now contains: " + mySet.print());
+                }
+            }
+            /** 2 PHASE SET ADD */
             if(crbDeliver.payload instanceof TwoP_Add) {
                 TwoP_Add addOp = (TwoP_Add)crbDeliver.payload;
                 System.out.println(selfAdr + " received ADD, adding " + addOp.element);
-                //mySet.add(addOp.element);
-                //System.out.println(selfAdr + " my set now contains: " + mySet.print());
                 if(twoPhaseSet.add(addOp.element)) {
                     System.out.println(selfAdr + " my set now contains: " + twoPhaseSet.print());
                 }
             }
+            /** 2 PHASE SET REMOVE */
             else if(crbDeliver.payload instanceof TwoP_Remove) {
                 TwoP_Remove removeOp = (TwoP_Remove)crbDeliver.payload;
                 System.out.println(selfAdr + " received REMOVE, removing " + removeOp.element);
@@ -171,18 +168,21 @@ public class AppComp extends ComponentDefinition {
                     System.out.println(selfAdr + " my set now contains: " + twoPhaseSet.print());
                 }
             }
+            /** OBSERVE REMOVE SET ADD */
             else if(crbDeliver.payload instanceof OR_Add) {
                 OR_Add orAddOp = (OR_Add)crbDeliver.payload;
                 System.out.println(selfAdr + " received OR_ADD, adding " + orAddOp.element + ", before: " + orSet.print());
                 orSet.add(orAddOp.element, orAddOp.tag);
                 System.out.println(selfAdr + " my set now contains: " + orSet.print());
             }
+            /** OBSERVE REMOVE SET REMOVE */
             else if(crbDeliver.payload instanceof  OR_Remove) {
                 OR_Remove orRemoveOp = (OR_Remove)crbDeliver.payload;
                 System.out.println(selfAdr + " received OR_REMOVE, removing " + orRemoveOp.element + ", before: " + orSet.print());
                 orSet.remove(orRemoveOp.element, orRemoveOp.tags);
                 System.out.println(selfAdr + " my set now contains: " + orSet.print());
             }
+            /** OPERATION UNKNOWN */
             else {
                 //System.out.println("Operation not recognized: " + crbDeliver.payload);
                 System.out.println("BROADCAST RECEIVED: " + crbDeliver.payload + ", SOURCE: " +  crbDeliver.source + ", SELF: " + selfAdr);
