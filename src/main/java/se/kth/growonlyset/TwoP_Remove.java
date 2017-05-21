@@ -5,10 +5,10 @@ import se.sics.kompics.KompicsEvent;
 /**
  * Created by mikael on 2017-05-18.
  */
-public class Remove implements KompicsEvent {
+public class TwoP_Remove implements KompicsEvent {
     public Object element;
 
-    public Remove(Object element) {
+    public TwoP_Remove(Object element) {
         this.element = element;
     }
 }

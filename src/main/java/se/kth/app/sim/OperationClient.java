@@ -2,8 +2,8 @@ package se.kth.app.sim;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.kth.growonlyset.Add;
-import se.kth.growonlyset.Remove;
+import se.kth.growonlyset.TwoP_Add;
+import se.kth.growonlyset.TwoP_Remove;
 import se.sics.kompics.*;
 import se.sics.kompics.network.Network;
 import se.sics.kompics.network.Transport;
@@ -72,9 +72,9 @@ public class OperationClient extends ComponentDefinition {
         KAddress peer = ScenarioSetup.getNodeAdr(ipaddr, ide);
         KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
         if(type == 0) {
-            return new BasicContentMsg(header, new Add(content));
+            return new BasicContentMsg(header, new TwoP_Add(content));
         } else {
-            return new BasicContentMsg(header, new Remove(content));
+            return new BasicContentMsg(header, new TwoP_Remove(content));
         }
     }
 

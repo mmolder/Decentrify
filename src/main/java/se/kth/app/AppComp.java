@@ -23,10 +23,7 @@ import se.kth.app.test.TriggerMsg;
 import se.kth.causalbroadcast.CRBDeliver;
 import se.kth.causalbroadcast.CRBPort;
 import se.kth.causalbroadcast.CRBroadcast;
-import se.kth.growonlyset.Add;
-import se.kth.growonlyset.GSet;
-import se.kth.growonlyset.Remove;
-import se.kth.growonlyset.TwoPhaseSet;
+import se.kth.growonlyset.*;
 import se.kth.observedremovedset.ORSet;
 import se.kth.observedremovedset.OR_Add;
 import se.kth.observedremovedset.OR_Remove;
@@ -71,8 +68,10 @@ public class AppComp extends ComponentDefinition {
         subscribe(handleStart, control);
         subscribe(crbDeliverHandler, crb);
         subscribe(simulationMsgHandler, networkPort);
-        subscribe(addOperationHandler, networkPort);
-        subscribe(removeOperationHandler, networkPort);
+        subscribe(gSetAddHandler, networkPort);
+        subscribe(twpPAddHandler, networkPort);
+        subscribe(gSetRemoveHandler, networkPort);
+        subscribe(twoPRemoveHandler, networkPort);
         subscribe(oraddhandler, networkPort);
         subscribe(orremovehandler, networkPort);
     }
@@ -91,13 +90,10 @@ public class AppComp extends ComponentDefinition {
         }
     };
 
-    ClassMatchedHandler addOperationHandler = new ClassMatchedHandler<Add, KContentMsg<?, KHeader<?>, Add>>() {
+    ClassMatchedHandler gSetAddHandler = new ClassMatchedHandler<GSet_Add, KContentMsg<?, KHeader<?>, GSet_Add>>() {
         @Override
-        public void handle(Add op, KContentMsg<?, KHeader<?>, Add> msg) {
+        public void handle(GSet_Add op, KContentMsg<?, KHeader<?>, GSet_Add> msg) {
             Object element = op.element;
-            /*if(mySet.add(element)) {
-                System.out.println("Added " + element + " to source set");
-            }*/
             if(twoPhaseSet.add(element)) {
                 System.out.println("Added " + element + " to source set, now contains: " + twoPhaseSet.print());
             }
@@ -105,9 +101,30 @@ public class AppComp extends ComponentDefinition {
         }
     };
 
-    ClassMatchedHandler removeOperationHandler = new ClassMatchedHandler<Remove, KContentMsg<?, KHeader<?>, Remove>>() {
+    ClassMatchedHandler twpPAddHandler = new ClassMatchedHandler<TwoP_Add, KContentMsg<?, KHeader<?>, TwoP_Add>>() {
         @Override
-        public void handle(Remove op, KContentMsg<?, KHeader<?>, Remove> msg) {
+        public void handle(TwoP_Add op, KContentMsg<?, KHeader<?>, TwoP_Add> msg) {
+            Object element = op.element;
+            if(mySet.add(element)) {
+                System.out.println("Added " + element + " to source set");
+            }
+            trigger(new CRBroadcast(op), crb);
+        }
+    };
+
+    ClassMatchedHandler gSetRemoveHandler = new ClassMatchedHandler<GSet_Remove, KContentMsg<?, KHeader<?>, GSet_Remove>>() {
+        @Override
+        public void handle(GSet_Remove op, KContentMsg<?, KHeader<?>, GSet_Remove> msg) {
+            if(twoPhaseSet.remove(op.element)) {
+                System.out.println("Removed " + op.element + " from source set, now contains: " + twoPhaseSet.print());
+            }
+            trigger(new CRBroadcast(op), crb);
+        }
+    };
+
+    ClassMatchedHandler twoPRemoveHandler = new ClassMatchedHandler<TwoP_Remove, KContentMsg<?, KHeader<?>, TwoP_Remove>>() {
+        @Override
+        public void handle(TwoP_Remove op, KContentMsg<?, KHeader<?>, TwoP_Remove> msg) {
             if(twoPhaseSet.remove(op.element)) {
                 System.out.println("Removed " + op.element + " from source set, now contains: " + twoPhaseSet.print());
             }
@@ -138,8 +155,8 @@ public class AppComp extends ComponentDefinition {
     Handler crbDeliverHandler = new Handler<CRBDeliver>() {
         @Override
         public void handle(CRBDeliver crbDeliver) {
-            if(crbDeliver.payload instanceof Add) {
-                Add addOp = (Add)crbDeliver.payload;
+            if(crbDeliver.payload instanceof TwoP_Add) {
+                TwoP_Add addOp = (TwoP_Add)crbDeliver.payload;
                 System.out.println(selfAdr + " received ADD, adding " + addOp.element);
                 //mySet.add(addOp.element);
                 //System.out.println(selfAdr + " my set now contains: " + mySet.print());
@@ -147,8 +164,8 @@ public class AppComp extends ComponentDefinition {
                     System.out.println(selfAdr + " my set now contains: " + twoPhaseSet.print());
                 }
             }
-            else if(crbDeliver.payload instanceof Remove) {
-                Remove removeOp = (Remove)crbDeliver.payload;
+            else if(crbDeliver.payload instanceof TwoP_Remove) {
+                TwoP_Remove removeOp = (TwoP_Remove)crbDeliver.payload;
                 System.out.println(selfAdr + " received REMOVE, removing " + removeOp.element);
                 if(twoPhaseSet.remove(removeOp.element)) {
                     System.out.println(selfAdr + " my set now contains: " + twoPhaseSet.print());
