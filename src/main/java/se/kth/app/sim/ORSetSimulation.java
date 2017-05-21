@@ -224,7 +224,13 @@ public class ORSetSimulation {
                 StochasticProcess startSpecial2 = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 5), new ConstantDistribution<>(Integer.class, 0));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
+                    }
+                };
+                StochasticProcess startSpecial3 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 5), new ConstantDistribution<>(Integer.class, 0));
                     }
                 };
 
@@ -232,10 +238,11 @@ public class ORSetSimulation {
                 /** Start 10 normal nodes */
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
-                /** Start special node which triggers one normal node to broadcast a message */
-                startSpecial.startAfterTerminationOf(1000, startPeers);
-                startSpecial2.startAfterTerminationOf(1000, startSpecial);
-                terminateAfterTerminationOf(1000*1000, startSpecial2);
+                /** Start special nodes which sends two add operations storing two different values and one unique */
+                startSpecial.startAfterTerminationOf(10000, startPeers);         // add("value4")
+                startSpecial2.startAfterTerminationOf(10000, startSpecial);      // add("value4")
+                startSpecial3.startAfterTerminationOf(10000, startSpecial2);     // add("value5")
+                terminateAfterTerminationOf(1000*1000, startSpecial3);
             }
         };
 
@@ -302,11 +309,84 @@ public class ORSetSimulation {
                 /** Start 10 normal nodes */
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
-                /** Start special node which triggers one normal node to broadcast a message */
-                startSpecial.startAfterTerminationOf(1000, startPeers);
-                startSpecial2.startAfterTerminationOf(1000, startSpecial);
-                startSpecial3.startAfterTerminationOf(1000, startSpecial2);
-                startSpecial4.startAfterTerminationOf(1000000, startSpecial3);
+                /** Start special nodes which will store 2 duplicate values and one lone, of of the duplicates then gets removed */
+                startSpecial.startAfterTerminationOf(1000, startPeers);         // add("value4")
+                startSpecial2.startAfterTerminationOf(1000, startSpecial);      // add("value4")
+                startSpecial3.startAfterTerminationOf(1000, startSpecial2);     // add("value6")
+                startSpecial4.startAfterTerminationOf(1000000, startSpecial3);  // remove("value4")
+                terminateAfterTerminationOf(1000*1000, startSpecial4);
+            }
+        };
+
+        return scen;
+    }
+
+    /**
+     *
+     * operationTest3
+     *
+     * SimulationScenario which will start 10 normal nodes and start one special node that triggers an alive node to
+     * broadcast an add operation. Thereafter a remove operation ios triggered which will remove the object again.
+     * The operations should eventually be received by all alive nodes on order to validate the properties
+     * of the algorithms.
+     *
+     **/
+    public static SimulationScenario orsettest3() {
+        SimulationScenario scen = new SimulationScenario() {
+            {
+                StochasticProcess systemSetup = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(constant(1000));
+                        raise(1, systemSetupOp);
+                    }
+                };
+                StochasticProcess startBootstrapServer = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(constant(1000));
+                        raise(1, startBootstrapServerOp);
+                    }
+                };
+                StochasticProcess startPeers = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1100));
+                        raise(10, startNodeOp, new BasicIntSequentialDistribution(1));
+                    }
+                };
+                StochasticProcess startSpecial = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
+                    }
+                };
+                StochasticProcess startSpecial2 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 6), new ConstantDistribution<>(Integer.class, 0));
+                    }
+                };
+                StochasticProcess startSpecial3 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
+                    }
+                };
+                StochasticProcess startSpecial4 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 14), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 1));
+                    }
+                };
+
+                systemSetup.start();
+                /** Start 10 normal nodes */
+                startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
+                startPeers.startAfterTerminationOf(1000, startBootstrapServer);
+                /** Start special nodes which will store 2 duplicate values and one lone, of of the duplicates then gets removed */
+                startSpecial.startAfterTerminationOf(10000, startPeers);            // add("value4")
+                startSpecial2.startAfterTerminationOf(10000, startSpecial);         // add("value6")
+                /** Start the next two simultaneously */
+                startSpecial3.startAfterTerminationOf(10000, startSpecial2);         // add("value4")
+                startSpecial4.startAfterTerminationOf(10000, startSpecial2);         // remove("value4")
                 terminateAfterTerminationOf(1000*1000, startSpecial4);
             }
         };

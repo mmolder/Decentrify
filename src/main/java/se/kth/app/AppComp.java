@@ -126,7 +126,7 @@ public class AppComp extends ComponentDefinition {
         public void handle(OR_Add op, KContentMsg<?, KHeader<?>, OR_Add> msg) {
             // add to source set
             String tag = orSet.add(op.element, "");                     // get unique tag (will add it to source as well not empty string)
-            System.out.println("Adding " + op.element + " to source set with tag " + tag + ", now contains: " + orSet.print());
+            //System.out.println("Adding " + op.element + " to source set with tag " + tag + ", now contains: " + orSet.print());
             trigger(new CRBroadcast(new OR_Add(op.element, tag)), crb);    // broadcast to all nodes
         }
     };
@@ -136,7 +136,7 @@ public class AppComp extends ComponentDefinition {
         public void handle(OR_Remove op, KContentMsg<?, KHeader<?>, OR_Remove> msg) {
             // remove from source set
             ArrayList<String> tags = orSet.remove(op.element, new ArrayList<String>());     // get list of tags associated with element
-            System.out.println("Removed " + op.element + " from source set with tags: " + tags + ", now contains: " + orSet.print());
+            //System.out.println("Removed " + op.element + " from source set with tags: " + tags + ", now contains: " + orSet.print());
             trigger(new CRBroadcast(new OR_Remove(op.element, tags)), crb);                 // broadcast to all nodes
         }
     };
@@ -171,14 +171,14 @@ public class AppComp extends ComponentDefinition {
             /** OBSERVE REMOVE SET ADD */
             else if(crbDeliver.payload instanceof OR_Add) {
                 OR_Add orAddOp = (OR_Add)crbDeliver.payload;
-                System.out.println(selfAdr + " received OR_ADD, adding " + orAddOp.element + ", before: " + orSet.print());
+                System.out.println(selfAdr + " received OR_ADD, adding " + orAddOp.element + " " + orAddOp.tag + ", before: " + orSet.print());
                 orSet.add(orAddOp.element, orAddOp.tag);
                 System.out.println(selfAdr + " my set now contains: " + orSet.print());
             }
             /** OBSERVE REMOVE SET REMOVE */
             else if(crbDeliver.payload instanceof  OR_Remove) {
                 OR_Remove orRemoveOp = (OR_Remove)crbDeliver.payload;
-                System.out.println(selfAdr + " received OR_REMOVE, removing " + orRemoveOp.element + ", before: " + orSet.print());
+                System.out.println(selfAdr + " received OR_REMOVE, removing " + orRemoveOp.element + " " + orRemoveOp.tags + ", before: " + orSet.print());
                 orSet.remove(orRemoveOp.element, orRemoveOp.tags);
                 System.out.println(selfAdr + " my set now contains: " + orSet.print());
             }

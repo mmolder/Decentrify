@@ -35,18 +35,27 @@ public class SimLauncher {
         //broadcastTest2.simulate(LauncherComp.class);
         //broadcastTest3.simulate(LauncherComp.class);
 
-        /** Operation simulation */
-        SimulationScenario operationTest1 = TwoPSetSimulation.operationTest1();
-        SimulationScenario operationTest2 = TwoPSetSimulation.operationTest2();
-        //operationTest1.simulate(LauncherComp.class);
-        //operationTest2.simulate(LauncherComp.class);
+        /** GSet simulation */
+        SimulationScenario gSetTest1 = GSetSimulation.gSetTest1();
+        SimulationScenario gSetTest2 = GSetSimulation.gSetTest2();
+        //gSetTest1.simulate(LauncherComp.class);
+        //gSetTest2.simulate(LauncherComp.class);
 
-        /** OR Set simulation */
+        /** 2PSet simulation */
+        SimulationScenario twoPTest1 = TwoPSetSimulation.twoPTest1();
+        SimulationScenario twoPTest2 = TwoPSetSimulation.twoPTest2();
+        //twoPTest1.simulate(LauncherComp.class);
+        //twoPTest2.simulate(LauncherComp.class);
+
+        /** ORSet simulation */
         SimulationScenario orSetTest1 = ORSetSimulation.orsettest1();
         SimulationScenario orSetTest2 = ORSetSimulation.orsettest2();
+        SimulationScenario orSetTest3 = ORSetSimulation.orsettest3();
         //orSetTest1.simulate(LauncherComp.class);
         orSetTest2.simulate(LauncherComp.class);
+        //orSetTest3.simulate(LauncherComp.class);
 
-        /** 2P2P graph simulation */
+        /** 2P2P Graph simulation */
+
     }
 }

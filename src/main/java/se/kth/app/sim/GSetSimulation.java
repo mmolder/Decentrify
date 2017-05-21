@@ -193,7 +193,7 @@ public class GSetSimulation {
      * of the algorithm.
      *
      **/
-    public static SimulationScenario operationTest1() {
+    public static SimulationScenario gSetTest1() {
         SimulationScenario scen = new SimulationScenario() {
             {
                 StochasticProcess systemSetup = new StochasticProcess() {
@@ -251,7 +251,7 @@ public class GSetSimulation {
      * of the algorithms.
      *
      **/
-    public static SimulationScenario operationTest2() {
+    public static SimulationScenario gSetTest2() {
         SimulationScenario scen = new SimulationScenario() {
             {
                 StochasticProcess systemSetup = new StochasticProcess() {

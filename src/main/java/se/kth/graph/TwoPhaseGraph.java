@@ -1,4 +1,4 @@
-package se.kth.app.graph;
+package se.kth.graph;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,10 +17,12 @@ public class TwoPhaseGraph {
         return verticesAdded.contains(v) && !verticesRemoved.contains(v);
     }
 
+    /** lookup edge e, return true of both vertices at the end exists and is a valid edge (not removed) */
     public boolean lookup(Edge e) {
         return lookup(e.v1) && lookup(e.v2) && edgesAdded.contains(e) && !edgesRemoved.contains(e);
     }
 
+    /** addVertex adds a new vertex to the graph */
     public void addVertex(Vertex w, boolean atSource) {
         // at source
         if(atSource) {
@@ -32,6 +34,8 @@ public class TwoPhaseGraph {
         }
     }
 
+    /** addEdge adds a new edge in the graph, it has to first pass the precondition at the source before it can be
+     *  added downstream */
     public Edge addEdge(Vertex u, Vertex v, boolean atSource) {
         // at source
         if(atSource) {
@@ -48,6 +52,8 @@ public class TwoPhaseGraph {
         return null;
     }
 
+    /** removeVertex removes a vertex from the graph, it has to pass a number of preconditions at the source before
+     *  it can be removed downstream */
     public Vertex removeVertex(Vertex w, boolean atSource) {
         // at source
         if(atSource) {
@@ -73,6 +79,8 @@ public class TwoPhaseGraph {
         return null;
     }
 
+    /** removeEdge removes an edge from the graph, at the source it only has to exist before it can be removed,
+     *  downstram it has to been delivered first */
     public Edge removeEdge(Edge e, boolean atSource) {
         // at source
         if(atSource) {

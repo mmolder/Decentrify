@@ -193,7 +193,7 @@ public class TwoPSetSimulation {
      * of the algorithm.
      *
      **/
-    public static SimulationScenario operationTest1() {
+    public static SimulationScenario twoPTest1() {
         SimulationScenario scen = new SimulationScenario() {
             {
                 StochasticProcess systemSetup = new StochasticProcess() {
@@ -251,7 +251,7 @@ public class TwoPSetSimulation {
      * of the algorithms.
      *
      **/
-    public static SimulationScenario operationTest2() {
+    public static SimulationScenario twoPTest2() {
         SimulationScenario scen = new SimulationScenario() {
             {
                 StochasticProcess systemSetup = new StochasticProcess() {

@@ -52,6 +52,7 @@ public class ORSet {
                     continue;
                 }
                 else {
+                    System.out.println("Not all add(e,u) has been delivered causal order does not suffice, wont remove");
                     return tags;
                 }
             }
@@ -66,7 +67,7 @@ public class ORSet {
     public String print() {
         StringBuilder sb = new StringBuilder();
         for(Map.Entry<String, Object> entry : set.entrySet()) {
-            sb.append(entry.getValue().toString());
+            sb.append(entry.getValue().toString() + " ");
         }
         return sb.toString();
     }

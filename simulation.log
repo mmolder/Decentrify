@@ -53082,3 +53082,157 @@ KompicsFault(java.util.ConcurrentModificationException thrown in Component(0ca6e
 [00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
 [00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
 [00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:00:12,298] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:01:11,801] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:03:02,891] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:03:59,366] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:04:28,929] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:06:06,118] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:06:38,042] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:06:59,472] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:07:46,315] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:09:16,360] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:12:00,517] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:13:23,281] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:15:18,283] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[14:16:56,329] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
