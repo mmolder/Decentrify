@@ -232,8 +232,8 @@ public class GSetSimulation {
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
                 /** Start special node which triggers one normal node to broadcast a message */
-                startSpecial.startAfterTerminationOf(1000, startPeers);
-                startSpecial2.startAfterTerminationOf(1000, startSpecial);
+                startSpecial.startAfterTerminationOf(1000, startPeers);         // add("value4")
+                startSpecial2.startAfterTerminationOf(1000, startSpecial);      // add("value5")
                 terminateAfterTerminationOf(1000*1000, startSpecial2);
             }
         };
@@ -281,13 +281,13 @@ public class GSetSimulation {
                 StochasticProcess startSpecial2 = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 1));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 5), new ConstantDistribution<>(Integer.class, 0));
                     }
                 };
                 StochasticProcess startSpecial3 = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
+                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 6), new ConstantDistribution<>(Integer.class, 0));
                     }
                 };
 
@@ -296,9 +296,9 @@ public class GSetSimulation {
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
                 /** Start special node which triggers one normal node to broadcast a message */
-                startSpecial.startAfterTerminationOf(1000, startPeers);
-                startSpecial2.startAfterTerminationOf(10000, startSpecial);
-                startSpecial3.startAfterTerminationOf(10000, startSpecial2);
+                startSpecial.startAfterTerminationOf(1000, startPeers);         // add("value4")
+                startSpecial2.startAfterTerminationOf(100000, startSpecial);    // add("value5")
+                startSpecial3.startAfterTerminationOf(1000000, startSpecial2);  // add("value6")
                 terminateAfterTerminationOf(1000*1000, startSpecial3);
             }
         };

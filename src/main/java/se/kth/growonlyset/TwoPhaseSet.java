@@ -42,9 +42,17 @@ public class TwoPhaseSet {
         for(int i = 0; i < set.size(); i++) {
             element = set.elementAt(i);
             if(!tombstone.contains(element)) {
-                sb.append(element.toString());
+                sb.append(element.toString() + " ");
             }
         }
         return sb.toString();
+    }
+
+    public int size() {
+        return set.size();
+    }
+
+    public Object elementAt(int i) {
+        return set.elementAt(i);
     }
 }

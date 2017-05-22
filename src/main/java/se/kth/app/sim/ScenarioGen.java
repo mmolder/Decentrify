@@ -245,7 +245,7 @@ public class ScenarioGen {
      * broadcastTest1
      *
      * SimulationScenario which will start 10 normal nodes and start one special node that triggers an alive node to
-     * broadcast a message. This should eventually be received by all alive nodes on order to validate the properties
+     * broadcast a message. This should eventually be received by all alive nodes in order to validate the properties
      * of the algorithm.
      *
      **/

@@ -232,8 +232,8 @@ public class TwoPSetSimulation {
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
                 /** Start special node which triggers one normal node to broadcast a message */
-                startSpecial.startAfterTerminationOf(1000, startPeers);
-                startSpecial2.startAfterTerminationOf(1000, startSpecial);
+                startSpecial.startAfterTerminationOf(1000, startPeers);     // add("value4")
+                startSpecial2.startAfterTerminationOf(1000, startSpecial);  // add("value5")
                 terminateAfterTerminationOf(1000*1000, startSpecial2);
             }
         };
@@ -296,9 +296,9 @@ public class TwoPSetSimulation {
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
                 /** Start special node which triggers one normal node to broadcast a message */
-                startSpecial.startAfterTerminationOf(1000, startPeers);
-                startSpecial2.startAfterTerminationOf(10000, startSpecial);
-                startSpecial3.startAfterTerminationOf(10000, startSpecial2);
+                startSpecial.startAfterTerminationOf(1000, startPeers);        // add("value4")
+                startSpecial2.startAfterTerminationOf(10000, startSpecial);    // remove("value4")
+                startSpecial3.startAfterTerminationOf(10000, startSpecial2);   // add("value4")
                 terminateAfterTerminationOf(1000*1000, startSpecial3);
             }
         };
