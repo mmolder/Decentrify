@@ -139,7 +139,7 @@ public class TwoPhaseGraph {
         System.out.println("Graph contains:");
         for(int i = 0; i < edges.size(); i++) {
             Edge e = (Edge)edges.elementAt(i);
-            System.out.println("["+ e + " : {" + e.v1 + ", " + e.v2 + "}]");
+            System.out.println("["+ e + " : {" + e.v1.id + ", " + e.v2.id + "}]");
         }
     }
 }

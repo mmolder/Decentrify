@@ -26,11 +26,13 @@ public class TwoPGraphClient extends ComponentDefinition {
     private String ip;
     private int id;
     private int type;
-    private String msg;
-    public Vertex v1 = new Vertex();
-    public Vertex v2 = new Vertex();
-    public Vertex v3 = new Vertex();
-    public Edge e1 = new Edge(v1, v2);
+    private Object msg;
+
+    /*
+    public Vertex v1 = new Vertex(1);
+    public Vertex v2 = new Vertex(2);
+    public Vertex v3 = new Vertex(3);
+    public Edge e1 = new Edge(v1, v2);*/
 
     public TwoPGraphClient(TwoPGraphClient.Init init) {
         selfAdr = init.selfAdr;
@@ -47,13 +49,20 @@ public class TwoPGraphClient extends ComponentDefinition {
         public void handle(Start event) {
             switch (type) {
                 case 0:
-                    addVertex();
+                    Vertex v = (Vertex)msg;
+                    addVertex(v);
                     break;
                 case 1:
-                    removeVertex();
+                    Vertex w = (Vertex)msg;
+                    removeVertex(w);
                     break;
                 case 2:
                     populate();
+                    break;
+                case 3:
+                    Edge e = (Edge)msg;
+                    addEdge(e);
+                    break;
                 default:
                     break;
 
@@ -61,45 +70,45 @@ public class TwoPGraphClient extends ComponentDefinition {
         }
     };
 
-    public void addVertex() {
+    public void addVertex(Vertex v) {
         KAddress peer = ScenarioSetup.getNodeAdr(ip, id);
         KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
-        KContentMsg msg1 = new BasicContentMsg(header, new AddVertex(v1));
+        KContentMsg msg1 = new BasicContentMsg(header, new AddVertex(v));
         //KContentMsg msg1 = createMsg(ip, id, 0, v1, null);
         trigger(msg1, networkPort);
     }
 
-    public void removeVertex() {
+    public void removeVertex(Vertex w) {
         KAddress peer = ScenarioSetup.getNodeAdr(ip, id);
         KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
-        KContentMsg msg1 = new BasicContentMsg(header, new RemoveVertex(v1));
+        KContentMsg msg1 = new BasicContentMsg(header, new RemoveVertex(w));
         //KContentMsg msg1 = createMsg(ip, id, 1, v1, null);
         trigger(msg1, networkPort);
     }
 
-    public void addEdge() {
+    public void addEdge(Edge e) {
         KAddress peer = ScenarioSetup.getNodeAdr(ip, id);
         KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
-        KContentMsg msg1 = new BasicContentMsg(header, new AddEdge(e1));
+        KContentMsg msg1 = new BasicContentMsg(header, new AddEdge(e));
         //KContentMsg msg1 = createMsg(ip, id, 2, null, e1);
         trigger(msg1, networkPort);
     }
-
+/*
     public void removeEdge() {
         KAddress peer = ScenarioSetup.getNodeAdr(ip, id);
         KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
         KContentMsg msg1 = new BasicContentMsg(header, new RemoveEdge(e1));
         //KContentMsg msg1 = createMsg(ip, id, 3, null, e1);
         trigger(msg1, networkPort);
-    }
+    }*/
 
-    public KContentMsg createMsg(String ipaddr, int ide, int type, Vertex w, Edge e) {
+    public KContentMsg createMsg(String ipaddr, int ide, int type, int vid, Edge e) {
         KAddress peer = ScenarioSetup.getNodeAdr(ipaddr, ide);
         KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
         if(type == 0) {
-            return new BasicContentMsg(header, new AddVertex(w));
+            return new BasicContentMsg(header, new AddVertex(new Vertex(vid)));
         } else if(type == 1) {
-            return new BasicContentMsg(header, new RemoveVertex(w));
+            return new BasicContentMsg(header, new RemoveVertex(new Vertex(vid)));
         } else if(type == 2) {
             return new BasicContentMsg(header, new AddEdge(e));
         } else {
@@ -109,18 +118,18 @@ public class TwoPGraphClient extends ComponentDefinition {
 
     public void populate() {
 
-        KContentMsg msg1 = createMsg(ip, id, 0, v1, null); // add vertex
+        KContentMsg msg1 = createMsg(ip, id, 0, 1, null); // add vertex
         trigger(msg1, networkPort);
-        KContentMsg msg2 = createMsg(ip, id, 0, v2, null); // add vertex
+        KContentMsg msg2 = createMsg(ip, id, 0, 2, null); // add vertex
         trigger(msg2, networkPort);
-        KContentMsg msg3 = createMsg(ip, id, 0, v3, null); // add vertex
+        KContentMsg msg3 = createMsg(ip, id, 0, 3, null); // add vertex
         trigger(msg3, networkPort);
     }
-
+/*
     public void addEdges() {
         KContentMsg msg1 = createMsg(ip, id, 2, null, e1); // add edge
         trigger(msg1, networkPort);
-    }
+    }*/
 
     public static class Init extends se.sics.kompics.Init<TwoPGraphClient> {
 
@@ -128,9 +137,9 @@ public class TwoPGraphClient extends ComponentDefinition {
         public final String ip;
         public final int id;
         public final int type;
-        public final String msg;
+        public final Object msg;
 
-        public Init(KAddress selfAdr, String ip, int id, int type, String msg) {
+        public Init(KAddress selfAdr, String ip, int id, int type, Object msg) {
             this.selfAdr = selfAdr;
             this.ip = ip;
             this.id = id;

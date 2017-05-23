@@ -26,12 +26,12 @@ import java.util.Map;
  */
 public class TwoPGraphSimulation {
 
-    Vertex v1 = new Vertex();
-    Vertex v2 = new Vertex();
-    Vertex v3 = new Vertex();
-    Edge e1 = new Edge(v1, v2);
-    Edge e2 = new Edge(v2, v3);
-    Edge e3 = new Edge(v3, v1);
+    static Vertex v1 = new Vertex(1);
+    static Vertex v2 = new Vertex(2);
+    static Vertex v3 = new Vertex(3);
+    static Edge e1 = new Edge(v1, v2);
+    static Edge e2 = new Edge(v2, v3);
+    static Edge e3 = new Edge(v3, v1);
 
     static Operation<SetupEvent> systemSetupOp = new Operation<SetupEvent>() {
         @Override
@@ -160,11 +160,212 @@ public class TwoPGraphSimulation {
 
                 @Override
                 public TwoPGraphClient.Init getComponentInit() {
-                    return new TwoPGraphClient.Init(selfAdr, "193.0.0." + target, target, settype, "test" + target);
+                    return new TwoPGraphClient.Init(selfAdr, "193.0.0." + target, target, settype, target);
                 }
             };
         }
     };
+
+    static Operation3 vertexNode1 = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
+
+        @Override
+        public StartNodeEvent generate(final Integer self, final Integer target, final Integer settype) {
+            return new StartNodeEvent() {
+                final KAddress selfAdr;
+                {
+                    selfAdr = ScenarioSetup.getNodeAdr("193.0.0." + self, self);
+                    System.out.println("Starting node: " + selfAdr);
+                }
+
+                @Override
+                public Address getNodeAddress() {
+                    return selfAdr;
+                }
+
+                @Override
+                public Class getComponentDefinition() {
+                    return TwoPGraphClient.class;
+                }
+
+                @Override
+                public String toString() {
+                    return "StartClient<" + selfAdr.toString() + ">";
+                }
+
+                @Override
+                public TwoPGraphClient.Init getComponentInit() {
+                    return new TwoPGraphClient.Init(selfAdr, "193.0.0." + target, target, settype, v1);
+                }
+            };
+        }
+    };
+    static Operation3 vertexNode2 = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
+
+        @Override
+        public StartNodeEvent generate(final Integer self, final Integer target, final Integer settype) {
+            return new StartNodeEvent() {
+                final KAddress selfAdr;
+                {
+                    selfAdr = ScenarioSetup.getNodeAdr("193.0.0." + self, self);
+                    System.out.println("Starting node: " + selfAdr);
+                }
+
+                @Override
+                public Address getNodeAddress() {
+                    return selfAdr;
+                }
+
+                @Override
+                public Class getComponentDefinition() {
+                    return TwoPGraphClient.class;
+                }
+
+                @Override
+                public String toString() {
+                    return "StartClient<" + selfAdr.toString() + ">";
+                }
+
+                @Override
+                public TwoPGraphClient.Init getComponentInit() {
+                    return new TwoPGraphClient.Init(selfAdr, "193.0.0." + target, target, settype, v2);
+                }
+            };
+        }
+    };
+    static Operation3 vertexNode3 = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
+
+        @Override
+        public StartNodeEvent generate(final Integer self, final Integer target, final Integer settype) {
+            return new StartNodeEvent() {
+                final KAddress selfAdr;
+                {
+                    selfAdr = ScenarioSetup.getNodeAdr("193.0.0." + self, self);
+                    System.out.println("Starting node: " + selfAdr);
+                }
+
+                @Override
+                public Address getNodeAddress() {
+                    return selfAdr;
+                }
+
+                @Override
+                public Class getComponentDefinition() {
+                    return TwoPGraphClient.class;
+                }
+
+                @Override
+                public String toString() {
+                    return "StartClient<" + selfAdr.toString() + ">";
+                }
+
+                @Override
+                public TwoPGraphClient.Init getComponentInit() {
+                    return new TwoPGraphClient.Init(selfAdr, "193.0.0." + target, target, settype, v3);
+                }
+            };
+        }
+    };
+
+    static Operation3 edgeNode1 = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
+
+        @Override
+        public StartNodeEvent generate(final Integer self, final Integer target, final Integer settype) {
+            return new StartNodeEvent() {
+                final KAddress selfAdr;
+                {
+                    selfAdr = ScenarioSetup.getNodeAdr("193.0.0." + self, self);
+                    System.out.println("Starting node: " + selfAdr);
+                }
+
+                @Override
+                public Address getNodeAddress() {
+                    return selfAdr;
+                }
+
+                @Override
+                public Class getComponentDefinition() {
+                    return TwoPGraphClient.class;
+                }
+
+                @Override
+                public String toString() {
+                    return "StartClient<" + selfAdr.toString() + ">";
+                }
+
+                @Override
+                public TwoPGraphClient.Init getComponentInit() {
+                    return new TwoPGraphClient.Init(selfAdr, "193.0.0." + target, target, settype, e1);
+                }
+            };
+        }
+    };
+    static Operation3 edgeNode2 = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
+
+        @Override
+        public StartNodeEvent generate(final Integer self, final Integer target, final Integer settype) {
+            return new StartNodeEvent() {
+                final KAddress selfAdr;
+                {
+                    selfAdr = ScenarioSetup.getNodeAdr("193.0.0." + self, self);
+                    System.out.println("Starting node: " + selfAdr);
+                }
+
+                @Override
+                public Address getNodeAddress() {
+                    return selfAdr;
+                }
+
+                @Override
+                public Class getComponentDefinition() {
+                    return TwoPGraphClient.class;
+                }
+
+                @Override
+                public String toString() {
+                    return "StartClient<" + selfAdr.toString() + ">";
+                }
+
+                @Override
+                public TwoPGraphClient.Init getComponentInit() {
+                    return new TwoPGraphClient.Init(selfAdr, "193.0.0." + target, target, settype, e2);
+                }
+            };
+        }
+    };
+    static Operation3 edgeNode3 = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
+
+        @Override
+        public StartNodeEvent generate(final Integer self, final Integer target, final Integer settype) {
+            return new StartNodeEvent() {
+                final KAddress selfAdr;
+                {
+                    selfAdr = ScenarioSetup.getNodeAdr("193.0.0." + self, self);
+                    System.out.println("Starting node: " + selfAdr);
+                }
+
+                @Override
+                public Address getNodeAddress() {
+                    return selfAdr;
+                }
+
+                @Override
+                public Class getComponentDefinition() {
+                    return TwoPGraphClient.class;
+                }
+
+                @Override
+                public String toString() {
+                    return "StartClient<" + selfAdr.toString() + ">";
+                }
+
+                @Override
+                public TwoPGraphClient.Init getComponentInit() {
+                    return new TwoPGraphClient.Init(selfAdr, "193.0.0." + target, target, settype, e3);
+                }
+            };
+        }
+    };
+
 
     /**
      *
@@ -226,19 +427,37 @@ public class TwoPGraphSimulation {
                 StochasticProcess startSpecial = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 2));
+                        raise(1, vertexNode1, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 5), new ConstantDistribution<>(Integer.class, 0));
                     }
                 };
                 StochasticProcess startSpecial2 = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
+                        raise(1, vertexNode2, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 5), new ConstantDistribution<>(Integer.class, 0));
                     }
                 };
                 StochasticProcess startSpecial3 = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 5), new ConstantDistribution<>(Integer.class, 1));
+                        raise(1, vertexNode3, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 5), new ConstantDistribution<>(Integer.class, 0));
+                    }
+                };
+                StochasticProcess startSpecial4 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, edgeNode1, new ConstantDistribution<>(Integer.class, 14), new ConstantDistribution<>(Integer.class, 7), new ConstantDistribution<>(Integer.class, 3));
+                    }
+                };
+                StochasticProcess startSpecial5 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, edgeNode2, new ConstantDistribution<>(Integer.class, 15), new ConstantDistribution<>(Integer.class, 7), new ConstantDistribution<>(Integer.class, 3));
+                    }
+                };
+                StochasticProcess startSpecial6 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, edgeNode3, new ConstantDistribution<>(Integer.class, 16), new ConstantDistribution<>(Integer.class, 7), new ConstantDistribution<>(Integer.class, 3));
                     }
                 };
 
@@ -247,10 +466,14 @@ public class TwoPGraphSimulation {
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
                 /** Start special nodes which sends two add operations storing two different values and one unique */
-                startSpecial.startAfterTerminationOf(10000, startPeers);        // add vertex
-                //startSpecial2.startAfterTerminationOf(10000, startSpecial);         // add vertex
-                //startSpecial3.startAfterTerminationOf(10000, startSpecial2);    // remove vertex
-                terminateAfterTerminationOf(1000*1000, startSpecial);
+                startSpecial.startAfterTerminationOf(10000, startPeers);        // add vertex v1
+                startSpecial2.startAfterTerminationOf(10000, startSpecial);     // add vertex v2
+                startSpecial3.startAfterTerminationOf(10000, startSpecial2);    // add vertex v3
+                startSpecial4.startAfterTerminationOf(10000, startSpecial3);    // add edge   v1->v2
+                startSpecial5.startAfterTerminationOf(10000, startSpecial4);    // add edge   v2->v3
+                startSpecial6.startAfterTerminationOf(10000, startSpecial5);    // add edge   v3->v1
+
+                terminateAfterTerminationOf(1000*1000, startSpecial6);
             }
         };
 

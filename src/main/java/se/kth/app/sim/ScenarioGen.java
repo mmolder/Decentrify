@@ -368,7 +368,7 @@ public class ScenarioGen {
 
     /**
      *
-     * broadcastTest2
+     * broadcastTest3
      *
      * SimulationScenario which will start 10 normal nodes and then start one special node that triggers an alive node
      * to broadcast a message. After this, two nodes are killed in order to simulate churn. A new special node is started

@@ -6,9 +6,11 @@ import java.util.UUID;
  * Created by mikael on 2017-05-20.
  */
 public class Vertex {
-    public String id;
+    public int id;
 
-    public Vertex() {
-        this.id = UUID.randomUUID().toString();
+    public Vertex(int id) {
+        //this.id = UUID.randomUUID().toString();
+        this.id = id;
     }
+
 }

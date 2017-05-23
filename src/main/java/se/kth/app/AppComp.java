@@ -180,6 +180,8 @@ public class AppComp extends ComponentDefinition {
                 trigger(new CRBroadcast(new AddEdge(op.e)), crb);
             } else {
                 System.out.println("Preconditions does not hold for add edge");
+                /*System.out.println(selfAdr + graph.print());
+                graph.printDetails();*/
             }
         }
     };
