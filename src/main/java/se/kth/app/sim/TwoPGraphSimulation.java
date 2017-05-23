@@ -166,6 +166,12 @@ public class TwoPGraphSimulation {
         }
     };
 
+    /**
+     *
+     * vertexNode1
+     *
+     * Starts a special node which will broadcast operations done with vertex v1
+     */
     static Operation3 vertexNode1 = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
 
         @Override
@@ -199,6 +205,13 @@ public class TwoPGraphSimulation {
             };
         }
     };
+
+    /**
+     *
+     * vertexNode2
+     *
+     * Starts a special node which will broadcast operations done with vertex v2
+     */
     static Operation3 vertexNode2 = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
 
         @Override
@@ -232,6 +245,13 @@ public class TwoPGraphSimulation {
             };
         }
     };
+
+    /**
+     *
+     * vertexNode3
+     *
+     * Starts a special node which will broadcast operations done with vertex v3
+     */
     static Operation3 vertexNode3 = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
 
         @Override
@@ -266,6 +286,12 @@ public class TwoPGraphSimulation {
         }
     };
 
+    /**
+     *
+     * edgeNode1
+     *
+     * Starts a special node which will broadcast operations done with edge e1
+     */
     static Operation3 edgeNode1 = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
 
         @Override
@@ -299,6 +325,13 @@ public class TwoPGraphSimulation {
             };
         }
     };
+
+    /**
+     *
+     * edgeNode2
+     *
+     * Starts a special node which will broadcast operations done with edge e2
+     */
     static Operation3 edgeNode2 = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
 
         @Override
@@ -332,6 +365,13 @@ public class TwoPGraphSimulation {
             };
         }
     };
+
+    /**
+     *
+     * edgeNode3
+     *
+     * Starts a special node which will broadcast operations done with edge e3
+     */
     static Operation3 edgeNode3 = new Operation3<StartNodeEvent, Integer, Integer, Integer>() {
 
         @Override
@@ -396,11 +436,7 @@ public class TwoPGraphSimulation {
 
     /**
      *
-     * operationTest1
-     *
-     * SimulationScenario which will start 10 normal nodes and start one special node that triggers an alive node to
-     * broadcast an add operation. This should eventually be received by all alive nodes on order to validate the properties
-     * of the algorithm.
+     * twopgraphtest1
      *
      **/
     public static SimulationScenario twopgraphtest1() {
@@ -465,7 +501,7 @@ public class TwoPGraphSimulation {
                 /** Start 10 normal nodes */
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
-                /** Start special nodes which sends two add operations storing two different values and one unique */
+                /** Start special nodes */
                 startSpecial.startAfterTerminationOf(10000, startPeers);        // add vertex v1
                 startSpecial2.startAfterTerminationOf(10000, startSpecial);     // add vertex v2
                 startSpecial3.startAfterTerminationOf(10000, startSpecial2);    // add vertex v3
@@ -482,12 +518,7 @@ public class TwoPGraphSimulation {
 
     /**
      *
-     * operationTest2
-     *
-     * SimulationScenario which will start 10 normal nodes and start one special node that triggers an alive node to
-     * broadcast an add operation. Thereafter a remove operation ios triggered which will remove the object again.
-     * The operations should eventually be received by all alive nodes on order to validate the properties
-     * of the algorithms.
+     * twopgraphtest2
      *
      **/
     public static SimulationScenario twopgraphtest2() {
@@ -514,25 +545,43 @@ public class TwoPGraphSimulation {
                 StochasticProcess startSpecial = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
+                        raise(1, vertexNode1, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 3), new ConstantDistribution<>(Integer.class, 0));
                     }
                 };
                 StochasticProcess startSpecial2 = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
+                        raise(1, vertexNode2, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 3), new ConstantDistribution<>(Integer.class, 0));
                     }
                 };
                 StochasticProcess startSpecial3 = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 6), new ConstantDistribution<>(Integer.class, 0));
+                        raise(1, vertexNode3, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 3), new ConstantDistribution<>(Integer.class, 0));
                     }
                 };
                 StochasticProcess startSpecial4 = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 14), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 1));
+                        raise(1, edgeNode1, new ConstantDistribution<>(Integer.class, 14), new ConstantDistribution<>(Integer.class, 7), new ConstantDistribution<>(Integer.class, 2));
+                    }
+                };
+                StochasticProcess startSpecial5 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, edgeNode2, new ConstantDistribution<>(Integer.class, 15), new ConstantDistribution<>(Integer.class, 7), new ConstantDistribution<>(Integer.class, 2));
+                    }
+                };
+                StochasticProcess startSpecial6 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, edgeNode3, new ConstantDistribution<>(Integer.class, 16), new ConstantDistribution<>(Integer.class, 7), new ConstantDistribution<>(Integer.class, 2));
+                    }
+                };
+                StochasticProcess startSpecial7 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, vertexNode1, new ConstantDistribution<>(Integer.class, 17), new ConstantDistribution<>(Integer.class, 1), new ConstantDistribution<>(Integer.class, 1));
                     }
                 };
 
@@ -540,12 +589,15 @@ public class TwoPGraphSimulation {
                 /** Start 10 normal nodes */
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
-                /** Start special nodes which will store 2 duplicate values and one lone, of of the duplicates then gets removed */
-                startSpecial.startAfterTerminationOf(1000, startPeers);         // add("value4")
-                startSpecial2.startAfterTerminationOf(1000, startSpecial);      // add("value4")
-                startSpecial3.startAfterTerminationOf(1000, startSpecial2);     // add("value6")
-                startSpecial4.startAfterTerminationOf(1000000, startSpecial3);  // remove("value4")
-                terminateAfterTerminationOf(1000*1000, startSpecial4);
+                /** Start special nodes */
+                startSpecial.startAfterTerminationOf(10000, startPeers);         // add vertex v1
+                startSpecial2.startAfterTerminationOf(10000, startSpecial);      // add vertex v2
+                startSpecial3.startAfterTerminationOf(10000, startSpecial2);     // add vertex v3
+                startSpecial4.startAfterTerminationOf(10000, startSpecial3);    // add edge e1 v1->v2
+                startSpecial5.startAfterTerminationOf(10000, startSpecial4);    // add edge e2 v2->v3
+                startSpecial6.startAfterTerminationOf(10000, startSpecial5);    // add edge e3 v3->v1
+                startSpecial7.startAfterTerminationOf(10000, startSpecial6);    // try to remove a vertex which is connected by an edge
+                terminateAfterTerminationOf(1000*1000, startSpecial7);
             }
         };
 
@@ -554,12 +606,7 @@ public class TwoPGraphSimulation {
 
     /**
      *
-     * operationTest3
-     *
-     * SimulationScenario which will start 10 normal nodes and start one special node that triggers an alive node to
-     * broadcast an add operation. Thereafter a remove operation ios triggered which will remove the object again.
-     * The operations should eventually be received by all alive nodes on order to validate the properties
-     * of the algorithms.
+     * twopgraphtest3
      *
      **/
     public static SimulationScenario twopgraphtest3() {
@@ -586,25 +633,55 @@ public class TwoPGraphSimulation {
                 StochasticProcess startSpecial = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
+                        raise(1, vertexNode1, new ConstantDistribution<>(Integer.class, 11), new ConstantDistribution<>(Integer.class, 3), new ConstantDistribution<>(Integer.class, 0));
                     }
                 };
                 StochasticProcess startSpecial2 = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 6), new ConstantDistribution<>(Integer.class, 0));
+                        raise(1, vertexNode2, new ConstantDistribution<>(Integer.class, 12), new ConstantDistribution<>(Integer.class, 3), new ConstantDistribution<>(Integer.class, 0));
                     }
                 };
                 StochasticProcess startSpecial3 = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 0));
+                        raise(1, vertexNode3, new ConstantDistribution<>(Integer.class, 13), new ConstantDistribution<>(Integer.class, 3), new ConstantDistribution<>(Integer.class, 0));
                     }
                 };
                 StochasticProcess startSpecial4 = new StochasticProcess() {
                     {
                         eventInterArrivalTime(uniform(1000, 1000));
-                        raise(1, startSpecialNode, new ConstantDistribution<>(Integer.class, 14), new ConstantDistribution<>(Integer.class, 4), new ConstantDistribution<>(Integer.class, 1));
+                        raise(1, edgeNode1, new ConstantDistribution<>(Integer.class, 14), new ConstantDistribution<>(Integer.class, 7), new ConstantDistribution<>(Integer.class, 2));
+                    }
+                };
+                StochasticProcess startSpecial5 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, edgeNode2, new ConstantDistribution<>(Integer.class, 15), new ConstantDistribution<>(Integer.class, 7), new ConstantDistribution<>(Integer.class, 2));
+                    }
+                };
+                StochasticProcess startSpecial6 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, edgeNode3, new ConstantDistribution<>(Integer.class, 16), new ConstantDistribution<>(Integer.class, 7), new ConstantDistribution<>(Integer.class, 2));
+                    }
+                };
+                StochasticProcess startSpecial7 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, edgeNode1, new ConstantDistribution<>(Integer.class, 17), new ConstantDistribution<>(Integer.class, 1), new ConstantDistribution<>(Integer.class, 3));
+                    }
+                };
+                StochasticProcess startSpecial8 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, edgeNode3, new ConstantDistribution<>(Integer.class, 18), new ConstantDistribution<>(Integer.class, 7), new ConstantDistribution<>(Integer.class, 3));
+                    }
+                };
+                StochasticProcess startSpecial9 = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(uniform(1000, 1000));
+                        raise(1, vertexNode1, new ConstantDistribution<>(Integer.class, 19), new ConstantDistribution<>(Integer.class, 7), new ConstantDistribution<>(Integer.class, 1));
                     }
                 };
 
@@ -612,13 +689,17 @@ public class TwoPGraphSimulation {
                 /** Start 10 normal nodes */
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
-                /** Start special nodes which will store 2 duplicate values and one lone, of of the duplicates then gets removed */
-                startSpecial.startAfterTerminationOf(10000, startPeers);            // add("value4")
-                startSpecial2.startAfterTerminationOf(10000, startSpecial);         // add("value6")
-                /** Start the next two simultaneously */
-                startSpecial3.startAfterTerminationOf(10000, startSpecial2);         // add("value4")
-                startSpecial4.startAfterTerminationOf(10000, startSpecial2);         // remove("value4")
-                terminateAfterTerminationOf(1000*1000, startSpecial4);
+                /** Start special nodes */
+                startSpecial.startAfterTerminationOf(10000, startPeers);         // add vertex v1
+                startSpecial2.startAfterTerminationOf(10000, startSpecial);      // add vertex v2
+                startSpecial3.startAfterTerminationOf(10000, startSpecial2);     // add vertex v3
+                startSpecial4.startAfterTerminationOf(10000, startSpecial3);    // add edge e1 v1->v2
+                startSpecial5.startAfterTerminationOf(10000, startSpecial4);    // add edge e2 v2->v3
+                startSpecial6.startAfterTerminationOf(10000, startSpecial5);    // add edge e3 v3->v1
+                startSpecial7.startAfterTerminationOf(10000, startSpecial6);    // remove edge e1 v1->v2
+                startSpecial8.startAfterTerminationOf(10000, startSpecial7);    // remove edge e3 v3->v1
+                startSpecial9.startAfterTerminationOf(10000, startSpecial8);    // remove edge e3 v3->v1
+                terminateAfterTerminationOf(1000 * 1000, startSpecial9);
             }
         };
 

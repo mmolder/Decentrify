@@ -61,7 +61,7 @@ public class TwoPhaseGraph {
         // downstream
         else {
             //edgesAdded.add(new Edge(u, v));
-            edges.add(new Edge(e.v1, e.v2));
+            edges.add(e);
         }
         return false;
     }
@@ -85,11 +85,12 @@ public class TwoPhaseGraph {
 
                 for(int i = 0; i < edges.size(); i++) {
                     Edge v = (Edge)edges.elementAt(i);
-                    if(lookup(v) && !v.v1.equals(w) && !v.v2.equals(w)) {
-                        return true;
+                    if(lookup(v) && (v.v1.equals(w) || v.v2.equals(w))) {
+                        return false;
                         //return w;
                     }
                 }
+                return true;
             }
         }
         //downstream
@@ -139,7 +140,9 @@ public class TwoPhaseGraph {
         System.out.println("Graph contains:");
         for(int i = 0; i < edges.size(); i++) {
             Edge e = (Edge)edges.elementAt(i);
-            System.out.println("["+ e + " : {" + e.v1.id + ", " + e.v2.id + "}]");
+            if(lookup(e)) {
+                System.out.println("["+ e + " : {" + e.v1.id + ", " + e.v2.id + "}]");
+            }
         }
     }
 }

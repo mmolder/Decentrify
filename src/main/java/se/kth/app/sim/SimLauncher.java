@@ -59,8 +59,8 @@ public class SimLauncher {
         SimulationScenario twoPGraphTest1 = TwoPGraphSimulation.twopgraphtest1();
         SimulationScenario twoPGraphTest2 = TwoPGraphSimulation.twopgraphtest2();
         SimulationScenario twoPGraphTest3 = TwoPGraphSimulation.twopgraphtest3();
-        twoPGraphTest1.simulate(LauncherComp.class);
+        //twoPGraphTest1.simulate(LauncherComp.class);
         //twoPGraphTest2.simulate(LauncherComp.class);
-        //twoPGraphTest3.simulate(LauncherComp.class);
+        twoPGraphTest3.simulate(LauncherComp.class);
     }
 }

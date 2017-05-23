@@ -57,11 +57,12 @@ public class TwoPGraphClient extends ComponentDefinition {
                     removeVertex(w);
                     break;
                 case 2:
-                    populate();
-                    break;
-                case 3:
                     Edge e = (Edge)msg;
                     addEdge(e);
+                    break;
+                case 3:
+                    Edge f = (Edge)msg;
+                    removeEdge(f);
                     break;
                 default:
                     break;
@@ -93,14 +94,14 @@ public class TwoPGraphClient extends ComponentDefinition {
         //KContentMsg msg1 = createMsg(ip, id, 2, null, e1);
         trigger(msg1, networkPort);
     }
-/*
-    public void removeEdge() {
+
+    public void removeEdge(Edge e) {
         KAddress peer = ScenarioSetup.getNodeAdr(ip, id);
         KHeader header = new BasicHeader(selfAdr, peer, Transport.UDP);
-        KContentMsg msg1 = new BasicContentMsg(header, new RemoveEdge(e1));
+        KContentMsg msg1 = new BasicContentMsg(header, new RemoveEdge(e));
         //KContentMsg msg1 = createMsg(ip, id, 3, null, e1);
         trigger(msg1, networkPort);
-    }*/
+    }
 
     public KContentMsg createMsg(String ipaddr, int ide, int type, int vid, Edge e) {
         KAddress peer = ScenarioSetup.getNodeAdr(ipaddr, ide);

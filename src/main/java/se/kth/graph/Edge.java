@@ -11,4 +11,15 @@ public class Edge {
         this.v1 = v1;
         this.v2 = v2;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if(o == null) {
+            return false;
+        }
+        if(o == this) {
+            return true;
+        }
+        return false;
+    }
 }
