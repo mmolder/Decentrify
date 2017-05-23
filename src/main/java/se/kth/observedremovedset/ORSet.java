@@ -46,9 +46,11 @@ public class ORSet {
         }
         // downstream
         else {
+            ArrayList<Object> tmp = new ArrayList<>();
             for(String entry : replicas) {
                 // if key exists, no need to check value since unique
                 if(set.containsKey(entry)) {
+                    tmp.add(entry);
                     continue;
                 }
                 else {
@@ -57,9 +59,11 @@ public class ORSet {
                 }
             }
             // success, all pairs have previously been delivered, remove from set
+            /*
             for(String entry : replicas) {
                 set.remove(entry);      // remove from downstream
-            }
+            }*/
+            set.keySet().removeAll(tmp);
             return tags;
         }
     }

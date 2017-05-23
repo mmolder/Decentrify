@@ -54123,3 +54123,14 @@ KompicsFault(java.lang.IllegalMonitorStateException thrown in Component(3ce757b5
 [00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
 [00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
 [00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
+[13:23:18,895] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:CROUPIER,o:01,bId:0> no partners - not shuffling
+[00:00:05,065] WARN  {CroupierComp} <nid:2,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:06,160] WARN  {CroupierComp} <nid:3,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:07,246] WARN  {CroupierComp} <nid:4,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:08,292] WARN  {CroupierComp} <nid:5,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:09,326] WARN  {CroupierComp} <nid:6,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:10,346] WARN  {CroupierComp} <nid:7,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:11,381] WARN  {CroupierComp} <nid:8,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:12,443] WARN  {CroupierComp} <nid:9,oid:CROUPIER,o:01,bId:0> no neighbours
+[00:00:13,538] WARN  {CroupierComp} <nid:10,oid:CROUPIER,o:01,bId:0> no neighbours
