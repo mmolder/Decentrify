@@ -698,7 +698,7 @@ public class TwoPGraphSimulation {
                 startSpecial6.startAfterTerminationOf(10000, startSpecial5);    // add edge e3 v3->v1
                 startSpecial7.startAfterTerminationOf(10000, startSpecial6);    // remove edge e1 v1->v2
                 startSpecial8.startAfterTerminationOf(10000, startSpecial7);    // remove edge e3 v3->v1
-                startSpecial9.startAfterTerminationOf(10000, startSpecial8);    // remove edge e3 v3->v1
+                startSpecial9.startAfterTerminationOf(10000, startSpecial8);    // remove vertex v1
                 terminateAfterTerminationOf(1000 * 1000, startSpecial9);
             }
         };
@@ -806,7 +806,7 @@ public class TwoPGraphSimulation {
                 startSpecial6.startAfterTerminationOf(10000, startSpecial5);    // add edge e3 v3->v1
                 startSpecial7.startAfterTerminationOf(10000, startSpecial6);    // remove edge e1 v1->v2
                 startSpecial8.startAfterTerminationOf(10000, startSpecial7);    // remove edge e3 v3->v1
-                startSpecial9.startAfterTerminationOf(10000, startSpecial8);    // remove edge e3 v3->v1
+                startSpecial9.startAfterTerminationOf(10000, startSpecial8);    // remove vertex v1
                 startSpecial10.startAfterTerminationOf(10000, startSpecial9);   // try to add an edge to the newly removed vertex
                 terminateAfterTerminationOf(1000 * 1000, startSpecial10);
             }

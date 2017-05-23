@@ -6,7 +6,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simulation.log" afterPath="$PROJECT_DIR$/simulation.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimLauncher.java" afterPath="$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimLauncher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPGraphSimulation.java" afterPath="$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPGraphSimulation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/kth/observedremovedset/ORSet.java" afterPath="$PROJECT_DIR$/src/main/java/se/kth/observedremovedset/ORSet.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,21 +40,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TwoPSetClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPSetClient.java">
+      <file leaf-file-name="TwoPGraphSimulation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPGraphSimulation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="504">
+              <caret line="808" column="99" lean-forward="false" selection-start-line="808" selection-start-column="99" selection-end-line="808" selection-end-column="99" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TwoPSetSimulation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPSetSimulation.java">
+      <file leaf-file-name="TwoPGraphClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPGraphClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-546">
-              <caret line="229" column="36" lean-forward="true" selection-start-line="229" selection-start-column="36" selection-end-line="229" selection-end-column="36" />
+            <state relative-caret-position="355">
+              <caret line="62" column="22" lean-forward="false" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,11 +74,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimLauncher.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SimLauncher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="65" column="10" lean-forward="false" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+            <state relative-caret-position="444">
+              <caret line="55" column="8" lean-forward="false" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ORSetSimulation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/ORSetSimulation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="387" column="101" lean-forward="false" selection-start-line="387" selection-start-column="101" selection-end-line="387" selection-end-column="101" />
               <folding />
             </state>
           </provider>
@@ -151,9 +162,9 @@
         <option value="$PROJECT_DIR$/src/main/java/se/kth/growonlyset/TwoPhaseSet.java" />
         <option value="$PROJECT_DIR$/src/main/java/se/kth/graph/Edge.java" />
         <option value="$PROJECT_DIR$/src/main/java/se/kth/graph/TwoPhaseGraph.java" />
-        <option value="$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPGraphSimulation.java" />
         <option value="$PROJECT_DIR$/src/main/java/se/kth/observedremovedset/ORSet.java" />
         <option value="$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimLauncher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPGraphSimulation.java" />
       </list>
     </option>
   </component>
@@ -1100,16 +1111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/ORSetSimulation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5220">
-          <caret line="387" column="101" lean-forward="false" selection-start-line="387" selection-start-column="101" selection-end-line="387" selection-end-column="101" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/causalbroadcast/CRB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
@@ -1139,26 +1140,6 @@
         <state relative-caret-position="210">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPGraphClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="62" column="22" lean-forward="false" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPGraphSimulation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="810" column="71" lean-forward="false" selection-start-line="810" selection-start-column="71" selection-end-line="810" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1218,10 +1199,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPSetClient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/observedremovedset/ORSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="579">
+          <caret line="65" column="40" lean-forward="false" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/ORSetSimulation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="387" column="101" lean-forward="false" selection-start-line="387" selection-start-column="101" selection-end-line="387" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="55" column="8" lean-forward="false" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1236,19 +1233,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/observedremovedset/ORSet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPSetClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="65" column="40" lean-forward="false" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
+        <state relative-caret-position="105">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/SimLauncher.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPGraphClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="65" column="10" lean-forward="false" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="355">
+          <caret line="62" column="22" lean-forward="false" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/kth/app/sim/TwoPGraphSimulation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="808" column="99" lean-forward="false" selection-start-line="808" selection-start-column="99" selection-end-line="808" selection-end-column="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

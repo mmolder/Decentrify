@@ -53,7 +53,7 @@ public class SimLauncher {
         SimulationScenario orSetTest3 = ORSetSimulation.orsettest3();
         //orSetTest1.simulate(LauncherComp.class);
         //orSetTest2.simulate(LauncherComp.class);
-        //orSetTest3.simulate(LauncherComp.class);
+        orSetTest3.simulate(LauncherComp.class);
 
         /** 2P2P Graph simulation */
         SimulationScenario twoPGraphTest1 = TwoPGraphSimulation.twopgraphtest1();
